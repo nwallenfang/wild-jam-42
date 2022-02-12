@@ -26,9 +26,14 @@ onready var head = $Head
 var node_currently_interacting_with: Node
 
 
+# number of currently owned crystals
+var number_of_crystals = 0
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	pass
+#	var _err = connect("crystal_collected", self, "crystal_collected")
+#	print(_err)
+
 
 #
 #	for coords in [top_left, top_right, bot_left, bot_right]:
@@ -51,17 +56,21 @@ func _ready() -> void:
 #		cyl.global_transform.origin = from
 #		cyl.rotate(cross, angle)	
 
+func crystal_collected(crystal):
+	print("player: crystal collected")
+	number_of_crystals += 1
+	crystal.queue_free()
+
 
 onready var scene: PackedScene = preload("res://Prototyping/DebugCyl.tscn")
 const interact_distance: float = 100.0
 func on_pressed_interact():
 	# Cast a ray from center of camera viewport into the world (?)
-	var camera = $Head/Camera
 	var vp = get_viewport().size
-	var top_left = Vector2(0, 0)
-	var top_right = Vector2(vp.x, 0)
-	var bot_left = Vector2(vp.x, vp.y)
-	var bot_right = Vector2(0, vp.y)
+#	var top_left = Vector2(0, 0)
+#	var top_right = Vector2(vp.x, 0)
+#	var bot_left = Vector2(vp.x, vp.y)
+#	var bot_right = Vector2(0, vp.y)
 	var center = Vector2(vp.x/2, vp.y/2)
 	
 	for coords in [center]:
@@ -98,8 +107,7 @@ func on_pressed_interact():
 			node_currently_interacting_with.call("start_interacting")
 			state = State.INTERACTING
 
-var jump_frame_count := -1
-func handle_input(delta):
+func handle_input(_delta):
 	if Input.is_action_just_pressed("interact"):
 		on_pressed_interact()
 	

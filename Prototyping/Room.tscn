@@ -1,8 +1,12 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://addons/kenney_prototypes/assets/colors/orange/materials/material_001.tres" type="Material" id=1]
+[ext_resource path="res://Objects/CrystalDoor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Crystal.tscn" type="PackedScene" id=3]
 
 [node name="Room" type="CSGCombiner"]
+transform = Transform( 0.340908, 0, 0, 0, 0.340908, 0, 0, 0, 0.340908, 0, 0, 0 )
+use_collision = true
 
 [node name="CSGBoxOuter" type="CSGBox" parent="."]
 transform = Transform( 35.0574, 0, 0, 0, 14.6027, 0, 0, 0, 69.1644, 0, 29.1281, -26.7906 )
@@ -13,13 +17,14 @@ depth = 3.27228
 material = ExtResource( 1 )
 
 [node name="Exit" type="CSGBox" parent="CSGBoxOuter"]
-transform = Transform( 0.784914, 0, 0, 0, -0.0272646, -2.04669, 0, 0.908377, 0.0096278, 0, -0.200618, -1.7626 )
+transform = Transform( 0.35853, 0, 0, 0, -0.01348, -1.01191, 0, 0.908374, 0.00962778, 0.00794282, -1.31122, -1.75488 )
 operation = 2
+width = 1.1576
 height = 0.622538
 material = ExtResource( 1 )
 
-[node name="Exit2" type="CSGBox" parent="CSGBoxOuter"]
-transform = Transform( 0.784914, 0, 0, 0, -0.0272646, -2.04669, 0, 0.908377, 0.0096278, 0, -0.200618, 1.40402 )
+[node name="Entry" type="CSGBox" parent="CSGBoxOuter"]
+transform = Transform( 0.784914, 0, 0, 0, -0.0272646, -2.04669, 0, 0.908377, 0.0096278, -0.0611137, -0.200618, 1.40402 )
 operation = 2
 height = 0.622538
 material = ExtResource( 1 )
@@ -28,3 +33,15 @@ material = ExtResource( 1 )
 transform = Transform( 1.45663, 0, 0, 0, 1.84204, 0, 0, 0, 1.45663, -0.00752757, -0.442173, -0.021206 )
 operation = 2
 material = ExtResource( 1 )
+
+[node name="CrystalDoor" parent="." instance=ExtResource( 2 )]
+transform = Transform( 3.06475, 0, 0, 0, 3.06475, 0, 0, 0, 3.06475, 0, -4.26831, -131.254 )
+
+[node name="Crystal" parent="." instance=ExtResource( 3 )]
+transform = Transform( 25, 0, 0, 0, 25, 0, 0, 0, 25, -21.9011, -0.682232, -49.6793 )
+
+[node name="Crystal2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 25, 0, 0, 0, 25, 0, 0, 0, 25, -8.43271, -0.682232, -52.8524 )
+
+[node name="Crystal3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 25, 0, 0, 0, 25, 0, 0, 0, 25, 1.97146, -0.682232, -47.7252 )

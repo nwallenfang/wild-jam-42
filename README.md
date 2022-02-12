@@ -1,11 +1,12 @@
-# General
-[Kenney.nl's](https://kenney.nl/) prototype textures applied to a cube for Godot's asset library.
-Block out levels, prototype, do level design, test proportions, test imports and gameplay.
+## The Last Walk
+An entry to Godot Wild Jam 42.
 
-![Screenshot](addons/kenney_prototypes/screenshots/screen1.PNG)
-![Screenshot](addons/kenney_prototypes/screenshots/screen2.PNG)
+### Licensing
+The code is licensed under MIT.
+Our own assets are licensed under CC BY (Attribution required).
 
-# Credit
+This project uses third-party assets:
+
 | Asset | Source | License |
 | ------ | ------ | ------ |
 | Prototype Textures | [Kenney.nl](https://www.kenney.nl/assets/prototype-textures) | CC0 1.0 Universal |

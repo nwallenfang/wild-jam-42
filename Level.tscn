@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Ramp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/kenney_prototypes/demo/demo_environment.tres" type="Environment" id=2]
@@ -14,7 +14,6 @@
 [ext_resource path="res://Assets/Meshes/tunnel.obj" type="ArrayMesh" id=12]
 [ext_resource path="res://Prototyping/BlenderTunnel.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Prototyping/Torch.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Prototyping/BlenderTunnel.lmbake" type="BakedLightmapData" id=15]
 
 [sub_resource type="CapsuleMesh" id=1]
 
@@ -34,7 +33,7 @@ script = ExtResource( 5 )
 environment = ExtResource( 2 )
 
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 0.8, 0, 0, 0, 1.2, 0, 0, 0, 0.8, -21.2894, 78.8655, -35.9556 )
+transform = Transform( 0.8, 0, 0, 0, 1.2, 0, 0, 0, 0.8, -43.4108, 72.4773, 63.3374 )
 script = ExtResource( 3 )
 
 [node name="PlayerMesh" type="MeshInstance" parent="Player"]
@@ -71,7 +70,7 @@ depth = 3.24726
 material = ExtResource( 4 )
 
 [node name="Ramp" type="CSGBox" parent="CSG"]
-transform = Transform( -2.11193e-07, 0, -12.7262, 0, 0.99982, 0, 4.83154, 0, -5.56278e-07, -17.8068, 117.493, 74.2404 )
+transform = Transform( -6.20699, 0, -13.7687, 0, 0.99982, 0, 5.22733, 0, -16.3491, -94.3647, 75.4656, -18.3265 )
 use_collision = true
 width = 1.37224
 height = 1.09321
@@ -172,6 +171,14 @@ height = 7.14986
 depth = 1.91994
 material = ExtResource( 4 )
 
+[node name="WindowOfRoom1" type="CSGBox" parent="CSG/DeepWellOuter"]
+transform = Transform( 0.149659, 0, -0.156128, 0, 0.0230294, 0, 0.170151, 0, 0.14001, -0.517334, 0.0323131, 0.391196 )
+operation = 2
+width = 5.37432
+height = 20.995
+depth = 3.96021
+material = ExtResource( 4 )
+
 [node name="CSGCombiner" type="CSGCombiner" parent="CSG"]
 transform = Transform( 25.327, 0, 0, 0, 85, 0, 0, 0, 25.083, 0, 85, 0 )
 use_collision = true
@@ -192,13 +199,14 @@ material = ExtResource( 9 )
 transform = Transform( 0.675153, 0, -0.737678, 0, 1, 0, 0.737678, 0, 0.675153, -48.858, 73.8663, -33.9323 )
 
 [node name="Room" parent="CSG" instance=ExtResource( 10 )]
-transform = Transform( -0.515462, -0.000317807, -0.208152, 0.000328502, 0.555901, -0.00166225, 0.208152, -0.00166432, -0.51546, -128.187, 43.6787, 28.0938 )
+transform = Transform( -0.45566, -0.000682916, -0.318436, 0.000328502, 0.555901, -0.00166225, 0.318437, -0.00155067, -0.455658, -59.7678, 69.8744, 32.4304 )
 
 [node name="Window" type="CSGBox" parent="CSG/Room"]
-transform = Transform( 7.84728, 0.00348687, -2.86102e-06, 0.00127614, 27.3419, -0.0144286, -1.66893e-06, -0.0176437, 17.5343, -59.0557, 29.743, -38.5443 )
+transform = Transform( 7.84728, 3.72529e-09, 0, -9.31323e-10, 32.8027, -3.72529e-09, 1.43051e-06, -7.45058e-09, 17.5344, -57.3019, 26.3584, -39.1082 )
 operation = 2
 width = 4.63179
-depth = 10.2624
+height = 2.15549
+depth = 10.969
 
 [node name="BlenderTunnel" type="MeshInstance" parent="CSG"]
 transform = Transform( -1.97297, 0, 1.74008, 0, 2.63069, 0, -1.74008, 0, -1.97297, -25.3166, 81.1673, -41.4802 )
@@ -218,11 +226,6 @@ transform = Transform( -0.72788, 0, 0.685704, 0, 1, 0, -0.685704, 0, -0.72788, 2
 
 [node name="Torch2" parent="CSG/BlenderTunnel" instance=ExtResource( 14 )]
 transform = Transform( -0.72788, 0, 0.685704, 0, 1, 0, -0.685704, 0, -0.72788, 22.5943, 0.996784, -9.77209 )
-
-[node name="BakedLightmap" type="BakedLightmap" parent="CSG/BlenderTunnel"]
-transform = Transform( -0.254258, 0, 0.28258, 0, 0.380129, 0, -0.28258, 0, -0.254258, 14.6911, 0.923712, -8.51018 )
-extents = Vector3( 23.4254, 10, 44.0782 )
-light_data = ExtResource( 15 )
 
 [node name="Tunnel2" parent="CSG" instance=ExtResource( 11 )]
 transform = Transform( 0.641878, 0, -0.766807, 0, 1, 0, 0.766807, 0, 0.641878, -255.505, 46.6482, -276.023 )

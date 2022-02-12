@@ -1,0 +1,70 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Objects/CrystalDoor.gd" type="Script" id=1]
+
+[sub_resource type="SphereShape" id=4]
+radius = 15.0
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 2.42243, 4.56772, 1 )
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_color = Color( 0.580392, 0.247059, 0, 1 )
+
+[sub_resource type="CubeMesh" id=1]
+material = SubResource( 6 )
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 0.639216, 0.392157, 0, 1 )
+
+[sub_resource type="CubeMesh" id=3]
+material = SubResource( 2 )
+
+[sub_resource type="BoxShape" id=7]
+
+[node name="CrystalDoor" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="CrystalDetector" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="CrystalDetector"]
+shape = SubResource( 4 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Door" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Door"]
+transform = Transform( 1, 0, 0, 0, 0.749688, 0, 0, 0, 1, 0, 3.46896, 0 )
+shape = SubResource( 5 )
+
+[node name="DoorMesh" type="MeshInstance" parent="Door"]
+transform = Transform( 5.054, 0, 0, 0, 6.856, 0, 0, 0, 2, 0, 3.428, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="Socket" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.90825, -0.036819 )
+
+[node name="SocketMesh" type="MeshInstance" parent="Socket"]
+transform = Transform( 2.50528, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+material/0 = null
+
+[node name="CrystalPos1" type="Position3D" parent="Socket/SocketMesh"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60533, 0.00384998, 1.00954 )
+
+[node name="CrystalPos2" type="Position3D" parent="Socket/SocketMesh"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00906675, 0.00384998, 1.00954 )
+
+[node name="CrystalPos3" type="Position3D" parent="Socket/SocketMesh"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.618284, 0.00384998, 1.00954 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Socket"]
+transform = Transform( 2.49342, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 7 )
+
+[connection signal="body_entered" from="CrystalDetector" to="." method="_on_CrystalDetector_body_entered"]
