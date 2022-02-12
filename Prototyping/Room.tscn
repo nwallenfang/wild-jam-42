@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/kenney_prototypes/assets/colors/orange/materials/material_001.tres" type="Material" id=1]
 [ext_resource path="res://Objects/CrystalDoor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Crystal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Torch.tscn" type="PackedScene" id=4]
 
 [node name="Room" type="CSGCombiner"]
 transform = Transform( 0.340908, 0, 0, 0, 0.340908, 0, 0, 0, 0.340908, 0, 0, 0 )
@@ -45,3 +46,6 @@ transform = Transform( 25, 0, 0, 0, 25, 0, 0, 0, 25, -8.43271, -0.682232, -52.85
 
 [node name="Crystal3" parent="." instance=ExtResource( 3 )]
 transform = Transform( 25, 0, 0, 0, 25, 0, 0, 0, 25, 1.97146, -0.682232, -47.7252 )
+
+[node name="Torch" parent="." instance=ExtResource( 4 )]
+transform = Transform( 0.869159, -0.494534, 0, 0.494534, 0.869159, 0, 0, 0, 1, 50.7249, 3.922, -16.714 )
