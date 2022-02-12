@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/red/materials/material_001.tres" type="Material" id=1]
+
+[node name="DebugCyl" type="CSGCylinder"]
+transform = Transform( 0.03, 0, 0, 0, 100, 0, 0, 0, 0.03, 0, 9.79768, 0 )
+material = ExtResource( 1 )

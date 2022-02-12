@@ -1,0 +1,133 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://addons/kenney_prototypes/demo/demo_environment.tres" type="Environment" id=2]
+[ext_resource path="res://Player.gd" type="Script" id=3]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/orange/materials/material_001.tres" type="Material" id=4]
+[ext_resource path="res://Level.gd" type="Script" id=5]
+[ext_resource path="res://FPSCounter.gd" type="Script" id=6]
+[ext_resource path="res://cross.png" type="Texture" id=7]
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/dark/materials/material_001.tres" type="Material" id=8]
+
+[sub_resource type="CapsuleMesh" id=1]
+
+[sub_resource type="CapsuleShape" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+params_cull_mode = 2
+albedo_color = Color( 0.498039, 0.231373, 0, 1 )
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 5 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 2 )
+
+[node name="Player" type="KinematicBody" parent="."]
+transform = Transform( 0.7, 0, 0, 0, 1.2, 0, 0, 0, 0.7, 0.720932, 120.416, 57.8967 )
+script = ExtResource( 3 )
+
+[node name="PlayerMesh" type="MeshInstance" parent="Player"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0 )
+shape = SubResource( 2 )
+
+[node name="Head" type="Spatial" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.865, 0 )
+
+[node name="Camera" type="Camera" parent="Player/Head"]
+far = 250.0
+
+[node name="CSG" type="Node" parent="."]
+
+[node name="Ground" type="CSGBox" parent="CSG"]
+transform = Transform( 11.4772, 0, 0, 0, 1, 0, 0, 0, 26.0881, 0, 117.653, 80.136 )
+use_collision = true
+width = 1.37224
+height = 1.09321
+depth = 3.23706
+material = ExtResource( 4 )
+
+[node name="Ground2" type="CSGBox" parent="CSG"]
+transform = Transform( 0.280344, -0.340382, -24.522, -0.106741, 0.940132, -8.88775, 11.4733, 0.0170635, 0.516496, -47.5156, 102.99, 80.5553 )
+use_collision = true
+width = 1.37224
+height = 1.09321
+depth = 3.23706
+material = ExtResource( 4 )
+
+[node name="Vortex" type="CSGBox" parent="CSG"]
+transform = Transform( -0.0096075, 1.11655, 0, -0.999963, -0.00860434, 0, 0, 0, 1, 0.745069, 12.7574, 0 )
+use_collision = true
+width = 5.0
+height = 5.0
+depth = 5.0
+material = ExtResource( 8 )
+
+[node name="DeepWellOuter" type="CSGCylinder" parent="CSG"]
+transform = Transform( 54.7154, 0, 0, 0, 85, 0, 0, 0, 54.1882, 0, 85, 1.90735e-06 )
+operation = 2
+use_collision = true
+height = 1.94701
+sides = 13
+smooth_faces = false
+material = SubResource( 3 )
+
+[node name="DeepWellInner" type="CSGCylinder" parent="CSG/DeepWellOuter"]
+transform = Transform( 0.875147, 0, 0, 0, 0.875147, 0, 0, 0, 0.875147, 0, 0, 0 )
+operation = 2
+height = 1.94701
+sides = 13
+smooth_faces = false
+material = SubResource( 3 )
+
+[node name="Gate" type="CSGBox" parent="CSG/DeepWellOuter"]
+transform = Transform( 0.111075, 0, 0, 0, 0.0209747, 0, 0, 0, 0.201058, 0, 0.463034, 0.900609 )
+operation = 2
+width = 5.37432
+height = 7.14986
+depth = 2.68179
+material = ExtResource( 4 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="CSG"]
+transform = Transform( 25.327, 0, 0, 0, 85, 0, 0, 0, 25.083, 0, 85, 0 )
+use_collision = true
+
+[node name="CSGTorus" type="CSGTorus" parent="CSG"]
+transform = Transform( 11.0765, 0, 0, 0, 394.543, 0, 0, 0, 11.0765, 0, 0, 2.87686 )
+visible = false
+material = ExtResource( 4 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -4.27004e-08, 0.673619, -0.739079, 9.34689e-09, 0.739079, 0.673619, 1, 2.18557e-08, -3.78552e-08, -25.4246, 7.30854, -0.0317669 )
+shadow_enabled = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="FPSCounter" type="Label" parent="UI"]
+margin_right = 40.0
+margin_bottom = 14.0
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="UI/CenterContainer"]
+margin_left = 629.0
+margin_top = 349.0
+margin_right = 651.0
+margin_bottom = 371.0
+rect_pivot_offset = Vector2( 11, 11 )
+texture = ExtResource( 7 )
