@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/orange/materials/material_001.tres" type="Material" id=1]
+
+[node name="Tunnel" type="Spatial"]
+
+[node name="CSGBoxOuter" type="CSGBox" parent="."]
+transform = Transform( 5.17977, 0, 0, 0, 1.88982, 0, 0, 0, 6.34585, 0, 4.32486, 0 )
+use_collision = true
+width = 1.88539
+height = 4.61298
+depth = 3.27228
+material = ExtResource( 1 )
+
+[node name="Entry" type="CSGBox" parent="CSGBoxOuter"]
+transform = Transform( 0.784914, 0, 0, 0, -0.0253658, -1.90415, 0, 0.908377, 0.0096278, 0, -0.326084, 1.40402 )
+operation = 2
+height = 0.622538
+material = ExtResource( 1 )
+
+[node name="Entry2" type="CSGBox" parent="CSGBoxOuter"]
+transform = Transform( 0.784914, 0, 0, 0, -0.0272646, -2.04669, 0, 0.908377, 0.0096278, 0, -0.200618, -1.69107 )
+operation = 2
+height = 0.622538
+material = ExtResource( 1 )
+
+[node name="CSGBoxInner" type="CSGBox" parent="CSGBoxOuter"]
+transform = Transform( 1.45663, 0, 0, 0, 1.84204, 0, 0, 0, 1.45663, -0.00752757, -0.290794, -0.021206 )
+operation = 2
+width = 1.05708
+height = 2.13441
+material = ExtResource( 1 )

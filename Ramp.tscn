@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://addons/kenney_prototypes/assets/colors/orange/materials/material_001.tres" type="Material" id=1]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.12425, 0.876447, 1 )
+
+[node name="Ramp2" type="CSGBox"]
+transform = Transform( -1.20127e-07, 0, -7.23867, 0, 0.568699, 0, 2.74819, 0, -3.16412e-07, 0, 0, 0 )
+snap = 0.05
+use_collision = true
+width = 1.37224
+height = 1.09321
+depth = 1.43745
+material = ExtResource( 1 )
+
+[node name="Railing1" type="CSGBox" parent="."]
+transform = Transform( 0.112023, 0, 4.9738e-14, 0, 0.49395, 0, 0, 0, 0.729229, -0.786246, 0.278658, -0.00549388 )
+
+[node name="StaticBody" type="StaticBody" parent="Railing1"]
+transform = Transform( 8.92673, 0, 5.68434e-13, 0, 2.0245, 0, -7.10543e-15, 0, 1.37131, 0.496208, 0.0480874, 0.00753384 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Railing1/StaticBody"]
+transform = Transform( 1, 0, -3.50592e-08, 0, 3.96273, 0, -5.05335e-09, 0, 0.695492, -0.194874, 3.55622, -0.0284291 )
+shape = SubResource( 1 )
+
+[node name="Railing2" type="CSGBox" parent="."]
+transform = Transform( 0.112023, 0, 3.55271e-14, 0, 0.49395, 0, 0, 0, 0.729229, 0.782325, 0.279, -0.035 )
+
+[node name="StaticBody2" type="StaticBody" parent="Railing2"]
+transform = Transform( 8.92673, 0, 6.82121e-13, 0, 2.0245, 0, -3.55271e-15, 0, 1.37131, 0.973544, 0.0473951, 0.0479959 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Railing2/StaticBody2"]
+transform = Transform( 1, 0, -3.50592e-08, 0, 3.96273, 0, -5.05335e-09, 0, 0.695492, -0.0154287, 3.55622, -0.0284291 )
+shape = SubResource( 1 )

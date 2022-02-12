@@ -52,7 +52,7 @@ func _ready() -> void:
 #		cyl.rotate(cross, angle)	
 
 
-onready var scene: PackedScene = preload("res://DebugCyl.tscn")
+onready var scene: PackedScene = preload("res://Prototyping/DebugCyl.tscn")
 const interact_distance: float = 100.0
 func on_pressed_interact():
 	# Cast a ray from center of camera viewport into the world (?)

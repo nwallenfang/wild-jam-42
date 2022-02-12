@@ -61,7 +61,10 @@ func execute_movement(delta: float) -> void:
 	else:
 		velocity = velocity * pow(AIR_FRICTION, delta * EXPECTED_FPS)
 
-	
+	if velocity.length() < 0.15:
+		# to prevent long sliding down ramps
+		velocity = Vector3.ZERO
+		
 	velocity = move_and_slide_with_snap(velocity, snap_vector, Vector3.UP)
 	
 	var just_landed = is_on_floor() and snap_vector == Vector3.ZERO
