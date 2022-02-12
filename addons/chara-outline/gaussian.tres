@@ -1,0 +1,44 @@
+[gd_resource type="Shader" format=2]
+
+[resource]
+code = "/*
+	ガウシアンフィルタシェーダー by あるる（きのもと 結衣）
+	Outline Shader by Yui Kinomoto @arlez80
+
+	MIT License
+*/
+
+shader_type canvas_item;
+render_mode unshaded;
+
+uniform sampler2D source_texture : hint_black;
+uniform vec4 line_color : hint_color = vec4( 0.0, 0.0, 0.0, 1.0 );
+uniform float line_coef : hint_range( 0.0, 10.0 ) = 0.3;
+
+void fragment( )
+{
+	float p = 0.0;
+	float coef[9] = {
+		0.0625, 0.125, 0.0625,
+		0.125, 0.25, 0.125,
+		0.0625, 0.125, 0.0625
+	};
+
+	for( int y=-1; y<=1; y++ ) {
+		for( int x=-1; x<=1; x ++ ) {
+			vec2 uv = SCREEN_UV + vec2( float( x ), float( y ) ) * SCREEN_PIXEL_SIZE;
+			uv.y = 1.0 - uv.y;
+			p += texture( source_texture, uv ).r * coef[(y+1)*3 + (x+1)];
+		}
+	}
+	
+	COLOR = vec4(
+		line_color.rgb * line_coef
+	,	clamp(
+			line_color.a * p
+		,	0.0
+		,	1.0
+		)
+	);
+}
+"

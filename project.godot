@@ -9,17 +9,29 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "CharaOutline",
+"language": "GDScript",
+"path": "res://addons/chara-outline/CharaOutline.gd"
+}, {
+"base": "Node",
+"class": "CharaOutlineRegister",
+"language": "GDScript",
+"path": "res://addons/chara-outline/CharaOutlineRegister.gd"
+}, {
 "base": "KinematicBody",
 "class": "PhysicsMover3D",
 "language": "GDScript",
-"path": "res://PhysicsMover3D.gd"
+"path": "res://Logic/PhysicsMover3D.gd"
 }, {
 "base": "PhysicsMover3D",
 "class": "Player",
 "language": "GDScript",
-"path": "res://Player.gd"
+"path": "res://Logic/Player.gd"
 } ]
 _global_script_class_icons={
+"CharaOutline": "",
+"CharaOutlineRegister": "",
 "PhysicsMover3D": "",
 "Player": ""
 }
@@ -27,9 +39,13 @@ _global_script_class_icons={
 [application]
 
 config/name="The Last Walk"
-run/main_scene="res://Level.tscn"
-boot_splash/image="res://Wildling-Wallpaper 1080.png"
-config/icon="res://icon_placeholder.png"
+run/main_scene="res://Logic/Level.tscn"
+boot_splash/image="res://Assets/Sprites/Wildling-Wallpaper 1080.png"
+config/icon="res://Assets/Sprites/icon_placeholder.png"
+
+[autoload]
+
+Game="*res://Logic/Game.tscn"
 
 [debug]
 

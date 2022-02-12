@@ -50,6 +50,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.90825, -0.036819 )
 
 [node name="SocketMesh" type="MeshInstance" parent="Socket"]
 transform = Transform( 2.50528, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+visible = false
 mesh = SubResource( 3 )
 skeleton = NodePath("../..")
 material/0 = null
@@ -66,5 +67,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.618284, 0.00384998, 1.00954 
 [node name="CollisionShape" type="CollisionShape" parent="Socket"]
 transform = Transform( 2.49342, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 7 )
+
+[node name="CSGBox" type="CSGBox" parent="Socket"]
+transform = Transform( 2.48373, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0533504, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
 
 [connection signal="body_entered" from="CrystalDetector" to="." method="_on_CrystalDetector_body_entered"]

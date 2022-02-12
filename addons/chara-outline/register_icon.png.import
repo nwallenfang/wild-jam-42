@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon_placeholder.png-b2c0505cc240383bb28a32fd3350665d.stex"
+path="res://.import/register_icon.png-0d74ef38dfb6705e5725ef4f8e8dc18a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon_placeholder.png"
-dest_files=[ "res://.import/icon_placeholder.png-b2c0505cc240383bb28a32fd3350665d.stex" ]
+source_file="res://addons/chara-outline/register_icon.png"
+dest_files=[ "res://.import/register_icon.png-0d74ef38dfb6705e5725ef4f8e8dc18a.stex" ]
 
 [params]
 

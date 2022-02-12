@@ -1,28 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Objects/Crystal.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Meshes/Crystal/Crystal.glb" type="PackedScene" id=2]
+[ext_resource path="res://Objects/CrystalMesh.tscn" type="PackedScene" id=2]
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 1, 0.583276, 1 )
 
-[sub_resource type="SphereShape" id=4]
-
-[node name="Crystal" type="StaticBody"]
+[node name="Crystal" type="StaticBody" groups=["interactable"]]
 script = ExtResource( 1 )
 
-[node name="Crystal" parent="." instance=ExtResource( 2 )]
-
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.077302, 0, 0, 0, 0.077302, 0, 0, 0, 0.077302, 0, 0, 0 )
+transform = Transform( 0.0417535, 0, 0, 0, -3.08537e-09, -0.070585, 0, 0.070585, -3.08537e-09, 0, 0, 0 )
 shape = SubResource( 3 )
-
-[node name="PickUpArea" type="Area" parent="."]
-
-[node name="CollisionShape" type="CollisionShape" parent="PickUpArea"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00116038, 0.0040158, -0.00186789 )
-shape = SubResource( 4 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[connection signal="body_entered" from="PickUpArea" to="." method="_on_PickUpArea_body_entered"]
+[node name="Crystal" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )

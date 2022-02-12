@@ -62,20 +62,14 @@ func crystal_collected(crystal):
 	crystal.queue_free()
 
 
-onready var scene: PackedScene = preload("res://Prototyping/DebugCyl.tscn")
-const interact_distance: float = 100.0
-func on_pressed_interact():
-	# Cast a ray from center of camera viewport into the world (?)
-	var vp = get_viewport().size
-#	var top_left = Vector2(0, 0)
-#	var top_right = Vector2(vp.x, 0)
-#	var bot_left = Vector2(vp.x, vp.y)
-#	var bot_right = Vector2(0, vp.y)
-	var center = Vector2(vp.x/2, vp.y/2)
-	
-	for coords in [center]:
+func debug_cyl(coords_array):
+	#	var top_left = Vector2(0, 0)
+	#	var top_right = Vector2(vp.x, 0)
+	#	var bot_left = Vector2(vp.x, vp.y)
+	#	var bot_right = Vector2(0, vp.y)
+	for coords in coords_array:
+		var cyl: Spatial = scene.instance()
 		# always shoot from cross hair position (center of screen)
-#		var screen_point: Vector2 = get_viewport().size / 2.0
 		var screen_point: Vector2 = coords
 		var from = camera.project_ray_origin(screen_point)
 		var to = from + camera.project_ray_normal(screen_point) * interact_distance
@@ -85,27 +79,53 @@ func on_pressed_interact():
 		print("normal: ", camera.project_ray_normal(screen_point))
 		print("angle: ", angle)
 		print("cross: ", cross)
-
-		
-
-		var cyl: Spatial = scene.instance()
 		get_tree().get_current_scene().add_child(cyl)
 		cyl.global_transform.origin = from
 		cyl.rotate(cross, angle)	
-#	cyl.rotate(camera.project_ray_normal(screen_point), deg2rad(-45.0))
 
+onready var scene: PackedScene = load("res://Prototyping/DebugCyl.tscn")
+const interact_distance: float = 100.0
+func on_pressed_interact():
+	# Cast a ray from center of camera viewport into the world (?)
+	var vp = get_viewport().size
+	var center = Vector2(vp.x/2, vp.y/2)
+	var screen_point = Vector2(vp.x/2, vp.y/2)
+	var from = camera.project_ray_origin(screen_point)
+	var to = from + camera.project_ray_normal(screen_point) * interact_distance
 	
+	var directState = PhysicsServer.space_get_direct_state(camera.get_world().get_space())
+	var result = directState.intersect_ray(from, to, [self])
+
+	var node_to_interact_with: Node = result.get("collider") as Node
+
+	if node_to_interact_with != null and node_to_interact_with.is_in_group("interactable"):
+		# have some kind of contract that ever node belonging to interactable
+		# has start_interacting() and stop_interacting()
+		Game.CROSSHAIR.texture = Game.selection_crosshair
+		node_currently_interacting_with = node_to_interact_with
+		node_currently_interacting_with.call("start_interacting", self)
+		state = State.INTERACTING
+		
+		
+func shoot_test_ray():
+	# Cast a ray from center of camera viewport into the world (?)
+	var vp = get_viewport().size
+	var center = Vector2(vp.x/2, vp.y/2)
+	var screen_point = Vector2(vp.x/2, vp.y/2)
+	var from = camera.project_ray_origin(screen_point)
+	var to = from + camera.project_ray_normal(screen_point) * interact_distance
 	
-		var directState = PhysicsServer.space_get_direct_state(camera.get_world().get_space())
-		var result = directState.intersect_ray(from, to, [self])
-	
-		var node_to_interact_with: Node = result.get("collider") as Node
-		if node_to_interact_with != null and node_to_interact_with.is_in_group("interactable"):
-			# have some kind of contract that ever node belonging to interactable
-			# has start_interacting() and stop_interacting()
-			node_currently_interacting_with = node_to_interact_with
-			node_currently_interacting_with.call("start_interacting")
-			state = State.INTERACTING
+	var directState = PhysicsServer.space_get_direct_state(camera.get_world().get_space())
+	var result = directState.intersect_ray(from, to, [self])
+
+	var node_to_interact_with: Node = result.get("collider") as Node
+
+	if node_to_interact_with != null and node_to_interact_with.is_in_group("interactable"):
+		# have some kind of contract that ever node belonging to interactable
+		# has start_interacting() and stop_interacting()
+		Game.CROSSHAIR.texture = Game.selection_crosshair
+	else:
+		Game.CROSSHAIR.texture = Game.default_crosshair
 
 func handle_input(_delta):
 	if Input.is_action_just_pressed("interact"):
@@ -142,7 +162,9 @@ func state_default(delta):
 	
 func state_interacting(_delta):
 	if not Input.is_action_pressed("interact"):
-		node_currently_interacting_with.call("stop_interacting")
+		if is_instance_valid(node_currently_interacting_with):
+			node_currently_interacting_with.call("stop_interacting")
+		Game.CROSSHAIR.texture = Game.default_crosshair
 		state = State.DEFAULT
 
 
@@ -167,6 +189,8 @@ func _process(delta):
 	else:
 		camera.set_as_toplevel(false)
 		camera.global_transform = head.global_transform
+		
+	shoot_test_ray()
 	
 		
 func _input(event):

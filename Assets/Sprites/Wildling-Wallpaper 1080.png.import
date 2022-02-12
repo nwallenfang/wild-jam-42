@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Wildling-Wallpaper 1080.png-07c23db3f2d284acd88bd570201b0ce4.stex"
+path="res://.import/Wildling-Wallpaper 1080.png-813a81961c0ce2d0110fcc75094914ee.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Wildling-Wallpaper 1080.png"
-dest_files=[ "res://.import/Wildling-Wallpaper 1080.png-07c23db3f2d284acd88bd570201b0ce4.stex" ]
+source_file="res://Assets/Sprites/Wildling-Wallpaper 1080.png"
+dest_files=[ "res://.import/Wildling-Wallpaper 1080.png-813a81961c0ce2d0110fcc75094914ee.stex" ]
 
 [params]
 
