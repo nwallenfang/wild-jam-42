@@ -9,3 +9,10 @@ transform = Transform( 2.3, 0, 0, 0, -1.00536e-07, -2.3, 0, 2.3, -1.00536e-07, 0
 mesh = ExtResource( 1 )
 material/0 = null
 material/1 = null
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0183024, 0, 0.26603 )
+visible = false
+light_color = Color( 0.0235294, 0.996078, 0.905882, 1 )
+light_energy = 12.479
+omni_range = 0.384

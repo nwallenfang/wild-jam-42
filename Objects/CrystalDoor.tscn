@@ -9,7 +9,7 @@ radius = 5.0
 
 [sub_resource type="BoxShape" id=8]
 
-[node name="CrystalDoor" type="StaticBody"]
+[node name="CrystalDoor" type="Spatial"]
 script = ExtResource( 1 )
 
 [node name="CrystalDetector" type="Area" parent="."]
@@ -24,6 +24,27 @@ shape = SubResource( 4 )
 [node name="Crystals" parent="SlidingDoor" index="0"]
 visible = false
 
+[node name="OmniLight1" type="OmniLight" parent="SlidingDoor"]
+transform = Transform( 0.970851, 0, -0.239686, 0, 1, 0, 0.239686, 0, 0.970851, -0.442411, 0.0156664, 0.332457 )
+visible = false
+light_color = Color( 0.0666667, 0.764706, 0.835294, 1 )
+light_energy = 3.47
+omni_attenuation = 3.13834
+
+[node name="OmniLight2" type="OmniLight" parent="SlidingDoor"]
+transform = Transform( 0.970851, 0, -0.239686, 0, 1, 0, 0.239686, 0, 0.970851, -0.0039254, 0.0156664, 0.332457 )
+visible = false
+light_color = Color( 0.0666667, 0.764706, 0.835294, 1 )
+light_energy = 3.47
+omni_attenuation = 3.13834
+
+[node name="OmniLight3" type="OmniLight" parent="SlidingDoor"]
+transform = Transform( 0.970851, 0, -0.239686, 0, 1, 0, 0.239686, 0, 0.970851, 0.447585, 0.0156664, 0.332457 )
+visible = false
+light_color = Color( 0.0666667, 0.764706, 0.835294, 1 )
+light_energy = 3.47
+omni_attenuation = 3.13834
+
 [node name="Crystal1" parent="SlidingDoor" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.447, 0, 0.249 )
 visible = false
@@ -36,9 +57,17 @@ visible = false
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.447, 0, 0.249 )
 visible = false
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1.98662, 0, 0, 0, 0.266046, 0, 0, 0 )
+[node name="StaticBody" type="StaticBody" parent="SlidingDoor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="SlidingDoor/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1.79874, 0, 0, 0, 0.266046, 0, 0, 0 )
 shape = SubResource( 8 )
+
+[node name="LightTw1" type="Tween" parent="."]
+
+[node name="LightTw2" type="Tween" parent="."]
+
+[node name="LightTw3" type="Tween" parent="."]
 
 [connection signal="body_entered" from="CrystalDetector" to="." method="_on_CrystalDetector_body_entered"]
 

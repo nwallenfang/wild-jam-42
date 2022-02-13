@@ -5,6 +5,28 @@ var crystal_count = 0
 var positions = null
 
 onready var crystals = [$SlidingDoor/Crystal1, $SlidingDoor/Crystal2, $SlidingDoor/Crystal3]
+onready var lights = [$SlidingDoor/OmniLight1, $SlidingDoor/OmniLight2, $SlidingDoor/OmniLight3]
+onready var tweens = [$LightTw1, $LightTw2, $LightTw3]
+
+var max_energy = 3.9
+var grow_dur = 0.4
+var shrink_dur = 0.2
+func animate_light(light: OmniLight, tween: Tween):
+	light.visible = true
+	light.light_energy = 0.0
+	tween.reset_all()
+	tween.interpolate_property(light, "light_energy", null, max_energy, Tween.EASE_IN)
+	tween.start()
+	yield(tween, "tween_all_completed")
+	
+	tween.reset_all()
+	tween.interpolate_property(light, "light_energy", null, 0.0, Tween.EASE_OUT)
+	tween.start()
+	yield(tween, "tween_all_completed")
+	
+	
+	light.visible = false
+
 
 var start_transform: Transform
 var target_transform: Transform
@@ -32,10 +54,9 @@ func move_to_transform(target_transform_arg: Transform):
 
 
 func open() -> void:
-	print("open")
 	# TODO have sand particles flying
 	# TODO play cool sound
-	yield(get_tree().create_timer(2.4), "timeout")
+	yield(get_tree().create_timer(0.5), "timeout")
 	# move doormesh down towards ground
 	var start = $SlidingDoor.transform
 	# works under the assumption that door is perfecly upright
@@ -51,7 +72,10 @@ func open() -> void:
 func add_crystal(crystal: Node):
 	# move crystal to new parent (CrystalDoor/SlidingDoor)
 	crystals[crystal_count].visible = true
+	animate_light(lights[crystal_count], tweens[crystal_count])
 	crystal_count += 1
+	
+	
 	
 	crystal.queue_free()
 	if crystal_count == 3:
