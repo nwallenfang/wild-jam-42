@@ -1100,7 +1100,7 @@ scene={
 "materials/storage": 0,
 "meshes/compress": 4286,
 "meshes/ensure_tangents": true,
-"meshes/light_baking": 1,
+"meshes/light_baking": 2,
 "meshes/lightmap_texel_size": 0.1,
 "meshes/octahedral_compression": true,
 "meshes/storage": 0,
@@ -1173,5 +1173,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/filters/msaa=1
-environment/default_environment="res://addons/kenney_prototypes/demo/demo_environment.tres"
+environment/default_environment="res://fresh_environment.tres"

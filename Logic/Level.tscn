@@ -26,7 +26,6 @@ albedo_color = Color( 0.498039, 0.231373, 0, 1 )
 
 [sub_resource type="StreamTexture" id=7]
 flags = 4
-load_path = "res://.import/cross.png-fa240eff0c5791115699b08cead3dd87.stex"
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 9 )
@@ -240,10 +239,10 @@ __meta__ = {
 }
 
 [node name="Crosshair" type="TextureRect" parent="UI/CenterContainer"]
-margin_left = 629.0
-margin_top = 349.0
-margin_right = 651.0
-margin_bottom = 371.0
+margin_left = 640.0
+margin_top = 360.0
+margin_right = 640.0
+margin_bottom = 360.0
 rect_pivot_offset = Vector2( 11, 11 )
 texture = SubResource( 7 )
 
