@@ -111,7 +111,7 @@ func on_pressed_interact():
 func shoot_test_ray():
 	# Cast a ray from center of camera viewport into the world (?)
 	var vp = get_viewport().size
-	var center = Vector2(vp.x/2, vp.y/2)
+	var _center = Vector2(vp.x/2, vp.y/2)
 	var screen_point = Vector2(vp.x/2, vp.y/2)
 	var from = camera.project_ray_origin(screen_point)
 	var to = from + camera.project_ray_normal(screen_point) * interact_distance

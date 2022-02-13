@@ -4,10 +4,11 @@ extends Spatial
 var crystal_count = 0
 var positions = null
 
-onready var crystal_positions = [$SlidingDoor/CrystalPos1, $SlidingDoor/CrystalPos2, $SlidingDoor/CrystalPos3]
+onready var crystals = [$SlidingDoor/Crystal1, $SlidingDoor/Crystal2, $SlidingDoor/Crystal3]
 
 var start_transform: Transform
 var target_transform: Transform
+# made this global hope this works
 func interpolate_transform(weight: float):
 	self.transform = start_transform.interpolate_with(target_transform, weight)
 	
@@ -49,13 +50,10 @@ func open() -> void:
 
 func add_crystal(crystal: Node):
 	# move crystal to new parent (CrystalDoor/SlidingDoor)
-	print("adddd")
-	get_tree().current_scene.remove_child(crystal)
-	$SlidingDoor.add_child(crystal)
-	crystal.set_owner($SlidingDoor)
-	
+	crystals[crystal_count].visible = true
 	crystal_count += 1
 	
+	crystal.queue_free()
 	if crystal_count == 3:
 		open()
 
@@ -78,9 +76,11 @@ func _on_CrystalDetector_body_entered(body: Node) -> void:
 			# TODO rotate crystals
 			get_tree().current_scene.add_child(crystal)
 			crystal.global_transform.origin = player.global_transform.origin
-			var pos = crystal_positions[i + current_crystal_count]
-			crystal.move_towards(pos.global_transform.origin)
+			var pos = crystals[i + current_crystal_count]
+			crystal.move_towards(pos.global_transform)
 			crystal.connect("movement_done", self, "add_crystal")
+			
+			yield(get_tree().create_timer(0.3), "timeout")
 			
 		player.number_of_crystals = 0
 

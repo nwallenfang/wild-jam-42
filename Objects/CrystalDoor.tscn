@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Objects/CrystalDoor.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Meshes/SlidingDoor.glb" type="PackedScene" id=2]
+[ext_resource path="res://Assets/Meshes/Crystal/GodotCrystal.tscn" type="PackedScene" id=3]
 
 [sub_resource type="SphereShape" id=4]
 radius = 5.0
@@ -23,14 +24,17 @@ shape = SubResource( 4 )
 [node name="Crystals" parent="SlidingDoor" index="0"]
 visible = false
 
-[node name="CrystalPos1" type="Position3D" parent="SlidingDoor"]
-transform = Transform( 2.50528, 0, 0, 0, 1, 0, 0, 0, 1, -0.447, 0, 0.249 )
+[node name="Crystal1" parent="SlidingDoor" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.447, 0, 0.249 )
+visible = false
 
-[node name="CrystalPos2" type="Position3D" parent="SlidingDoor"]
-transform = Transform( 2.50528, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.249 )
+[node name="Crystal2" parent="SlidingDoor" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.249 )
+visible = false
 
-[node name="CrystalPos3" type="Position3D" parent="SlidingDoor"]
-transform = Transform( 2.50528, 0, 0, 0, 1, 0, 0, 0, 1, 0.447, 0, 0.249 )
+[node name="Crystal3" parent="SlidingDoor" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.447, 0, 0.249 )
+visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1.98662, 0, 0, 0, 0.266046, 0, 0, 0 )

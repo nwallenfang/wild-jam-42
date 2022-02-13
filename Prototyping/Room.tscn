@@ -128,13 +128,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, -1.77636e-14, 0, 1, 0, -0.0765085, 0 )
 mesh = SubResource( 11 )
 
 [node name="Crystal" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.984267, 0, -2.07875, 0, 2.3, 0, 2.07875, 0, 0.984267, 2.3715, 0.670916, 0.766315 )
+transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, 3.38895, 1.12628, 0.766315 )
 
 [node name="Crystal2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.984267, 0, -2.07875, 0, 2.3, 0, 2.07875, 0, 0.984267, 2.3715, 0.670916, 1.50844 )
+transform = Transform( 0.427943, 0, -0.903806, 0, 1, 0, 0.903806, 0, 0.427943, 2.3715, 0.670916, 1.50844 )
 
 [node name="Crystal3" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.984267, 0, -2.07875, 0, 2.3, 0, 2.07875, 0, 0.984267, 2.3715, 0.670916, 2.23812 )
+transform = Transform( 0.427943, 0, -0.903806, 0, 1, 0, 0.903806, 0, 0.427943, 2.3715, 0.670916, 2.23812 )
 
 [node name="Pillar" parent="." instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 0.790993, 0, 0, 0, 1, 2.98905, -0.018486, -4.45619 )

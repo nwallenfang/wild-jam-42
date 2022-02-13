@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Sprites/crosshair_dark.png" type="Texture" id=1]
 [ext_resource path="res://Prototyping/BlenderTunnel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Prototyping/Room.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Prototyping/Tunnel.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/Ramp.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Meshes/BigWallWithArc.glb" type="PackedScene" id=6]
 [ext_resource path="res://addons/kenney_prototypes/demo/demo_environment.tres" type="Environment" id=7]
@@ -191,22 +190,10 @@ height = 20.995
 depth = 3.96021
 material = ExtResource( 13 )
 
-[node name="CSGCombiner" type="CSGCombiner" parent="CSG"]
-transform = Transform( 25.327, 0, 0, 0, 85, 0, 0, 0, 25.083, 0, 85, 0 )
-use_collision = true
-
-[node name="CSGTorus" type="CSGTorus" parent="CSG"]
-transform = Transform( 11.0765, 0, 0, 0, 394.543, 0, 0, 0, 11.0765, 0, 0, 2.87686 )
-visible = false
-material = ExtResource( 13 )
-
 [node name="CSGBox2" type="CSGBox" parent="CSG"]
 transform = Transform( 44.6626, 0, 0, 0, 1.72112, 0, 0, 0, 56.3847, 0, 11.0063, 0 )
 width = 3.42553
 material = ExtResource( 12 )
-
-[node name="Tunnel" parent="CSG" instance=ExtResource( 4 )]
-transform = Transform( 0.675153, 0, -0.737678, 0, 1, 0, 0.737678, 0, 0.675153, -48.858, 73.8663, -33.9323 )
 
 [node name="Room" parent="CSG" instance=ExtResource( 3 )]
 transform = Transform( -0.0760985, -0.000114052, -0.0531811, 5.48622e-05, 0.0928395, -0.000277608, 0.0531813, -0.000258973, -0.0760982, -65.6772, 68.8256, 40.6633 )
