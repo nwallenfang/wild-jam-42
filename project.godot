@@ -42,6 +42,7 @@ config/name="The Last Walk"
 run/main_scene="res://Logic/Level.tscn"
 boot_splash/image="res://Assets/Sprites/Wildling-Wallpaper 1080.png"
 config/icon="res://Assets/Sprites/icon_placeholder.png"
+config/windows_native_icon="res://Assets/Sprites/icon_placeholder.ico"
 
 [autoload]
 

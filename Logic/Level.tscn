@@ -43,7 +43,7 @@ script = ExtResource( 9 )
 environment = ExtResource( 7 )
 
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 0.515262, 0, -0.857032, 0, 1, 0, 0.857032, 0, 0.515262, 0, 145.871, 78.341 )
+transform = Transform( 0.829037, 0, 0.559193, 0, 1, 0, -0.559193, 0, 0.829037, -18.7037, 118.967, 77.991 )
 script = ExtResource( 10 )
 
 [node name="PlayerMesh" type="MeshInstance" parent="Player"]
