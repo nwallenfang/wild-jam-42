@@ -28,4 +28,5 @@ func move_towards(target_position_global: Vector3):
 	$Tween.interpolate_property(self, "global_transform", start, target, 1.2)
 	$Tween.start()
 	yield($Tween, "tween_all_completed")
-	emit_signal("movement_done")
+	emit_signal("movement_done", self)
+#	print("crystal ", name, " movement done")

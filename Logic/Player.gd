@@ -72,7 +72,7 @@ func debug_cyl(coords_array):
 		# always shoot from cross hair position (center of screen)
 		var screen_point: Vector2 = coords
 		var from = camera.project_ray_origin(screen_point)
-		var to = from + camera.project_ray_normal(screen_point) * interact_distance
+		var _to = from + camera.project_ray_normal(screen_point) * interact_distance
 		
 		var angle = Vector3.UP.angle_to(camera.project_ray_normal(screen_point))
 		var cross = Vector3.UP.cross(camera.project_ray_normal(screen_point)).normalized()
@@ -88,7 +88,7 @@ const interact_distance: float = 100.0
 func on_pressed_interact():
 	# Cast a ray from center of camera viewport into the world (?)
 	var vp = get_viewport().size
-	var center = Vector2(vp.x/2, vp.y/2)
+	var _center = Vector2(vp.x/2, vp.y/2)
 	var screen_point = Vector2(vp.x/2, vp.y/2)
 	var from = camera.project_ray_origin(screen_point)
 	var to = from + camera.project_ray_normal(screen_point) * interact_distance

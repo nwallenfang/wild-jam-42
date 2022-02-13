@@ -4,7 +4,7 @@ extends Spatial
 var crystal_count = 0
 var positions = null
 
-onready var crystal_positions = [$Socket/SocketMesh/CrystalPos1, $Socket/SocketMesh/CrystalPos2, $Socket/SocketMesh/CrystalPos3]
+onready var crystal_positions = [$SlidingDoor/CrystalPos1, $SlidingDoor/CrystalPos2, $SlidingDoor/CrystalPos3]
 
 var start_transform: Transform
 var target_transform: Transform
@@ -18,7 +18,10 @@ func move_to_transform(target_transform_arg: Transform):
 	# back up current transform as starting point for interpolation
 	self.start_transform = Transform(transform)
 	
-	var distance: float = transform.origin.distance_to(target_transform_arg.origin)
+	var _distance: float = transform.origin.distance_to(target_transform_arg.origin)
+	
+	# crystals should 
+	
 	var duration = 2.5
 	
 	$Tween.reset_all()  
@@ -28,24 +31,29 @@ func move_to_transform(target_transform_arg: Transform):
 
 
 func open() -> void:
+	print("open")
 	# TODO have sand particles flying
 	# TODO play cool sound
-	
+	yield(get_tree().create_timer(2.4), "timeout")
 	# move doormesh down towards ground
-	var start = $Door.transform
+	var start = $SlidingDoor.transform
 	# works under the assumption that door is perfecly upright
-	var move_depth = $Door/DoorMesh.scale.y
+	var move_depth = 4
 	var end = start.translated(Vector3(0, -move_depth, 0))
 	
 	$Tween.reset_all()
-	$Tween.interpolate_property($Door, "transform", start, end, 2.5)
+	$Tween.interpolate_property($SlidingDoor, "transform", start, end, 2.5)
 	$Tween.start()
 	
-#	yield($Tween, "tween_all_completed")
-#	$CollisionShape.disabled = true
 
 
-func add_crystal():
+func add_crystal(crystal: Node):
+	# move crystal to new parent (CrystalDoor/SlidingDoor)
+	print("adddd")
+	get_tree().current_scene.remove_child(crystal)
+	$SlidingDoor.add_child(crystal)
+	crystal.set_owner($SlidingDoor)
+	
 	crystal_count += 1
 	
 	if crystal_count == 3:
@@ -53,8 +61,6 @@ func add_crystal():
 
 const Crystal = preload("res://Objects/Crystal.tscn")
 func _on_CrystalDetector_body_entered(body: Node) -> void:
-	print(body, " entered CrystalDetector")
-	
 	if body is Player:
 		# instantiate crystals from player position and move them towards
 		# maybe rotate them a couple of times while they are moving
@@ -69,7 +75,7 @@ func _on_CrystalDetector_body_entered(body: Node) -> void:
 			# and shouldn't collide
 #			crystal.get_node("PickUpArea/CollisionShape").disabled = true
 			crystal.get_node("CollisionShape").disabled = true
-			crystal.scale *= 20
+			# TODO rotate crystals
 			get_tree().current_scene.add_child(crystal)
 			crystal.global_transform.origin = player.global_transform.origin
 			var pos = crystal_positions[i + current_crystal_count]
@@ -77,14 +83,6 @@ func _on_CrystalDetector_body_entered(body: Node) -> void:
 			crystal.connect("movement_done", self, "add_crystal")
 			
 		player.number_of_crystals = 0
-		
-
-	
-	# check how many Crystal the player holds
-	
-	# have Crystals flying towards door
-	
-	# check if the door has 3 
 
 
 func _on_Button_pressed() -> void:

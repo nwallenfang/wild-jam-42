@@ -41,8 +41,8 @@ _global_script_class_icons={
 config/name="The Last Walk"
 run/main_scene="res://Logic/Level.tscn"
 boot_splash/image="res://Assets/Sprites/Wildling-Wallpaper 1080.png"
-config/icon="res://Assets/Sprites/icon_placeholder.png"
-config/windows_native_icon="res://Assets/Sprites/icon_placeholder.ico"
+config/icon="res://Assets/Sprites/icon.png"
+config/windows_native_icon="res://Assets/Sprites/icon.ico"
 
 [autoload]
 
@@ -1174,6 +1174,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_clear_color=Color( 0.27451, 0.27451, 0.27451, 1 )
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 quality/filters/msaa=1
 environment/default_environment="res://fresh_environment.tres"
