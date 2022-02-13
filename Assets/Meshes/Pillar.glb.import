@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Pillar.glb-a91445ca8e8832e11ebdccc0d03e2772.scn"
+path="res://.import/pillar.glb-ed494dc3811b77238e33b993752d035c.scn"
 
 [deps]
 
-source_file="res://Assets/Meshes/Pillar.glb"
-dest_files=[ "res://.import/Pillar.glb-a91445ca8e8832e11ebdccc0d03e2772.scn" ]
+source_file="res://Assets/Meshes/pillar.glb"
+dest_files=[ "res://.import/pillar.glb-ed494dc3811b77238e33b993752d035c.scn" ]
 
 [params]
 
@@ -18,13 +18,13 @@ nodes/custom_script=""
 nodes/storage=0
 nodes/use_legacy_names=false
 materials/location=1
-materials/storage=1
+materials/storage=0
 materials/keep_on_reimport=true
 meshes/octahedral_compression=true
 meshes/compress=4286
 meshes/ensure_tangents=true
 meshes/storage=0
-meshes/light_baking=0
+meshes/light_baking=1
 meshes/lightmap_texel_size=0.1
 skins/use_named_skins=true
 external_files/store_in_subdir=false

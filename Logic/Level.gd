@@ -1,5 +1,5 @@
 extends Spatial
 
 func _ready() -> void:
-	$Player/PlayerMesh.visible = false
+#	$Player/PlayerMesh.visible = true
 	Game.CROSSHAIR = $UI/CenterContainer/Crosshair

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=2]
+
+[sub_resource type="Curve" id=1]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, 44.0909 ), 0.0, 0.0, 0, 0, Vector2( 0.0386473, 4.09091 ), 0.0, 0.0, 0, 0, Vector2( 0.0966184, 0.454559 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=2]
+curve = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+direction = Vector3( 0, -1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 1.0
+linear_accel_curve = SubResource( 2 )
+tangential_accel = 3.69
+color = Color( 0.913725, 0.478431, 0.0627451, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+vertex_color_use_as_albedo = true
+
+[sub_resource type="QuadMesh" id=5]
+material = SubResource( 4 )
+size = Vector2( 0.5, 0.5 )
+
+[node name="FallingSand" type="Particles"]
+amount = 200
+lifetime = 3.0
+process_material = SubResource( 3 )
+draw_pass_1 = SubResource( 5 )

@@ -15,8 +15,8 @@ var mouse_sensitivity = 0.1
 
 # movement parameters
 export var CONTROLS_ENABLED := true
-export var move_acceleration = 280.0
-export var air_acceleration = 70.0
+export var move_acceleration = 150.0
+export var air_acceleration = 40.0
 export var jump_total_acceleration = 3000.0
 export var ground_dampening = 0.7
 
@@ -101,7 +101,8 @@ func on_pressed_interact():
 	if node_to_interact_with != null and node_to_interact_with.is_in_group("interactable"):
 		# have some kind of contract that ever node belonging to interactable
 		# has start_interacting() and stop_interacting()
-		Game.CROSSHAIR.texture = Game.selection_crosshair
+		Game.change_crosshair("selection")
+#		Game.CROSSHAIR.texture = Game.selection_crosshair
 		node_currently_interacting_with = node_to_interact_with
 		node_currently_interacting_with.call("start_interacting", self)
 		state = State.INTERACTING
@@ -123,9 +124,11 @@ func shoot_test_ray():
 	if node_to_interact_with != null and node_to_interact_with.is_in_group("interactable"):
 		# have some kind of contract that ever node belonging to interactable
 		# has start_interacting() and stop_interacting()
-		Game.CROSSHAIR.texture = Game.selection_crosshair
+		Game.change_crosshair("selection")
+#		Game.CROSSHAIR.texture = Game.selection_crosshair
 	else:
-		Game.CROSSHAIR.texture = Game.default_crosshair
+		Game.change_crosshair("default")
+#		Game.CROSSHAIR.texture = Game.default_crosshair
 
 func handle_input(_delta):
 	if Input.is_action_just_pressed("interact"):
@@ -164,7 +167,8 @@ func state_interacting(_delta):
 	if not Input.is_action_pressed("interact"):
 		if is_instance_valid(node_currently_interacting_with):
 			node_currently_interacting_with.call("stop_interacting")
-		Game.CROSSHAIR.texture = Game.default_crosshair
+		Game.change_crosshair("default")
+#		Game.CROSSHAIR.texture = Game.default_crosshair
 		state = State.DEFAULT
 
 

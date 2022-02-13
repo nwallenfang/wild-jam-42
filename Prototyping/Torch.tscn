@@ -12,7 +12,8 @@ material = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03209, 0 )
 light_color = Color( 1, 0.921569, 0.678431, 1 )
 light_energy = 2.044
-omni_range = 10.76
+shadow_enabled = true
+omni_range = 18.51
 omni_attenuation = 2.14355
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
