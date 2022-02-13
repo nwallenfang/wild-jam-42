@@ -1173,6 +1173,6 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_clear_color=Color( 0.27451, 0.27451, 0.27451, 1 )
 quality/filters/msaa=1
 environment/default_environment="res://fresh_environment.tres"
