@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/tunnel_savestate.obj-6c47a1c3e5efeb8351f977de73bbd5dd.mesh"
+
+[deps]
+
+files=[ "res://.import/tunnel_savestate.obj-6c47a1c3e5efeb8351f977de73bbd5dd.mesh" ]
+
+source_file="res://Assets/Meshes/Tunnel/tunnel_savestate.obj"
+dest_files=[ "res://.import/tunnel_savestate.obj-6c47a1c3e5efeb8351f977de73bbd5dd.mesh", "res://.import/tunnel_savestate.obj-6c47a1c3e5efeb8351f977de73bbd5dd.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

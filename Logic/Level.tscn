@@ -1,22 +1,17 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Assets/Sprites/crosshair_dark.png" type="Texture" id=1]
 [ext_resource path="res://Prototyping/BlenderTunnel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Prototyping/Room.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Well.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Objects/Ramp.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Meshes/BigWallWithArc.glb" type="PackedScene" id=6]
 [ext_resource path="res://addons/kenney_prototypes/demo/demo_environment.tres" type="Environment" id=7]
 [ext_resource path="res://UI/FPSCounter.gd" type="Script" id=8]
 [ext_resource path="res://Logic/Level.gd" type="Script" id=9]
 [ext_resource path="res://Logic/Player.gd" type="Script" id=10]
 [ext_resource path="res://addons/kenney_prototypes/assets/colors/dark/materials/material_001.tres" type="Material" id=11]
-[ext_resource path="res://addons/kenney_prototypes/assets/colors/purple/materials/material_001.tres" type="Material" id=12]
-[ext_resource path="res://addons/kenney_prototypes/assets/colors/orange/materials/material_001.tres" type="Material" id=13]
 [ext_resource path="res://Assets/Sprites/Avara.ttf" type="DynamicFontData" id=14]
-[ext_resource path="res://Objects/SlidingDoorArc.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Objects/TunnelObj.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Tunnel.lmbake" type="BakedLightmapData" id=17]
+[ext_resource path="res://Objects/Tunnels/TunnelObj.tscn" type="PackedScene" id=16]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -24,10 +19,6 @@ radius = 0.5
 [sub_resource type="CylinderShape" id=6]
 radius = 0.5
 height = 1.6
-
-[sub_resource type="SpatialMaterial" id=3]
-params_cull_mode = 2
-albedo_color = Color( 0.498039, 0.231373, 0, 1 )
 
 [sub_resource type="DynamicFont" id=7]
 size = 24
@@ -67,136 +58,13 @@ far = 250.0
 
 [node name="CSG" type="Node" parent="."]
 
-[node name="Ground" type="CSGBox" parent="CSG"]
-transform = Transform( 103.234, 0, 0, 0, 1, 0, 0, 0, 26.0881, 0, 117.653, 80.136 )
-use_collision = true
-width = 1.37224
-height = 1.09321
-depth = 3.23706
-material = ExtResource( 13 )
-
-[node name="Ground2" type="CSGBox" parent="CSG"]
-transform = Transform( -9.9083, 0, -6.42813, 0, 1, 0, 8.99407, 0, -7.08153, -24.3753, 74.1493, -40.4778 )
-use_collision = true
-width = 1.23331
-height = 1.09321
-depth = 3.24726
-material = ExtResource( 13 )
-
-[node name="Ramp" type="CSGBox" parent="CSG"]
-transform = Transform( -6.20699, 0, -13.7687, 0, 0.99982, 0, 5.22733, 0, -16.3491, -94.3647, 75.4656, -18.3265 )
-use_collision = true
-width = 1.37224
-height = 1.09321
-depth = 1.43745
-material = ExtResource( 13 )
-
-[node name="Railing1" type="CSGBox" parent="CSG/Ramp"]
-transform = Transform( 0.112023, 0, 0, 0, 0.49395, 0, 0, 0, 0.729229, -0.701507, 1.14466, -0.00549388 )
-
-[node name="Railing2" type="CSGBox" parent="CSG/Ramp"]
-transform = Transform( 0.112023, 0, 0, 0, 0.49395, 0, 0, 0, 0.729229, 0.707088, 1.4341, -0.0354633 )
-
-[node name="Ramp2" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( -1.20127e-07, 0, -7.23867, 0, 0.568699, 0, 2.74819, 0, -3.16412e-07, 12.6611, 117.889, 39.5056 )
-
-[node name="Ramp4" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( -1.20127e-07, 0, -7.23867, 0, 0.568699, 0, 2.74819, 0, -3.16412e-07, 12.6611, 117.889, 39.5056 )
-
-[node name="Ramp3" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( 0.63208, 0.181583, -6.65466, 3.94127e-08, 0.537219, 2.37495, 2.67451, -0.0429144, 1.57273, 22.4042, 116.324, 38.327 )
-
-[node name="Ramp5" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( 2.23049, 0.101934, -4.02477, 0.00944227, 0.540426, 2.25383, 1.60543, -0.1448, 5.57851, 29.6296, 113.476, 33.7794 )
-
-[node name="Ramp6" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( 2.15261, 0.115994, -4.25095, 3.94127e-08, 0.537219, 2.37495, 1.70846, -0.146149, 5.35606, 35.5379, 110.242, 25.7199 )
-
-[node name="Ramp8" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( 2.56521, 0.014667, -2.59045, 0.0657972, 0.563417, 0.968869, 0.983822, -0.0759225, 6.68949, 40.0272, 107.998, 17.1794 )
-
-[node name="Ramp9" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( 2.67305, -0.0126439, -1.6734, 0.158195, 0.561548, 1.06574, 0.618326, -0.0890073, 6.96148, 43.1674, 106.542, 7.56233 )
-
-[node name="Ramp10" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( 2.72959, -0.0575445, -0.41291, 0.317643, 0.517355, 2.88691, 0.0317039, -0.229021, 6.62522, 44.4756, 103.942, -2.09725 )
-
-[node name="Ramp11" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( 2.67936, -0.0608903, 1.41112, 0.0686781, 0.525298, 2.76763, -0.607357, -0.20922, 6.53814, 43.3649, 99.9465, -11.281 )
-
-[node name="Ramp12" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( 2.30293, -0.129612, 3.58912, -0.0616293, 0.508109, 3.24714, -1.49842, -0.2201, 5.38261, 40.0655, 95.9705, -19.6071 )
-
-[node name="Ramp13" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( 2.05634, -0.0768498, 4.70156, -0.259217, 0.538796, 2.21342, -1.80467, -0.164958, 5.03928, 34.3424, 92.1963, -26.968 )
-
-[node name="Ramp14" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( 1.86049, -0.0951058, 5.18825, -0.186648, 0.543387, 2.07815, -2.01402, -0.138214, 4.60017, 28.0113, 89.0912, -34.1365 )
-
-[node name="Ramp15" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( 1.15102, -0.132999, 6.35144, -0.186648, 0.543387, 2.07815, -2.48855, -0.102272, 2.78186, 19.5712, 86.2371, -39.259 )
-
-[node name="Ramp16" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( -0.914936, -0.184519, 6.40894, 0.0262357, 0.533286, 2.5135, -2.59128, 0.0705492, -2.23742, -9.03246, 76.0788, -42.5254 )
-
-[node name="Ramp17" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( -0.203531, -0.164053, 6.91017, 0.109368, 0.543466, 2.11271, -2.73846, 0.0338975, -0.4292, 0.251871, 79.1931, -44.3458 )
-
-[node name="Ramp18" parent="CSG" instance=ExtResource( 5 )]
-transform = Transform( 0.707035, -0.166087, 6.6679, -0.17266, 0.538083, 2.29846, -2.65006, -0.0793701, 1.62925, 9.80432, 83.0212, -42.9998 )
-
 [node name="Vortex" type="CSGBox" parent="CSG"]
-transform = Transform( -0.0096075, 1.11655, 0, -0.999963, -0.00860434, 0, 0, 0, 1, 0.745069, 12.7574, 0 )
+transform = Transform( -0.0096075, 1.11655, 0, -0.999963, -0.00860434, 0, 0, 0, 1, 0, 0, 0 )
 use_collision = true
 width = 5.0
 height = 5.0
 depth = 5.0
 material = ExtResource( 11 )
-
-[node name="DeepWellOuter" type="CSGCylinder" parent="CSG"]
-transform = Transform( 54.7154, 0, 0, 0, 85, 0, 0, 0, 54.1882, 0, 85, 1.90735e-06 )
-use_collision = true
-height = 1.94701
-sides = 13
-smooth_faces = false
-material = SubResource( 3 )
-
-[node name="DeepWellInner" type="CSGCylinder" parent="CSG/DeepWellOuter"]
-transform = Transform( 0.875147, 0, 0, 0, 0.875147, 0, 0, 0, 0.875147, 0, 0, 0 )
-operation = 2
-height = 1.94701
-sides = 13
-smooth_faces = false
-material = SubResource( 3 )
-
-[node name="Gate" type="CSGBox" parent="CSG/DeepWellOuter"]
-transform = Transform( 0.111075, 0, 0, 0, 0.0209747, 0, 0, 0, 0.201058, 0, 0.463034, 0.900609 )
-operation = 2
-width = 5.37432
-height = 7.14986
-depth = 2.68179
-material = ExtResource( 13 )
-
-[node name="GateToRoom1" type="CSGBox" parent="CSG/DeepWellOuter"]
-transform = Transform( 0.0643133, 0, 0, 0, 0.0230294, 0, 0, 0, 0.116414, -0.517334, -0.0389478, -0.78034 )
-operation = 2
-width = 5.37432
-height = 7.14986
-depth = 1.91994
-material = ExtResource( 13 )
-
-[node name="WindowOfRoom1" type="CSGBox" parent="CSG/DeepWellOuter"]
-transform = Transform( 0.149659, 0, -0.156128, 0, 0.0230294, 0, 0.170151, 0, 0.14001, -0.517334, 0.0323131, 0.391196 )
-operation = 2
-width = 5.37432
-height = 20.995
-depth = 3.96021
-material = ExtResource( 13 )
-
-[node name="CSGBox2" type="CSGBox" parent="CSG"]
-transform = Transform( 44.6626, 0, 0, 0, 1.72112, 0, 0, 0, 56.3847, 0, 11.0063, 0 )
-width = 3.42553
-material = ExtResource( 12 )
 
 [node name="Room" parent="CSG" instance=ExtResource( 3 )]
 transform = Transform( -0.0760985, -0.000114052, -0.0531811, 5.48622e-05, 0.0928395, -0.000277608, 0.0531813, -0.000258973, -0.0760982, -65.6772, 68.8256, 40.6633 )
@@ -210,15 +78,6 @@ depth = 10.969
 
 [node name="Tunnel3" parent="CSG" instance=ExtResource( 2 )]
 transform = Transform( -1.97297, 0, 1.74008, 0, 2.63069, 0, -1.74008, 0, -1.97297, -25.3166, 81.0266, -41.4802 )
-
-[node name="Room2" parent="CSG" instance=ExtResource( 3 )]
-transform = Transform( 0.302054, 0, 0.953291, 0, 1, 0, -0.953291, 0, 0.302054, -23.1677, 118.321, 77.8044 )
-
-[node name="Spatial" parent="CSG/Room2" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.75762, 0, 11.6879 )
-
-[node name="Room3" parent="CSG" instance=ExtResource( 3 )]
-transform = Transform( 0.302054, 0, 0.953291, 0, 1, 0, -0.953291, 0, 0.302054, -152.859, 118.321, 37.754 )
 
 [node name="SpotLight" type="SpotLight" parent="CSG"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.853, 119.069, 86.142 )
@@ -286,17 +145,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 118.357, 82.7466 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="Tunnel" parent="." instance=ExtResource( 16 )]
+[node name="TunnelDown" parent="." instance=ExtResource( 16 )]
 transform = Transform( -0.999357, 0, -0.0358588, 0, 1, 0, 0.0358588, 0, -0.999357, -8.11697, 119.81, 123.077 )
 
-[node name="BakedLightmap" type="BakedLightmap" parent="Tunnel"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6604, 0.0375061, -18.56 )
-extents = Vector3( 10, 12.4615, 24.2559 )
-environment_mode = 1
-light_data = ExtResource( 17 )
-
-[node name="Tunnel2" parent="." instance=ExtResource( 16 )]
-transform = Transform( -0.999357, 0, -0.0358588, 0, 1, 0, 0.0358588, 0, -0.999357, -23.0098, 119.81, 123.077 )
-
 [node name="Well" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.243259, 0, 0.969961, 0, 1, 0, -0.969961, 0, 0.243259, -106.632, 93.7564, 72.9158 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0 )
+
+[node name="Position3D" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 115.827 )
