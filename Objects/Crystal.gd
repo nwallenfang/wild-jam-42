@@ -25,7 +25,7 @@ func move_to_global_transform(global_target_transform: Transform):
 	# back up current transform as starting point for interpolation
 	self.start_transform = Transform(global_transform)
 	
-	var duration = 2.5
+	var duration = 1.6
 	$Tween.reset_all()  
 	$Tween.playback_process_mode = Tween.TWEEN_PROCESS_PHYSICS
 	$Tween.interpolate_method(self, "interpolate_transform", 0.0, 1.0, duration, Tween.TRANS_LINEAR)

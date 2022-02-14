@@ -83,6 +83,7 @@ func add_crystal(crystal: Node):
 		open()
 
 const Crystal = preload("res://Objects/Crystal.tscn")
+#var 
 func _on_CrystalDetector_body_entered(body: Node) -> void:
 	if body is Player:
 		# instantiate crystals from player position and move them towards

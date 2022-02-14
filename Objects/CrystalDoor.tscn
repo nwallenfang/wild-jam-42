@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Objects/CrystalDoor.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Meshes/SlidingDoor.glb" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Meshes/Crystal/GodotCrystal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/SlidingDoorMesh.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/SlidingDoorArc.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SphereShape" id=4]
 radius = 5.0
@@ -38,21 +39,24 @@ visible = false
 transform = Transform( 0.970851, 0, -0.239686, 0, 1, 0, 0.239686, 0, 0.970851, -0.442411, 0.0156664, 0.332457 )
 visible = false
 light_color = Color( 0.0666667, 0.764706, 0.835294, 1 )
-light_energy = 3.47
+light_energy = 0.0
+light_bake_mode = 0
 omni_attenuation = 3.13834
 
 [node name="OmniLight2" type="OmniLight" parent="SlidingDoor"]
 transform = Transform( 0.970851, 0, -0.239686, 0, 1, 0, 0.239686, 0, 0.970851, -0.0039254, 0.0156664, 0.332457 )
 visible = false
 light_color = Color( 0.0666667, 0.764706, 0.835294, 1 )
-light_energy = 3.47
+light_energy = 0.0
+light_bake_mode = 0
 omni_attenuation = 3.13834
 
 [node name="OmniLight3" type="OmniLight" parent="SlidingDoor"]
 transform = Transform( 0.970851, 0, -0.239686, 0, 1, 0, 0.239686, 0, 0.970851, 0.447585, 0.0156664, 0.332457 )
 visible = false
 light_color = Color( 0.0666667, 0.764706, 0.835294, 1 )
-light_energy = 3.47
+light_energy = 0.0
+light_bake_mode = 0
 omni_attenuation = 3.13834
 
 [node name="Crystal1" parent="SlidingDoor" instance=ExtResource( 3 )]
@@ -72,6 +76,9 @@ visible = false
 [node name="CollisionShape" type="CollisionShape" parent="SlidingDoor/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1.79874, 0, 0, 0, 0.266046, 0, 0, 0 )
 shape = SubResource( 8 )
+
+[node name="Arc" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.82174, 0 )
 
 [connection signal="body_entered" from="CrystalDetector" to="." method="_on_CrystalDetector_body_entered"]
 
