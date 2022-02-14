@@ -12,16 +12,17 @@ var max_energy = 3.9
 var grow_dur = 0.4
 var shrink_dur = 0.2
 func animate_light(light: OmniLight, tween: Tween):
+	var _dummy: bool
 	light.visible = true
 	light.light_energy = 0.0
-	tween.reset_all()
-	tween.interpolate_property(light, "light_energy", null, max_energy, Tween.EASE_IN)
-	tween.start()
+	_dummy = tween.reset_all()
+	_dummy = tween.interpolate_property(light, "light_energy", null, max_energy, Tween.EASE_IN)
+	_dummy = tween.start()
 	yield(tween, "tween_all_completed")
 	
-	tween.reset_all()
-	tween.interpolate_property(light, "light_energy", null, 0.0, Tween.EASE_OUT)
-	tween.start()
+	_dummy = tween.reset_all()
+	_dummy = tween.interpolate_property(light, "light_energy", null, 0.0, Tween.EASE_OUT)
+	_dummy = tween.start()
 	yield(tween, "tween_all_completed")
 	
 	
@@ -56,7 +57,7 @@ func move_to_transform(target_transform_arg: Transform):
 func open() -> void:
 	# TODO have sand particles flying
 	# TODO play cool sound
-	yield(get_tree().create_timer(0.5), "timeout")
+	yield(get_tree().create_timer(1.5), "timeout")
 	# move doormesh down towards ground
 	var start = $SlidingDoor.transform
 	# works under the assumption that door is perfecly upright
@@ -104,7 +105,7 @@ func _on_CrystalDetector_body_entered(body: Node) -> void:
 			crystal.move_towards(pos.global_transform)
 			crystal.connect("movement_done", self, "add_crystal")
 			
-			yield(get_tree().create_timer(0.3), "timeout")
+			yield(get_tree().create_timer(0.8), "timeout")
 			
 		player.number_of_crystals = 0
 
