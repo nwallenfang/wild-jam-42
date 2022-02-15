@@ -1,0 +1,529 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.7.33",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Feets",
+            "translation" : [
+                0,
+                0.04592883586883545,
+                0
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Stem",
+            "translation" : [
+                0,
+                1.0659288167953491,
+                0
+            ]
+        },
+        {
+            "mesh" : 2,
+            "name" : "Bowl",
+            "scale" : [
+                1.4744899272918701,
+                1.214975357055664,
+                1.4744899272918701
+            ],
+            "translation" : [
+                0,
+                1.952956199645996,
+                0
+            ]
+        },
+        {
+            "mesh" : 3,
+            "name" : "StemAddon",
+            "translation" : [
+                0,
+                1.0659288167953491,
+                0
+            ]
+        },
+        {
+            "mesh" : 4,
+            "name" : "BowlAddon",
+            "scale" : [
+                1.444209098815918,
+                1.214975357055664,
+                1.444209098815918
+            ],
+            "translation" : [
+                0,
+                1.9170324802398682,
+                0
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Stem",
+            "normalTexture" : {
+                "index" : 0,
+                "scale" : 6.829999923706055
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1
+                }
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "Bowl",
+            "normalTexture" : {
+                "index" : 2,
+                "scale" : 1.3100000619888306
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 3
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.531818151473999
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "BowlAddon",
+            "normalTexture" : {
+                "index" : 4
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.3052423894405365,
+                    0.037533413618803024,
+                    0.0421496145427227,
+                    1
+                ],
+                "roughnessFactor" : 0.581818163394928
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cylinder",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Circle",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "NORMAL" : 9,
+                        "TEXCOORD_0" : 10
+                    },
+                    "indices" : 11,
+                    "material" : 1
+                }
+            ]
+        },
+        {
+            "name" : "Cylinder.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 12,
+                        "NORMAL" : 13,
+                        "TEXCOORD_0" : 14
+                    },
+                    "indices" : 15,
+                    "material" : 2
+                }
+            ]
+        },
+        {
+            "name" : "Circle.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 16,
+                        "NORMAL" : 17,
+                        "TEXCOORD_0" : 18
+                    },
+                    "indices" : 19,
+                    "material" : 2
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        },
+        {
+            "sampler" : 0,
+            "source" : 3
+        },
+        {
+            "sampler" : 0,
+            "source" : 4
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "MetalCorrodedHeavy001_NRM_1K_METALNESS",
+            "uri" : "MetalCorrodedHeavy001_NRM_1K_METALNESS.jpg"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "FireStandStemTextureBake",
+            "uri" : "FireStandStemTextureBake.png"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "RockBrown009_NRM_1K",
+            "uri" : "RockBrown009_NRM_1K.jpg"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "FireStandBowlTextureBake",
+            "uri" : "FireStandBowlTextureBake.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "FireStandBowlAddonNormalBake",
+            "uri" : "FireStandBowlAddonNormalBake.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 96,
+            "max" : [
+                0.5802455544471741,
+                0.26382648944854736,
+                0.5802456140518188
+            ],
+            "min" : [
+                -0.5802455544471741,
+                -0.04999999701976776,
+                -0.5802456140518188
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 96,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 96,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 144,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 80,
+            "max" : [
+                0.06467156112194061,
+                0.8700000047683716,
+                0.06467156112194061
+            ],
+            "min" : [
+                -0.06467156112194061,
+                -0.8700000047683716,
+                -0.06467156112194061
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 80,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 80,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 132,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 828,
+            "max" : [
+                0.22862334549427032,
+                0.22250719368457794,
+                0.2285582721233368
+            ],
+            "min" : [
+                -0.22862334549427032,
+                -0.01996459811925888,
+                -0.2285582721233368
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 828,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 828,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5123,
+            "count" : 4212,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 12,
+            "componentType" : 5126,
+            "count" : 80,
+            "max" : [
+                0.11062397062778473,
+                0.8786335587501526,
+                0.11062397062778473
+            ],
+            "min" : [
+                -0.11062397062778473,
+                0.8289678692817688,
+                -0.11062397062778473
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 13,
+            "componentType" : 5126,
+            "count" : 80,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 14,
+            "componentType" : 5126,
+            "count" : 80,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 15,
+            "componentType" : 5123,
+            "count" : 132,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 16,
+            "componentType" : 5126,
+            "count" : 160,
+            "max" : [
+                0.23367980122566223,
+                0.16925720870494843,
+                0.2330075353384018
+            ],
+            "min" : [
+                -0.23367980122566223,
+                0.11997202038764954,
+                -0.2330075353384018
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 17,
+            "componentType" : 5126,
+            "count" : 160,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 18,
+            "componentType" : 5126,
+            "count" : 160,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 19,
+            "componentType" : 5123,
+            "count" : 960,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 1152,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1152,
+            "byteOffset" : 1152
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 768,
+            "byteOffset" : 2304
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 288,
+            "byteOffset" : 3072
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 960,
+            "byteOffset" : 3360
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 960,
+            "byteOffset" : 4320
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 640,
+            "byteOffset" : 5280
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 264,
+            "byteOffset" : 5920
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 9936,
+            "byteOffset" : 6184
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 9936,
+            "byteOffset" : 16120
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6624,
+            "byteOffset" : 26056
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 8424,
+            "byteOffset" : 32680
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 960,
+            "byteOffset" : 41104
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 960,
+            "byteOffset" : 42064
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 640,
+            "byteOffset" : 43024
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 264,
+            "byteOffset" : 43664
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1920,
+            "byteOffset" : 43928
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1920,
+            "byteOffset" : 45848
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1280,
+            "byteOffset" : 47768
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1920,
+            "byteOffset" : 49048
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 50968,
+            "uri" : "FireStand.bin"
+        }
+    ]
+}
