@@ -1,0 +1,159 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Objects/BigWallWithArc.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/CrystalDoor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/Crystal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Torch.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/Materials/TilesTerracottaSmall.jpg" type="Texture" id=5]
+[ext_resource path="res://Assets/Materials/TilesTerracottaSmallNRM.jpg" type="Texture" id=6]
+[ext_resource path="res://Assets/Meshes/HalfWall.glb" type="PackedScene" id=7]
+[ext_resource path="res://Assets/Materials/cliff_jagged_NRM_1k.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Materials/cliff_jagged_COL_1k.png" type="Texture" id=9]
+[ext_resource path="res://Objects/OneSidedUV.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Objects/StoneWall.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Prototyping/Room.lmbake" type="BakedLightmapData" id=12]
+[ext_resource path="res://Objects/Pillar.tscn" type="PackedScene" id=13]
+
+[sub_resource type="CubeMesh" id=6]
+size = Vector3( 8.4, 12, 0.5 )
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_texture = ExtResource( 9 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 8 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="ArrayMesh" id=10]
+resource_name = "OneSidedUV_Cube"
+lightmap_size_hint = Vector2( 326, 278 )
+surfaces/0 = {
+"aabb": AABB( -1, -0.0343422, -1, 2, 0.0686843, 2.00001 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 63, 129, 0, 116, 1, 37, 39, 203, 59, 31, 58, 134, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 191, 129, 0, 116, 1, 13, 45, 218, 59, 172, 38, 97, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 63, 129, 0, 116, 1, 170, 38, 207, 59, 31, 58, 97, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 191, 129, 0, 116, 1, 232, 44, 214, 59, 172, 38, 134, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 191, 127, 127, 64, 94, 232, 44, 214, 59, 172, 38, 156, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 191, 127, 127, 189, 93, 13, 45, 109, 59, 40, 56, 193, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 191, 127, 127, 67, 93, 13, 45, 218, 59, 172, 38, 193, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 191, 127, 127, 187, 92, 238, 44, 113, 59, 40, 56, 156, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 191, 127, 0, 140, 127, 238, 44, 113, 59, 17, 35, 75, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 63, 127, 0, 140, 127, 170, 38, 97, 59, 6, 58, 38, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 191, 127, 0, 140, 127, 13, 45, 109, 59, 17, 35, 38, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 63, 127, 0, 140, 127, 62, 39, 101, 59, 6, 58, 75, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 63, 0, 0, 65, 32, 62, 39, 101, 59, 172, 38, 215, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 63, 0, 0, 189, 33, 170, 38, 207, 59, 40, 56, 252, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 63, 0, 0, 67, 33, 170, 38, 97, 59, 172, 38, 252, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 63, 0, 0, 187, 34, 37, 39, 203, 59, 40, 56, 215, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 191, 0, 129, 127, 120, 232, 44, 214, 59, 237, 55, 93, 23, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 63, 0, 129, 127, 120, 62, 39, 101, 59, 72, 22, 243, 58, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 191, 0, 129, 127, 120, 238, 44, 113, 59, 72, 22, 93, 23, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 63, 0, 129, 127, 120, 37, 39, 203, 59, 237, 55, 243, 58, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 191, 0, 127, 0, 63, 0, 0, 0, 0, 9, 56, 36, 36, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 63, 0, 127, 0, 63, 255, 59, 255, 59, 252, 59, 16, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 191, 0, 127, 0, 63, 0, 0, 0, 60, 252, 59, 36, 36, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 63, 0, 127, 0, 63, 255, 59, 0, 0, 9, 56, 16, 59 ),
+"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0, 4, 0, 5, 0, 6, 0, 4, 0, 7, 0, 5, 0, 8, 0, 9, 0, 10, 0, 8, 0, 11, 0, 9, 0, 12, 0, 13, 0, 14, 0, 12, 0, 15, 0, 13, 0, 16, 0, 17, 0, 18, 0, 16, 0, 19, 0, 17, 0, 20, 0, 21, 0, 22, 0, 20, 0, 23, 0, 21, 0 ),
+"blend_shape_data": [  ],
+"format": 2194743,
+"index_count": 36,
+"material": SubResource( 9 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_texture = ExtResource( 5 )
+normal_enabled = true
+normal_scale = 16.0
+normal_texture = ExtResource( 6 )
+uv1_scale = Vector3( 3, 2, 1 )
+
+[sub_resource type="ArrayMesh" id=11]
+resource_name = "OneSidedUV_Cube"
+lightmap_size_hint = Vector2( 326, 278 )
+surfaces/0 = {
+"aabb": AABB( -1, -0.0343422, -1, 2, 0.0686843, 2.00001 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 63, 129, 0, 116, 1, 37, 39, 203, 59, 31, 58, 134, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 191, 129, 0, 116, 1, 13, 45, 218, 59, 172, 38, 97, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 63, 129, 0, 116, 1, 170, 38, 207, 59, 31, 58, 97, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 191, 129, 0, 116, 1, 232, 44, 214, 59, 172, 38, 134, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 191, 127, 127, 64, 94, 232, 44, 214, 59, 172, 38, 156, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 191, 127, 127, 189, 93, 13, 45, 109, 59, 40, 56, 193, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 191, 127, 127, 67, 93, 13, 45, 218, 59, 172, 38, 193, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 191, 127, 127, 187, 92, 238, 44, 113, 59, 40, 56, 156, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 191, 127, 0, 116, 127, 238, 44, 113, 59, 17, 35, 75, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 63, 127, 0, 116, 127, 170, 38, 97, 59, 6, 58, 38, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 191, 127, 0, 116, 127, 13, 45, 109, 59, 17, 35, 38, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 63, 127, 0, 116, 127, 62, 39, 101, 59, 6, 58, 75, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 63, 0, 0, 65, 32, 62, 39, 101, 59, 172, 38, 215, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 63, 0, 0, 189, 33, 170, 38, 207, 59, 40, 56, 252, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 63, 0, 0, 67, 33, 170, 38, 97, 59, 172, 38, 252, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 63, 0, 0, 187, 34, 37, 39, 203, 59, 40, 56, 215, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 191, 0, 129, 127, 120, 232, 44, 214, 59, 237, 55, 93, 23, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 63, 0, 129, 127, 120, 62, 39, 101, 59, 72, 22, 243, 58, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 191, 0, 129, 127, 120, 238, 44, 113, 59, 72, 22, 93, 23, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 63, 0, 129, 127, 120, 37, 39, 203, 59, 237, 55, 243, 58, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 191, 0, 127, 0, 63, 0, 0, 0, 0, 9, 56, 36, 36, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 63, 0, 127, 0, 63, 255, 59, 255, 59, 252, 59, 16, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 191, 0, 127, 0, 63, 0, 0, 0, 60, 252, 59, 36, 36, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 63, 0, 127, 0, 63, 255, 59, 0, 0, 9, 56, 16, 59 ),
+"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0, 4, 0, 5, 0, 6, 0, 4, 0, 7, 0, 5, 0, 8, 0, 9, 0, 10, 0, 8, 0, 11, 0, 9, 0, 12, 0, 13, 0, 14, 0, 12, 0, 15, 0, 13, 0, 16, 0, 17, 0, 18, 0, 16, 0, 19, 0, 17, 0, 20, 0, 21, 0, 22, 0, 20, 0, 23, 0, 21, 0 ),
+"blend_shape_data": [  ],
+"format": 2194743,
+"index_count": 36,
+"material": SubResource( 7 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[sub_resource type="BoxShape" id=12]
+
+[node name="Room" type="Spatial"]
+
+[node name="CrystalDoor" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.958858, 1.70141, -5.7423 )
+
+[node name="BigWallWithArc2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, 2.09412, -0.0488375, 5.67194 )
+
+[node name="StoneWall9" parent="." instance=ExtResource( 11 )]
+transform = Transform( -0.00938978, 0, 0.999956, 0, 1, 0, -0.999956, 0, -0.00938978, -4.18881, 1.86913, 3.9982 )
+
+[node name="StoneWall12" parent="." instance=ExtResource( 11 )]
+transform = Transform( -0.00938978, 0, 0.999956, 0, 1, 0, -0.999956, 0, -0.00938978, 4.26813, 1.86913, 3.9982 )
+
+[node name="StoneWall13" parent="." instance=ExtResource( 11 )]
+transform = Transform( -0.00938978, 0, 0.999956, 0, 1, 0, -0.999956, 0, -0.00938978, 4.26813, 1.86913, 0.0183294 )
+
+[node name="StoneWall14" parent="." instance=ExtResource( 11 )]
+transform = Transform( -0.00938978, 0, 0.999956, 0, 1, 0, -0.999956, 0, -0.00938978, 4.23902, 1.86913, -3.93191 )
+
+[node name="StoneWall15" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38482, 1.86913, -5.85804 )
+
+[node name="StoneWall16" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77635, 1.86913, 5.8518 )
+
+[node name="StoneWall10" parent="." instance=ExtResource( 11 )]
+transform = Transform( -0.00938978, 0, 0.999956, 0, 1, 0, -0.999956, 0, -0.00938978, -4.22414, 1.86913, 0.000291944 )
+
+[node name="StoneWall11" parent="." instance=ExtResource( 11 )]
+transform = Transform( -0.00938978, 0, 0.999956, 0, 1, 0, -0.999956, 0, -0.00938978, -4.22414, 1.86913, -3.96685 )
+
+[node name="Torch" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.36108e-08, -0.0678063, 0.997698, -2.96391e-09, 0.997698, 0.0678063, -1, 0, -4.37114e-08, 4.02292, 1.23247, 0.104057 )
+
+[node name="Torch2" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.02555, 1.23247, -3.07707 )
+
+[node name="CeilingSolid" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 4.08558, 0 )
+mesh = SubResource( 6 )
+material/0 = null
+
+[node name="BakedLightmap" type="BakedLightmap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000412703, 1.91919, 0.00471735 )
+extents = Vector3( 4.13644, 2.19777, 5.84648 )
+quality = 2
+light_data = ExtResource( 12 )
+
+[node name="Ceiling" parent="." instance=ExtResource( 10 )]
+transform = Transform( 4, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, 0.0777035, 3.81427, 0 )
+
+[node name="Cube" parent="Ceiling" index="0"]
+transform = Transform( 1.02795, 0, 0, 0, 1, 1.7053e-13, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 10 )
+
+[node name="Floor" parent="." instance=ExtResource( 10 )]
+transform = Transform( -4, 0, -5.24537e-07, 0, 1, 0, 3.49691e-07, 0, -6, 0, 0.0172733, 0 )
+
+[node name="Cube" parent="Floor" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, -1.77636e-14, 0, 1, 0, -0.0765085, 0 )
+mesh = SubResource( 11 )
+
+[node name="StaticBody" type="StaticBody" parent="Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03412, 0 )
+shape = SubResource( 12 )
+
+[node name="Crystal" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, 3.38895, 1.12628, 0.766315 )
+
+[node name="Crystal2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.427943, 0, -0.903806, 0, 1, 0, 0.903806, 0, 0.427943, 2.3715, 0.670916, 1.50844 )
+
+[node name="Crystal3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.427943, 0, -0.903806, 0, 1, 0, 0.903806, 0, 0.427943, 2.3715, 0.670916, 2.23812 )
+
+[node name="Pillar" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.790993, 0, 0, 0, 1, 2.98905, -0.018486, -4.45619 )
+
+[node name="Pillar2" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 0.790993, 0, 0, 0, 1, 2.39644, -0.018486, -0.605052 )
+
+[node name="HalfWall" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, -3.62118, 1.82671, -5.98306 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20414, 0 )
+
+[editable path="Ceiling"]
+[editable path="Floor"]

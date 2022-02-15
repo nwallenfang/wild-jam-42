@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Sprites/crosshair_dark.png" type="Texture" id=1]
 [ext_resource path="res://Prototyping/BlenderTunnel.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Prototyping/Room.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Prototyping/Room1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Well.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Assets/gltf/SlidingDoorGLTF.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Meshes/BigWallWithArc.glb" type="PackedScene" id=6]
 [ext_resource path="res://addons/kenney_prototypes/demo/demo_environment.tres" type="Environment" id=7]
 [ext_resource path="res://UI/FPSCounter.gd" type="Script" id=8]
@@ -37,7 +38,7 @@ script = ExtResource( 9 )
 environment = ExtResource( 7 )
 
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 0.829037, 0, 0.559193, 0, 1, 0, -0.559193, 0, 0.829037, -18.7037, 118.967, 77.991 )
+transform = Transform( -0.756624, -0.0553638, 0.651502, -0.0166293, 0.997716, 0.0654721, -0.653639, 0.0387037, -0.755816, -51.7897, 65.558, 2.86372 )
 script = ExtResource( 10 )
 
 [node name="PlayerMesh" type="MeshInstance" parent="Player"]
@@ -146,10 +147,33 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 118.357, 82.7466 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="TunnelDown" parent="." instance=ExtResource( 16 )]
-transform = Transform( -0.999357, 0, -0.0358588, 0, 1, 0, 0.0358588, 0, -0.999357, -8.11697, 119.81, 123.077 )
+transform = Transform( -0.999357, 0, -0.0358588, 0, 1, 0, 0.0358588, 0, -0.999357, -8.37422, 120.432, 111.003 )
+
+[node name="Camera" type="Camera" parent="TunnelDown"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0434151, 0, 1.20999 )
 
 [node name="Well" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0 )
 
 [node name="Position3D" type="Position3D" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 115.827 )
+
+[node name="Room" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.6055, 63.2121, -8.89846 )
+
+[node name="SlidingDoor" parent="." instance=ExtResource( 5 )]
+transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -56.3757, 64.3115, 8.83641 )
+
+[node name="CSGBox" type="CSGBox" parent="."]
+transform = Transform( 33.292, 0, 0, 0, 1, 0, 0, 0, 28.2465, -74.752, 61.6923, 0 )
+use_collision = true
+width = 3.06678
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 0.408824, 0.645315, -0.645315, 3.09086e-08, 0.707107, 0.707107, 0.912613, -0.289082, 0.289082, -18.0713, 100.885, 20.8303 )
+
+[editable path="Room"]
+[editable path="Room/CrystalDoor"]
+[editable path="Room/CrystalDoor/SlidingDoor"]
+[editable path="Room/Ceiling"]
+[editable path="Room/Floor"]

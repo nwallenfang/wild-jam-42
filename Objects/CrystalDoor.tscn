@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Objects/CrystalDoor.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Meshes/SlidingDoor.glb" type="PackedScene" id=2]
+[ext_resource path="res://Assets/gltf/SlidingDoorGLTF.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Meshes/Crystal/GodotCrystal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Objects/SlidingDoorMesh.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/SlidingDoorArc.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SphereShape" id=4]
@@ -21,19 +20,16 @@ shape = SubResource( 4 )
 
 [node name="Tween" type="Tween" parent="."]
 
-[node name="SlidingDoorOLD" parent="." instance=ExtResource( 2 )]
-visible = false
-
-[node name="Crystals" parent="SlidingDoorOLD" index="0"]
-visible = false
-
 [node name="LightTw1" type="Tween" parent="."]
 
 [node name="LightTw2" type="Tween" parent="."]
 
 [node name="LightTw3" type="Tween" parent="."]
 
-[node name="SlidingDoor" parent="." instance=ExtResource( 4 )]
+[node name="Arc" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.82174, 0 )
+
+[node name="SlidingDoor" parent="." instance=ExtResource( 2 )]
 
 [node name="OmniLight1" type="OmniLight" parent="SlidingDoor"]
 transform = Transform( 0.970851, 0, -0.239686, 0, 1, 0, 0.239686, 0, 0.970851, -0.442411, 0.0156664, 0.332457 )
@@ -77,9 +73,4 @@ visible = false
 transform = Transform( 1, 0, 0, 0, 1.79874, 0, 0, 0, 0.266046, 0, 0, 0 )
 shape = SubResource( 8 )
 
-[node name="Arc" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.82174, 0 )
-
 [connection signal="body_entered" from="CrystalDetector" to="." method="_on_CrystalDetector_body_entered"]
-
-[editable path="SlidingDoorOLD"]

@@ -1,6 +1,6 @@
 [gd_resource type="ArrayMesh" load_steps=2 format=2]
 
-[ext_resource path="res://Objects/Tunnels/TunnelMaterial.tres" type="Material" id=1]
+[ext_resource path="res://Assets/Materials/SimpleTunnelMaterial.tres" type="Material" id=1]
 
 [resource]
 resource_name = "tunnel_new_Cube001"
