@@ -131,7 +131,7 @@ mesh = SubResource( 11 )
 [node name="StaticBody" type="StaticBody" parent="Floor"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03412, 0 )
+transform = Transform( 1, 0, 0, 0, 0.19894, 0, 0, 0, 1, 0, -0.240398, 0 )
 shape = SubResource( 12 )
 
 [node name="Crystal" parent="." instance=ExtResource( 3 )]
@@ -157,7 +157,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20414, 0 )
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0425315, 2.00329, -0.778211 )
-extents = Vector3( 5.49018, 3.42689, 7.35951 )
+extents = Vector3( 5.49018, 1.88525, 7.35951 )
 origin_offset = Vector3( 0, 0, 0.000976563 )
 interior_enable = true
 
