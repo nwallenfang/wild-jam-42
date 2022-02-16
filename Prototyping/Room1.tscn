@@ -135,13 +135,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03412, 0 )
 shape = SubResource( 12 )
 
 [node name="Crystal" parent="." instance=ExtResource( 3 )]
-transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, 3.38895, 1.12628, 0.766315 )
+transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, 3.38895, 0.654056, 0.766315 )
 
 [node name="Crystal2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.427943, 0, -0.903806, 0, 1, 0, 0.903806, 0, 0.427943, 2.3715, 0.670916, 1.50844 )
+transform = Transform( 0.427943, 0, -0.903806, 0, 1, 0, 0.903806, 0, 0.427943, 2.3715, 0.788799, 1.50844 )
 
 [node name="Crystal3" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.427943, 0, -0.903806, 0, 1, 0, 0.903806, 0, 0.427943, 2.3715, 0.670916, 2.23812 )
+transform = Transform( 0.427943, 0, -0.903806, 0, 1, 0, 0.903806, 0, 0.427943, 2.3715, 1.02334, 2.23812 )
 
 [node name="Pillar" parent="." instance=ExtResource( 13 )]
 transform = Transform( 1, 0, 0, 0, 0.790993, 0, 0, 0, 1, 2.98905, -0.018486, -4.45619 )
@@ -154,6 +154,12 @@ transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, -3.62118, 1.82671, -5.98
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20414, 0 )
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0425315, 2.00329, -0.778211 )
+extents = Vector3( 5.49018, 3.42689, 7.35951 )
+origin_offset = Vector3( 0, 0, 0.000976563 )
+interior_enable = true
 
 [editable path="Ceiling"]
 [editable path="Floor"]

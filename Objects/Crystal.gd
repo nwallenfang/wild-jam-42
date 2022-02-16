@@ -1,10 +1,16 @@
-extends StaticBody
+extends Spatial
 
 
 signal movement_done
 
 
+func _ready():
+	$Dance.play("dance")
+	$Rotate.play("rotate")
+#	$MoveThis.connect("started_interacting", self, "start_interacting")
+
 func start_interacting(player: Player):
+	
 	player.crystal_collected(self)
 	
 	

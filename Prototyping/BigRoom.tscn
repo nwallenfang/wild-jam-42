@@ -1,8 +1,7 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Objects/Pillar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Torch.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/Meshes/HalfWall.glb" type="PackedScene" id=3]
 [ext_resource path="res://Objects/OneSidedUV.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/MiniaturPyramide.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/CrystalDoor.tscn" type="PackedScene" id=6]
@@ -10,8 +9,7 @@
 [ext_resource path="res://Objects/StoneWall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Assets/Materials/cliff_jagged_NRM_1k.png" type="Texture" id=9]
 [ext_resource path="res://Assets/Materials/cliff_jagged_COL_1k.png" type="Texture" id=10]
-[ext_resource path="res://Assets/Materials/TilesTerracottaSmall.jpg" type="Texture" id=11]
-[ext_resource path="res://Assets/Materials/TilesTerracottaSmallNRM.jpg" type="Texture" id=12]
+[ext_resource path="res://Objects/HalfWall.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Objects/Crystal.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Prototyping/BigRoom.lmbake" type="BakedLightmapData" id=14]
 [ext_resource path="res://Objects/FireStand.tscn" type="PackedScene" id=15]
@@ -42,31 +40,6 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 24
 }
-
-[sub_resource type="SpatialMaterial" id=7]
-albedo_texture = ExtResource( 11 )
-normal_enabled = true
-normal_scale = 16.0
-normal_texture = ExtResource( 12 )
-uv1_scale = Vector3( 3, 2, 1 )
-
-[sub_resource type="ArrayMesh" id=11]
-resource_name = "OneSidedUV_Cube"
-lightmap_size_hint = Vector2( 326, 278 )
-surfaces/0 = {
-"aabb": AABB( -1, -0.0343422, -1, 2, 0.0686843, 2.00001 ),
-"array_data": PoolByteArray( 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 63, 129, 0, 116, 1, 37, 39, 203, 59, 31, 58, 134, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 191, 129, 0, 116, 1, 13, 45, 218, 59, 172, 38, 97, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 63, 129, 0, 116, 1, 170, 38, 207, 59, 31, 58, 97, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 191, 129, 0, 116, 1, 232, 44, 214, 59, 172, 38, 134, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 191, 127, 127, 64, 94, 232, 44, 214, 59, 172, 38, 156, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 191, 127, 127, 189, 93, 13, 45, 109, 59, 40, 56, 193, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 191, 127, 127, 67, 93, 13, 45, 218, 59, 172, 38, 193, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 191, 127, 127, 187, 92, 238, 44, 113, 59, 40, 56, 156, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 191, 127, 0, 116, 127, 238, 44, 113, 59, 17, 35, 75, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 63, 127, 0, 116, 127, 170, 38, 97, 59, 6, 58, 38, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 191, 127, 0, 116, 127, 13, 45, 109, 59, 17, 35, 38, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 63, 127, 0, 116, 127, 62, 39, 101, 59, 6, 58, 75, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 63, 0, 0, 65, 32, 62, 39, 101, 59, 172, 38, 215, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 63, 0, 0, 189, 33, 170, 38, 207, 59, 40, 56, 252, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 63, 0, 0, 67, 33, 170, 38, 97, 59, 172, 38, 252, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 63, 0, 0, 187, 34, 37, 39, 203, 59, 40, 56, 215, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 191, 0, 129, 127, 120, 232, 44, 214, 59, 237, 55, 93, 23, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 63, 0, 129, 127, 120, 62, 39, 101, 59, 72, 22, 243, 58, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 191, 0, 129, 127, 120, 238, 44, 113, 59, 72, 22, 93, 23, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 63, 0, 129, 127, 120, 37, 39, 203, 59, 237, 55, 243, 58, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 191, 0, 127, 0, 63, 0, 0, 0, 0, 9, 56, 36, 36, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 63, 0, 127, 0, 63, 255, 59, 255, 59, 252, 59, 16, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 191, 0, 127, 0, 63, 0, 0, 0, 60, 252, 59, 36, 36, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 63, 0, 127, 0, 63, 255, 59, 0, 0, 9, 56, 16, 59 ),
-"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0, 4, 0, 5, 0, 6, 0, 4, 0, 7, 0, 5, 0, 8, 0, 9, 0, 10, 0, 8, 0, 11, 0, 9, 0, 12, 0, 13, 0, 14, 0, 12, 0, 15, 0, 13, 0, 16, 0, 17, 0, 18, 0, 16, 0, 19, 0, 17, 0, 20, 0, 21, 0, 22, 0, 20, 0, 23, 0, 21, 0 ),
-"blend_shape_data": [  ],
-"format": 2194743,
-"index_count": 36,
-"material": SubResource( 7 ),
-"primitive": 4,
-"skeleton_aabb": [  ],
-"vertex_count": 24
-}
-
-[sub_resource type="BoxShape" id=12]
 
 [node name="Room" type="Spatial"]
 
@@ -196,27 +169,14 @@ transform = Transform( 4.16003, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, 8
 transform = Transform( 1.02795, 0, 0, 0, 1, 5.68434e-13, 0, 0, 1, 0, -0.966174, 2.43161e-08 )
 mesh = SubResource( 10 )
 
-[node name="Floor" parent="." instance=ExtResource( 4 )]
-transform = Transform( -4, 0, -5.24537e-07, 0, 1, 0, 3.49691e-07, 0, -6, 0, 0.0172733, 0 )
-
-[node name="Cube" parent="Floor" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, -1.77636e-14, 0, 1, -5.93942, -0.0765085, -3.46161e-07 )
-mesh = SubResource( 11 )
-
-[node name="StaticBody" type="StaticBody" parent="Floor"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03412, 0 )
-shape = SubResource( 12 )
-
 [node name="Crystal" parent="." instance=ExtResource( 13 )]
-transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, 3.38895, 1.12628, 0.766315 )
+transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, -0.713546, 1.12628, -1.73504 )
 
 [node name="Crystal2" parent="." instance=ExtResource( 13 )]
-transform = Transform( 0.427943, 0, -0.903806, 0, 1, 0, 0.903806, 0, 0.427943, 2.3715, 0.670916, 1.50844 )
+transform = Transform( 0.427943, 0, -0.903806, 0, 1, 0, 0.903806, 0, 0.427943, -3.3584, 0.670916, 1.50844 )
 
 [node name="Crystal3" parent="." instance=ExtResource( 13 )]
-transform = Transform( 0.427943, 0, -0.903806, 0, 1, 0, 0.903806, 0, 0.427943, 2.3715, 0.670916, 2.23812 )
+transform = Transform( 0.427943, 0, -0.903806, 0, 1, 0, 0.903806, 0, 0.427943, 2.3715, 0.670916, 3.1545 )
 
 [node name="Pillar" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 0.790993, 0, 0, 0, 1, 8.80391, -0.018486, -4.42985 )
@@ -229,21 +189,6 @@ transform = Transform( 1, 0, 0, 0, 0.790993, 0, 0, 0, 1, -8.75807, -0.0184858, -
 
 [node name="Pillar4" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 0.790993, 0, 0, 0, 1, -8.87809, -0.018486, 5.26057 )
-
-[node name="HalfWall" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, 23.4479, 1.82671, -15.0617 )
-
-[node name="HalfWall4" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, 2.35626, 1.88602, 11.5812 )
-
-[node name="HalfWall5" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, -2.88523, 1.84685, 11.5679 )
-
-[node name="HalfWall2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, -2.81104, 1.82671, -11.8611 )
-
-[node name="HalfWall3" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, 2.51581, 1.82671, -12.059 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.20414, 0 )
@@ -281,10 +226,21 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.44787, 0.917404, -2.05799 )
 [node name="GoldenCup3" parent="." instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97728, 0.917404, -1.50318 )
 
+[node name="HalfWallGood1" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, 2.35626, 1.88602, 11.5812 )
+
+[node name="HalfWallGood2" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, -2.88523, 1.84685, 11.5679 )
+
+[node name="HalfWallGood3" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, -2.81104, 1.82671, -11.8611 )
+
+[node name="HalfWallGood4" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, 2.51581, 1.82671, -12.059 )
+
 [editable path="Ceiling"]
 [editable path="Ceiling2"]
 [editable path="Ceiling3"]
 [editable path="Ceiling4"]
 [editable path="Ceiling5"]
 [editable path="Ceiling6"]
-[editable path="Floor"]

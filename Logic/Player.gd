@@ -97,10 +97,11 @@ func on_pressed_interact():
 	var result = directState.intersect_ray(from, to, [self])
 
 	var node_to_interact_with: Node = result.get("collider") as Node
-
+	print(node_to_interact_with)
 	if node_to_interact_with != null and node_to_interact_with.is_in_group("interactable"):
 		# have some kind of contract that ever node belonging to interactable
 		# has start_interacting() and stop_interacting()
+		print("interacitng")
 		Game.change_crosshair("selection")
 #		Game.CROSSHAIR.texture = Game.selection_crosshair
 		node_currently_interacting_with = node_to_interact_with

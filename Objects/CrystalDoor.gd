@@ -8,6 +8,15 @@ onready var crystals = [$SlidingDoor/Crystal1, $SlidingDoor/Crystal2, $SlidingDo
 onready var lights = [$SlidingDoor/OmniLight1, $SlidingDoor/OmniLight2, $SlidingDoor/OmniLight3]
 onready var tweens = [$LightTw1, $LightTw2, $LightTw3]
 
+func _ready() -> void:
+#	$SlidingDoor/Crystal1/.get_node("Dance").stop()
+#	$SlidingDoor/Crystal1.get_node("Rotate").stop()
+#	$SlidingDoor/Crystal2.get_node("Dance").stop()
+#	$SlidingDoor/Crystal2.get_node("Rotate").stop()
+#	$SlidingDoor/Crystal3.get_node("Dance").stop()
+#	$SlidingDoor/Crystal3.get_node("Rotate").stop()
+	pass
+
 var max_energy = 3.9
 var grow_dur = 0.4
 var shrink_dur = 0.2
@@ -83,9 +92,9 @@ func add_crystal(crystal: Node):
 		open()
 
 const Crystal = preload("res://Objects/Crystal.tscn")
-#var 
+var currently_entered = false
 func _on_CrystalDetector_body_entered(body: Node) -> void:
-	if body is Player:
+	if body is Player and not currently_entered:
 		# instantiate crystals from player position and move them towards
 		# maybe rotate them a couple of times while they are moving
 		# play some ding sound
@@ -94,13 +103,12 @@ func _on_CrystalDetector_body_entered(body: Node) -> void:
 		var current_crystal_count: int = int(crystal_count)
 		
 		for i in range(player.number_of_crystals):
+			currently_entered = true
 			var crystal = Crystal.instance()
-			# the instanced crystal shouldn't be picked up
-			# and shouldn't collide
-#			crystal.get_node("PickUpArea/CollisionShape").disabled = true
-			crystal.get_node("CollisionShape").disabled = true
-			# TODO rotate crystals
 			get_tree().current_scene.add_child(crystal)
+			crystal.get_node("Dance").call_deferred("stop")
+			crystal.get_node("Rotate").call_deferred("stop")
+			crystal.get_node("MoveThis/CollisionShape").disabled = true
 			crystal.global_transform.origin = player.global_transform.origin
 			var pos = crystals[i + current_crystal_count]
 			crystal.move_towards(pos.global_transform)
@@ -109,6 +117,7 @@ func _on_CrystalDetector_body_entered(body: Node) -> void:
 			yield(get_tree().create_timer(0.8), "timeout")
 			
 		player.number_of_crystals = 0
+		currently_entered = false
 
 
 func _on_Button_pressed() -> void:

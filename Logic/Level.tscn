@@ -5,7 +5,7 @@
 [ext_resource path="res://Prototyping/Room1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/Well.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/gltf/SlidingDoorGLTF.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Assets/Meshes/BigWallWithArc.glb" type="PackedScene" id=6]
+[ext_resource path="res://Prototyping/BigRoom.tscn" type="PackedScene" id=6]
 [ext_resource path="res://addons/kenney_prototypes/demo/demo_environment.tres" type="Environment" id=7]
 [ext_resource path="res://UI/FPSCounter.gd" type="Script" id=8]
 [ext_resource path="res://Logic/Level.gd" type="Script" id=9]
@@ -80,9 +80,6 @@ depth = 10.969
 [node name="Tunnel3" parent="CSG" instance=ExtResource( 2 )]
 transform = Transform( -1.97297, 0, 1.74008, 0, 2.63069, 0, -1.74008, 0, -1.97297, -25.3166, 81.0266, -41.4802 )
 
-[node name="SpotLight" type="SpotLight" parent="CSG"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.853, 119.069, 86.142 )
-
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -4.27004e-08, 0.673619, -0.739079, 9.34689e-09, 0.739079, 0.673619, 1, 2.18557e-08, -3.78552e-08, -25.4246, 7.30854, -0.0317669 )
 visible = false
@@ -141,9 +138,6 @@ anims/say_text = SubResource( 9 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 156.563, 0 )
 omni_range = 4.486
 
-[node name="BigWallWithArc" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 118.357, 82.7466 )
-
 [node name="Tween" type="Tween" parent="."]
 
 [node name="TunnelDown" parent="." instance=ExtResource( 16 )]
@@ -165,12 +159,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51.6055, 63.2121, -8.89846 )
 transform = Transform( -0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -56.3757, 64.3115, 8.83641 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
-transform = Transform( 33.292, 0, 0, 0, 1, 0, 0, 0, 28.2465, -74.752, 61.6923, 0 )
+transform = Transform( 11.9178, 0, 0, 0, 1, 0, 0, 0, 28.2465, -65.9743, 61.6923, 0 )
 use_collision = true
 width = 3.06678
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 0.408824, 0.645315, -0.645315, 3.09086e-08, 0.707107, 0.707107, 0.912613, -0.289082, 0.289082, -18.0713, 100.885, 20.8303 )
+
+[node name="Room2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 0.0938825, 0, 0.995583, 0, 1, 0, -0.995583, 0, 0.0938825, -94.6045, 62.8225, -7.19987 )
+visible = false
 
 [editable path="Room"]
 [editable path="Room/CrystalDoor"]
