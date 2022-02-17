@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Objects/HouseLayout.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/HalfWallWithoutFilling.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/BigWallWithArc.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/StoneWall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/HalfWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Pillar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/Torch.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Objects/FireStand.tscn" type="PackedScene" id=8]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="Spatial" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.86424, 3.96539, 0.403053 )
+
+[node name="Spatial2" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.19219, 3.96539, 0.509249 )
+
+[node name="Spatial5" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.12331, 3.96539, 0.403053 )
+
+[node name="Spatial6" parent="." instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.79535, 3.96539, 0.509249 )
+
+[node name="Spatial3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00758, 3.96539, -0.151012 )
+
+[node name="Spatial4" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05305, 3.96539, -0.151012 )
+
+[node name="BigWallWithArc" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1.03904, 0, 0, 0, 1, 0.0406975, 2.00226, -0.13911 )
+
+[node name="House" parent="." instance=ExtResource( 1 )]
+
+[node name="HalfWallWithoutFilling" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.94555, 4, 1.76883 )
+
+[node name="HalfWallWithoutFilling2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.946, 4, 1.769 )
+
+[node name="HalfWallWithoutFilling3" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -3.85516, 1.0077, 1.86256 )
+
+[node name="HalfWallWithoutFilling4" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 3.96965, 1.0077, 1.86256 )
+
+[node name="StoneWall" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.1707, 4, -2.60565 )
+
+[node name="StoneWall2" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.1707, 4, -6.62537 )
+
+[node name="StoneWall3" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.1707, 4, -10.6396 )
+
+[node name="StoneWall4" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.20425, 4, -2.60565 )
+
+[node name="StoneWall5" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.20425, 4, -6.62537 )
+
+[node name="StoneWall6" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.20425, 4, -10.6396 )
+
+[node name="StoneWall7" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95698, 4, -12.2057 )
+
+[node name="StoneWall8" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04781, 4, -12.2057 )
+
+[node name="Pillar" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 0.862501, 0, 0, 0, 1, -2.65443, 1.99928, 0.837811 )
+
+[node name="Pillar2" parent="." instance=ExtResource( 6 )]
+transform = Transform( -4.37114e-08, 0, -1, 0, 0.862501, 0, 1, 0, -4.37114e-08, 2.83169, 1.99928, 0.837811 )
+
+[node name="Torch" parent="." instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.3978, 3.51701, 0.0467125 )
+
+[node name="Torch2" parent="." instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.66521, 3.51701, 0.0467125 )
+
+[node name="Torch3" parent="." instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.43257, 3.51701, -12.0127 )
+
+[node name="Torch4" parent="." instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.64206, 3.51701, -12.0127 )
+
+[node name="FireStand" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.95551, 0, 3.35727 )
+
+[node name="FireStand2" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.10625, 0, 3.35727 )
+
+[node name="BakedLightmap" type="BakedLightmap" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84103, -5.82971 )
+extents = Vector3( 6.64452, 6.80875, 13.2618 )

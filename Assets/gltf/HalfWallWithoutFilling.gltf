@@ -1,0 +1,285 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.7.33",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "HalfWallWithoutFilling",
+            "scale" : [
+                0.9988768696784973,
+                0.9988768696784973,
+                0.9988768696784973
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "StoneWallLowPoly",
+            "normalTexture" : {
+                "index" : 0,
+                "scale" : 1.6999998092651367
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.8227272629737854
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "SandstoneFill",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 2
+                },
+                "metallicFactor" : 0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.004",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "NORMAL" : 9,
+                        "TEXCOORD_0" : 10
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "StoneWallCompleteNormalBake",
+            "uri" : "StoneWallCompleteNormalBake.png"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "RockSandstone001_COL_1Krotated2",
+            "uri" : "RockSandstone001_COL_1Krotated2.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "RockSandstone001_COL_3K",
+            "uri" : "RockSandstone001_COL_3K.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 1085,
+            "max" : [
+                1.0518214702606201,
+                -0.0025763139128684998,
+                0.20739717781543732
+            ],
+            "min" : [
+                -0.9472536444664001,
+                -2.001878499984741,
+                -0.19699324667453766
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 1085,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 1085,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 2760,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 24,
+            "max" : [
+                0.9625232219696045,
+                1.9457157850265503,
+                0.10526695102453232
+            ],
+            "min" : [
+                -0.8755114078521729,
+                -1.8695286512374878,
+                -0.09226871281862259
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 24,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 36,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 1085,
+            "max" : [
+                1.0490856170654297,
+                1.9989155530929565,
+                0.20739729702472687
+            ],
+            "min" : [
+                -0.95021653175354,
+                -0.00015916675329208374,
+                -0.19699333608150482
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 1085,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 1085,
+            "type" : "VEC2"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 13020,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 13020,
+            "byteOffset" : 13020
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 8680,
+            "byteOffset" : 26040
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5520,
+            "byteOffset" : 34720
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 288,
+            "byteOffset" : 40240
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 288,
+            "byteOffset" : 40528
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 192,
+            "byteOffset" : 40816
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 72,
+            "byteOffset" : 41008
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 13020,
+            "byteOffset" : 41080
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 13020,
+            "byteOffset" : 54100
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 8680,
+            "byteOffset" : 67120
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 75800,
+            "uri" : "HalfWallWithoutFilling.bin"
+        }
+    ]
+}
