@@ -39,7 +39,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The Last Walk"
-run/main_scene="res://Logic/Level.tscn"
+run/main_scene="res://Objects/Well.tscn"
 boot_splash/image="res://Assets/Sprites/Wildling-Wallpaper 1080.png"
 config/icon="res://Assets/Sprites/icon.png"
 config/windows_native_icon="res://Assets/Sprites/icon.ico"
@@ -53,6 +53,7 @@ UI="*res://Logic/UI.tscn"
 
 window/size/width=1280
 window/size/height=720
+window/size/fullscreen=true
 
 [editor_plugins]
 
@@ -1150,12 +1151,12 @@ move_left={
 }
 move_forward={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":83,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":87,"unicode":0,"echo":false,"script":null)
  ]
 }
 move_backward={
 "deadzone": 0.5,
-"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":87,"unicode":0,"echo":false,"script":null)
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":83,"unicode":0,"echo":false,"script":null)
  ]
 }
 jump={

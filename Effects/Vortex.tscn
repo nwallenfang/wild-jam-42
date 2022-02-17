@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Effects/VortexMaterial.tres" type="Material" id=1]
+
+[sub_resource type="QuadMesh" id=1]
+
+[node name="Vortex" type="Spatial"]
+
+[node name="RectanglePortal" type="MeshInstance" parent="."]
+transform = Transform( 37.0004, 0, 0, 0, -3.70533e-07, 0.41577, 0, -32.5961, -6.98847e-08, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]

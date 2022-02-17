@@ -17,9 +17,10 @@ var snap_vector := Vector3.DOWN
 var up_vector := Vector3.UP
 
 
-var floor_max_angle = deg2rad(50.0)
+var floor_max_angle = deg2rad(75.0)
 var max_slides = 4
 var stop_on_slopes = true
+
 
 
 func add_acceleration(var added_acc: Vector3):
@@ -68,7 +69,16 @@ func execute_movement(delta: float) -> void:
 		# to prevent long sliding down ramps
 		velocity = Vector3.ZERO
 		
-	velocity = move_and_slide_with_snap(velocity, snap_vector, Vector3.UP, stop_on_slopes, max_slides, floor_max_angle)
+#	velocity = move_and_slide_with_snap(velocity, snap_vector, Vector3.UP, stop_on_slopes, max_slides, floor_max_angle)
+	velocity = move_and_slide(velocity, Vector3.UP, stop_on_slopes, max_slides, floor_max_angle)
+	var ground = -0.8
+	var collision: KinematicCollision = get_last_slide_collision()
+	print(Input.is_action_pressed("move_forward"))
+	if collision != null:
+		var height = collision.position.y - global_transform.origin.y
+#		print(height)
+		if height < -0.5 and Input.is_action_pressed("move_forward"):
+			translate(Vector3(0.0, height - ground, 0.0))
 	
 	var just_landed = is_on_floor() and snap_vector == Vector3.ZERO
 	if just_landed:

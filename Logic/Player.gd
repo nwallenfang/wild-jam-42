@@ -116,7 +116,7 @@ func handle_input(_delta):
 	
 	var raw_direction := Vector3.ZERO
 	raw_direction.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
-	raw_direction.z = Input.get_action_strength("move_forward") - Input.get_action_strength("move_backward")
+	raw_direction.z = Input.get_action_strength("move_backward") - Input.get_action_strength("move_forward")
 	
 	var move_direction = raw_direction.rotated(Vector3.UP, h_rot).normalized()
 
