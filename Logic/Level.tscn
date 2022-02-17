@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/Sprites/crosshair_dark.png" type="Texture" id=1]
 [ext_resource path="res://Prototyping/BlenderTunnel.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Logic/Level.gd" type="Script" id=9]
 [ext_resource path="res://Logic/Player.gd" type="Script" id=10]
 [ext_resource path="res://addons/kenney_prototypes/assets/colors/dark/materials/material_001.tres" type="Material" id=11]
+[ext_resource path="res://Prototyping/House.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/Sprites/Avara.ttf" type="DynamicFontData" id=14]
 [ext_resource path="res://Objects/Tunnels/TunnelObj.tscn" type="PackedScene" id=16]
 
@@ -64,7 +65,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637039, 0 )
 
 [node name="Camera" type="Camera" parent="Player/Head"]
 environment = ExtResource( 7 )
-far = 250.0
 
 [node name="CSG" type="Node" parent="."]
 
@@ -201,3 +201,7 @@ transform = Transform( 0.408824, 0.645315, -0.645315, 3.09086e-08, 0.707107, 0.7
 
 [node name="Room2" parent="." instance=ExtResource( 6 )]
 transform = Transform( 0.0938825, 0, 0.995583, 0, 1, 0, -0.995583, 0, 0.0938825, -94.6045, 62.8225, -7.19987 )
+visible = false
+
+[node name="Spatial" parent="." instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.5377, 91.3163, -160.852 )
