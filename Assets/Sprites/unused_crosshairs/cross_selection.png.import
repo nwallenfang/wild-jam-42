@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/cross_selection_circle.png-63e80369abb0840b6deebd51bb2843d6.stex"
+path="res://.import/cross_selection.png-691620c168654c34e145286089452ee9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/cross_selection_circle.png"
-dest_files=[ "res://.import/cross_selection_circle.png-63e80369abb0840b6deebd51bb2843d6.stex" ]
+source_file="res://Assets/Sprites/unused_crosshairs/cross_selection.png"
+dest_files=[ "res://.import/cross_selection.png-691620c168654c34e145286089452ee9.stex" ]
 
 [params]
 
@@ -18,10 +18,10 @@ compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
-compress/normal_map=1
-flags/repeat=true
+compress/normal_map=0
+flags/repeat=0
 flags/filter=true
-flags/mipmaps=true
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true
@@ -31,5 +31,5 @@ process/invert_color=false
 process/normal_map_invert_y=false
 stream=false
 size_limit=0
-detect_3d=false
+detect_3d=true
 svg/scale=1.0

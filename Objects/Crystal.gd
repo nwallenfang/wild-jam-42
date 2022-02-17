@@ -4,6 +4,7 @@ extends Spatial
 signal movement_done
 
 
+
 func _ready():
 	$Dance.play("dance")
 	$Rotate.play("rotate")
@@ -11,7 +12,6 @@ func _ready():
 	pass
 
 func start_interacting(player: Player):
-	
 	player.crystal_collected(self)
 	
 	

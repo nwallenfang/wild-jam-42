@@ -47,6 +47,7 @@ config/windows_native_icon="res://Assets/Sprites/icon.ico"
 [autoload]
 
 Game="*res://Logic/Game.tscn"
+UI="*res://Logic/UI.tscn"
 
 [display]
 

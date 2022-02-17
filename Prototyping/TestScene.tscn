@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Objects/Crystal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://addons/kenney_prototypes/demo/demo_environment.tres" type="Environment" id=2]
+[ext_resource path="res://Logic/Player.gd" type="Script" id=3]
+[ext_resource path="res://Logic/UI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Prototyping/TestScene.gd" type="Script" id=7]
+
+[sub_resource type="CapsuleMesh" id=1]
+radius = 0.5
+
+[sub_resource type="CylinderShape" id=2]
+radius = 0.5
+height = 1.6
+
+[node name="TestScene" type="Spatial"]
+script = ExtResource( 7 )
+__meta__ = {
+"_editor_description_": "That loads faster than the game"
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 2 )
+
+[node name="Player" type="KinematicBody" parent="."]
+script = ExtResource( 3 )
+
+[node name="PlayerMesh" type="MeshInstance" parent="Player"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="CollisionShape" type="CollisionShape" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000228882, 0 )
+shape = SubResource( 2 )
+
+[node name="Head" type="Spatial" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637039, 0.482178 )
+
+[node name="Camera" type="Camera" parent="Player/Head"]
+transform = Transform( -1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, -1, 0, 0, -1.52588e-05 )
+environment = ExtResource( 2 )
+
+[node name="Ground" type="CSGBox" parent="."]
+transform = Transform( 5.96444, 0, 0, 0, 1, 0, 0, 0, 5.96444, 0, -2.42498, 0 )
+use_collision = true
+
+[node name="Crystal" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.83076 )
+
+[node name="UI" parent="." instance=ExtResource( 4 )]

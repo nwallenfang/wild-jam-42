@@ -31,30 +31,7 @@ var number_of_crystals = 0
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-#	var _err = connect("crystal_collected", self, "crystal_collected")
-#	print(_err)
 
-
-#
-#	for coords in [top_left, top_right, bot_left, bot_right]:
-#		# always shoot from cross hair position (center of screen)
-##		var screen_point: Vector2 = get_viewport().size / 2.0
-#		var screen_point: Vector2 = coords
-#		var from = camera.project_ray_origin(screen_point)
-#		var to = from + camera.project_ray_normal(screen_point) * interact_distance
-#
-#		var angle = Vector3.UP.angle_to(camera.project_ray_normal(screen_point))
-#		var cross = Vector3.UP.cross(camera.project_ray_normal(screen_point)).normalized()
-#		print("normal: ", camera.project_ray_normal(screen_point))
-#		print("angle: ", angle)
-#		print("cross: ", cross)
-#
-#
-#
-#		var cyl: Spatial = scene.instance()
-#		get_tree().get_current_scene().add_child(cyl)
-#		cyl.global_transform.origin = from
-#		cyl.rotate(cross, angle)	
 
 func crystal_collected(crystal):
 	print("player: crystal collected")
@@ -63,10 +40,6 @@ func crystal_collected(crystal):
 
 
 func debug_cyl(coords_array):
-	#	var top_left = Vector2(0, 0)
-	#	var top_right = Vector2(vp.x, 0)
-	#	var bot_left = Vector2(vp.x, vp.y)
-	#	var bot_right = Vector2(0, vp.y)
 	for coords in coords_array:
 		var cyl: Spatial = scene.instance()
 		# always shoot from cross hair position (center of screen)
@@ -84,7 +57,7 @@ func debug_cyl(coords_array):
 		cyl.rotate(cross, angle)	
 
 onready var scene: PackedScene = load("res://Prototyping/DebugCyl.tscn")
-const interact_distance: float = 100.0
+const interact_distance: float = 5.0
 func on_pressed_interact():
 	# Cast a ray from center of camera viewport into the world (?)
 	var vp = get_viewport().size
@@ -126,10 +99,10 @@ func shoot_test_ray():
 		# have some kind of contract that ever node belonging to interactable
 		# has start_interacting() and stop_interacting()
 		Game.change_crosshair("selection")
-#		Game.CROSSHAIR.texture = Game.selection_crosshair
+		UI.set_interaction_text(node_to_interact_with.interaction_text)
 	else:
 		Game.change_crosshair("default")
-#		Game.CROSSHAIR.texture = Game.default_crosshair
+		UI.unset_interaction_text()
 
 func handle_input(_delta):
 	if Input.is_action_just_pressed("interact"):
@@ -168,6 +141,8 @@ func state_interacting(_delta):
 	if not Input.is_action_pressed("interact"):
 		if is_instance_valid(node_currently_interacting_with):
 			node_currently_interacting_with.call("stop_interacting")
+
+
 		Game.change_crosshair("default")
 #		Game.CROSSHAIR.texture = Game.default_crosshair
 		state = State.DEFAULT
