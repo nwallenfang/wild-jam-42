@@ -48,11 +48,12 @@ script = ExtResource( 9 )
 environment = ExtResource( 7 )
 
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.4317, 95.114, -199.997 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.9336, 93.8078, -156.912 )
 script = ExtResource( 10 )
 
 [node name="PlayerMesh" type="MeshInstance" parent="Player"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+visible = false
 mesh = SubResource( 1 )
 material/0 = null
 
@@ -61,9 +62,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000228882, 0 )
 shape = SubResource( 6 )
 
 [node name="Head" type="Spatial" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637039, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637039, 0.482178 )
 
 [node name="Camera" type="Camera" parent="Player/Head"]
+transform = Transform( -1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, -1, 0, 0, -1.52588e-05 )
 environment = ExtResource( 7 )
 
 [node name="CSG" type="Node" parent="."]

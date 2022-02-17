@@ -1,0 +1,82 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/gltf/House.gltf" type="PackedScene" id=1]
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 1, 1, 4.097 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 1, 1, 1.13693 )
+
+[sub_resource type="BoxShape" id=3]
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 1, 3.54623, 1 )
+
+[node name="House" instance=ExtResource( 1 )]
+
+[node name="TileGround" parent="." index="1"]
+visible = false
+
+[node name="StaticBody" type="StaticBody" parent="TileGround" index="0"]
+
+[node name="CollisionShape" type="CollisionShape" parent="TileGround/StaticBody" index="0"]
+transform = Transform( 2.88937, 0, 0, 0, 0.667721, 0, 0, 0, 2.31181, 4.41971, -0.700251, -1.19669 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="TileGround/StaticBody" index="1"]
+transform = Transform( 2.88937, 0, 0, 0, 0.667721, 0, 0, 0, 2.31181, -4.48072, -0.605766, -1.33402 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="TileGround/StaticBody" index="2"]
+transform = Transform( -1.26298e-07, 0, -2.31181, 0, 0.667721, 0, 2.88937, 0, -1.01052e-07, -0.836379, -0.715727, -8.90623 )
+shape = SubResource( 5 )
+
+[node name="GroundHole" parent="." index="2"]
+mesh = null
+
+[node name="StaticBody" type="StaticBody" parent="." index="8"]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
+transform = Transform( 1.32264, 0, 0, 0, 0.0511325, -0.941047, 0, 0.0374895, 1.36447, 0.0246401, 1.04004, 3.36397 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape5" type="CollisionShape" parent="StaticBody" index="1"]
+transform = Transform( 1.44662, 0, 0, 0, 0.034283, 3.08567, 0, -0.170812, 3.27542, 0.0246401, -1.82905, -8.36959 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape9" type="CollisionShape" parent="StaticBody" index="2"]
+transform = Transform( 1.6289, 0, 0, 0, -0.00457757, 0.231848, 0, -0.0302158, 0.358751, -0.0553647, 1.69049, -4.83036 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="StaticBody" index="3"]
+transform = Transform( 1.58632, 0, 0, 0, 0.00297855, 0.117485, 0, -0.0115416, 0.216996, -0.0553647, -4.40584, -11.4526 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="StaticBody" index="4"]
+transform = Transform( 1.32264, 0, 0, 0, 0.0425067, -0.223494, 0, -0.0313177, 1.03194, 0.0246401, 0.053803, 4.82413 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody" index="5"]
+transform = Transform( 0.275102, 0, 0, 0, 1.29714, 0, 0, 0, 1.12623, -1.77742, 1.35631, 3.15083 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="StaticBody" index="6"]
+transform = Transform( 0.275102, 0, 0, 0, 1.29714, 0, 0, 0, 1.12623, 1.7534, 1.35631, 3.15083 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape6" type="CollisionShape" parent="StaticBody" index="7"]
+transform = Transform( 1.59721, 0, 0, 0, 1.72072, 0, 0, 0, 6.59011, -3.42077, -5.11634, -11.0991 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape8" type="CollisionShape" parent="StaticBody" index="8"]
+transform = Transform( 1.59721, 0, 0, 0, 1.72072, 0, 0, 0, 6.59011, 3.18347, -5.11634, -11.0991 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape7" type="CollisionShape" parent="StaticBody" index="9"]
+transform = Transform( 1.59721, 0, 0, 0, 1, 0, 0, 0, 4.2105, 0, -7.9802, -12.5546 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="StaticBody" index="10"]
+transform = Transform( -1.26298e-07, 0, -2.31181, 0, 0.667721, 0, 3.15505, 0, -1.10344e-07, -0.836379, 1.28427, -1.2337 )
+shape = SubResource( 5 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Objects/HouseLayout.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/HalfWallWithoutFilling.tscn" type="PackedScene" id=2]
@@ -8,66 +8,95 @@
 [ext_resource path="res://Objects/Pillar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Objects/Torch.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Objects/FireStand.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Prototyping/House.lmbake" type="BakedLightmapData" id=9]
+[ext_resource path="res://Assets/Materials/cliff_jagged_COL_1k.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Materials/cliff_jagged_NRM_1k.png" type="Texture" id=11]
+[ext_resource path="res://Objects/OneSidedUV.tscn" type="PackedScene" id=12]
 
-[node name="Spatial" type="Spatial"]
+[sub_resource type="SpatialMaterial" id=9]
+albedo_texture = ExtResource( 10 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 11 )
+uv1_scale = Vector3( 3, 2, 1 )
 
-[node name="Spatial" parent="." instance=ExtResource( 5 )]
+[sub_resource type="ArrayMesh" id=10]
+resource_name = "OneSidedUV_Cube"
+lightmap_size_hint = Vector2( 326, 278 )
+surfaces/0 = {
+"aabb": AABB( -1, -0.0343422, -1, 2, 0.0686843, 2.00001 ),
+"array_data": PoolByteArray( 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 63, 129, 0, 116, 1, 37, 39, 203, 59, 31, 58, 134, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 191, 129, 0, 116, 1, 13, 45, 218, 59, 172, 38, 97, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 63, 129, 0, 116, 1, 170, 38, 207, 59, 31, 58, 97, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 191, 129, 0, 116, 1, 232, 44, 214, 59, 172, 38, 134, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 191, 127, 127, 64, 94, 232, 44, 214, 59, 172, 38, 156, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 191, 127, 127, 189, 93, 13, 45, 109, 59, 40, 56, 193, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 191, 127, 127, 67, 93, 13, 45, 218, 59, 172, 38, 193, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 191, 127, 127, 187, 92, 238, 44, 113, 59, 40, 56, 156, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 191, 127, 0, 140, 127, 238, 44, 113, 59, 17, 35, 75, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 63, 127, 0, 140, 127, 170, 38, 97, 59, 6, 58, 38, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 191, 127, 0, 140, 127, 13, 45, 109, 59, 17, 35, 38, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 63, 127, 0, 140, 127, 62, 39, 101, 59, 6, 58, 75, 59, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 63, 0, 0, 65, 32, 62, 39, 101, 59, 172, 38, 215, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 63, 0, 0, 189, 33, 170, 38, 207, 59, 40, 56, 252, 59, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 63, 0, 0, 67, 33, 170, 38, 97, 59, 172, 38, 252, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 63, 0, 0, 187, 34, 37, 39, 203, 59, 40, 56, 215, 59, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 191, 0, 129, 127, 120, 232, 44, 214, 59, 237, 55, 93, 23, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 63, 0, 129, 127, 120, 62, 39, 101, 59, 72, 22, 243, 58, 0, 0, 128, 63, 96, 170, 12, 189, 0, 0, 128, 191, 0, 129, 127, 120, 238, 44, 113, 59, 72, 22, 93, 23, 0, 0, 128, 191, 96, 170, 12, 189, 0, 0, 128, 63, 0, 129, 127, 120, 37, 39, 203, 59, 237, 55, 243, 58, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 191, 0, 127, 0, 63, 0, 0, 0, 0, 9, 56, 36, 36, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 63, 0, 127, 0, 63, 255, 59, 255, 59, 252, 59, 16, 59, 0, 0, 128, 191, 96, 170, 12, 61, 0, 0, 128, 191, 0, 127, 0, 63, 0, 0, 0, 60, 252, 59, 36, 36, 0, 0, 128, 63, 96, 170, 12, 61, 0, 0, 128, 63, 0, 127, 0, 63, 255, 59, 0, 0, 9, 56, 16, 59 ),
+"array_index_data": PoolByteArray( 0, 0, 1, 0, 2, 0, 0, 0, 3, 0, 1, 0, 4, 0, 5, 0, 6, 0, 4, 0, 7, 0, 5, 0, 8, 0, 9, 0, 10, 0, 8, 0, 11, 0, 9, 0, 12, 0, 13, 0, 14, 0, 12, 0, 15, 0, 13, 0, 16, 0, 17, 0, 18, 0, 16, 0, 19, 0, 17, 0, 20, 0, 21, 0, 22, 0, 20, 0, 23, 0, 21, 0 ),
+"blend_shape_data": [  ],
+"format": 2194743,
+"index_count": 36,
+"material": SubResource( 9 ),
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 24
+}
+
+[node name="House" type="Spatial"]
+
+[node name="HouseLayout" parent="." instance=ExtResource( 1 )]
+
+[node name="Walls" type="Spatial" parent="."]
+
+[node name="HalfWall" parent="Walls" instance=ExtResource( 5 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.86424, 3.96539, 0.403053 )
 
-[node name="Spatial2" parent="." instance=ExtResource( 5 )]
+[node name="HalfWall2" parent="Walls" instance=ExtResource( 5 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.19219, 3.96539, 0.509249 )
 
-[node name="Spatial5" parent="." instance=ExtResource( 5 )]
+[node name="HalfWall3" parent="Walls" instance=ExtResource( 5 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -4.12331, 3.96539, 0.403053 )
 
-[node name="Spatial6" parent="." instance=ExtResource( 5 )]
+[node name="HalfWall4" parent="Walls" instance=ExtResource( 5 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.79535, 3.96539, 0.509249 )
 
-[node name="Spatial3" parent="." instance=ExtResource( 5 )]
+[node name="HalfWall5" parent="Walls" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.00758, 3.96539, -0.151012 )
 
-[node name="Spatial4" parent="." instance=ExtResource( 5 )]
+[node name="HalfWall6" parent="Walls" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.05305, 3.96539, -0.151012 )
 
-[node name="BigWallWithArc" parent="." instance=ExtResource( 3 )]
+[node name="BigWallWithArc" parent="Walls" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1.03904, 0, 0, 0, 1, 0.0406975, 2.00226, -0.13911 )
 
-[node name="House" parent="." instance=ExtResource( 1 )]
-
-[node name="HalfWallWithoutFilling" parent="." instance=ExtResource( 2 )]
+[node name="HalfWallWithoutFilling" parent="Walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.94555, 4, 1.76883 )
 
-[node name="HalfWallWithoutFilling2" parent="." instance=ExtResource( 2 )]
+[node name="HalfWallWithoutFilling2" parent="Walls" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.946, 4, 1.769 )
 
-[node name="HalfWallWithoutFilling3" parent="." instance=ExtResource( 2 )]
+[node name="HalfWallWithoutFilling3" parent="Walls" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -3.85516, 1.0077, 1.86256 )
 
-[node name="HalfWallWithoutFilling4" parent="." instance=ExtResource( 2 )]
+[node name="HalfWallWithoutFilling4" parent="Walls" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 3.96965, 1.0077, 1.86256 )
 
-[node name="StoneWall" parent="." instance=ExtResource( 4 )]
+[node name="StoneWall" parent="Walls" instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.1707, 4, -2.60565 )
 
-[node name="StoneWall2" parent="." instance=ExtResource( 4 )]
+[node name="StoneWall2" parent="Walls" instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.1707, 4, -6.62537 )
 
-[node name="StoneWall3" parent="." instance=ExtResource( 4 )]
+[node name="StoneWall3" parent="Walls" instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.1707, 4, -10.6396 )
 
-[node name="StoneWall4" parent="." instance=ExtResource( 4 )]
+[node name="StoneWall4" parent="Walls" instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.20425, 4, -2.60565 )
 
-[node name="StoneWall5" parent="." instance=ExtResource( 4 )]
+[node name="StoneWall5" parent="Walls" instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.20425, 4, -6.62537 )
 
-[node name="StoneWall6" parent="." instance=ExtResource( 4 )]
+[node name="StoneWall6" parent="Walls" instance=ExtResource( 4 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.20425, 4, -10.6396 )
 
-[node name="StoneWall7" parent="." instance=ExtResource( 4 )]
+[node name="StoneWall7" parent="Walls" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95698, 4, -12.2057 )
 
-[node name="StoneWall8" parent="." instance=ExtResource( 4 )]
+[node name="StoneWall8" parent="Walls" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04781, 4, -12.2057 )
 
 [node name="Pillar" parent="." instance=ExtResource( 6 )]
@@ -97,3 +126,18 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.10625, 0, 3.35727 )
 [node name="BakedLightmap" type="BakedLightmap" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84103, -5.82971 )
 extents = Vector3( 6.64452, 6.80875, 13.2618 )
+light_data = ExtResource( 9 )
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55907, -4.9299 )
+extents = Vector3( 6.30203, 6.88546, 12.0822 )
+interior_enable = true
+
+[node name="Ceiling" parent="." instance=ExtResource( 12 )]
+transform = Transform( 4, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, 0.0777035, 6.4358, -6.40762 )
+
+[node name="Cube" parent="Ceiling" index="0"]
+transform = Transform( 1.02795, 0, 0, 0, 1, 1.7053e-13, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 10 )
+
+[editable path="Ceiling"]

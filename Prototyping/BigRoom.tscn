@@ -41,13 +41,10 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[node name="Room" type="Spatial"]
+[node name="BigRoom" type="Spatial"]
 
 [node name="CrystalDoor" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0367854, 1.70141, -11.9521 )
-
-[node name="BigWallWithArc2" parent="." instance=ExtResource( 7 )]
-transform = Transform( 0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, -0.283497, -0.107927, 11.6002 )
 
 [node name="BakedLightmap" type="BakedLightmap" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.502992, 3.36055, 0.00471735 )
@@ -55,56 +52,8 @@ extents = Vector3( 12.8974, 5.02034, 12.8536 )
 quality = 2
 light_data = ExtResource( 14 )
 
-[node name="Ceiling" parent="." instance=ExtResource( 4 )]
-transform = Transform( 4, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, -8.31296, 4.8462, 5.42082 )
-
-[node name="Cube" parent="Ceiling" index="0"]
-transform = Transform( 1.02795, 0, 0, 0, 1, 6.25278e-13, 0, 0, 1, 0, -0.966174, 5.96046e-08 )
-mesh = SubResource( 10 )
-
-[node name="Ceiling2" parent="." instance=ExtResource( 4 )]
-transform = Transform( 4, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, -0.17049, 4.8462, 5.42082 )
-
-[node name="Cube" parent="Ceiling2" index="0"]
-transform = Transform( 1.02795, 0, 0, 0, 1, 6.25278e-13, 0, 0, 1, 0, -0.966174, 5.96046e-08 )
-mesh = SubResource( 10 )
-
-[node name="Ceiling3" parent="." instance=ExtResource( 4 )]
-transform = Transform( 4.16003, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, 8.0309, 4.8462, 5.42082 )
-
-[node name="Cube" parent="Ceiling3" index="0"]
-transform = Transform( 1.02795, 0, 0, 0, 1, 5.68434e-13, 0, 0, 1, 0, -0.966174, 2.43161e-08 )
-mesh = SubResource( 10 )
-
-[node name="Ceiling4" parent="." instance=ExtResource( 4 )]
-transform = Transform( 4, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, -8.31296, 4.8462, -6.53755 )
-
-[node name="Cube" parent="Ceiling4" index="0"]
-transform = Transform( 1.02795, 0, 0, 0, 1, 5.68434e-13, 0, 0, 1, 0, -0.966174, 2.43161e-08 )
-mesh = SubResource( 10 )
-
-[node name="Ceiling5" parent="." instance=ExtResource( 4 )]
-transform = Transform( 4, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, -0.17049, 4.8462, -6.53755 )
-
-[node name="Cube" parent="Ceiling5" index="0"]
-transform = Transform( 1.02795, 0, 0, 0, 1, 5.68434e-13, 0, 0, 1, 0, -0.966174, 2.43161e-08 )
-mesh = SubResource( 10 )
-
-[node name="Ceiling6" parent="." instance=ExtResource( 4 )]
-transform = Transform( 4.16003, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, 8.0309, 4.8462, -6.53755 )
-
-[node name="Cube" parent="Ceiling6" index="0"]
-transform = Transform( 1.02795, 0, 0, 0, 1, 5.68434e-13, 0, 0, 1, 0, -0.966174, 2.43161e-08 )
-mesh = SubResource( 10 )
-
-[node name="miniatur_pyramide_finished" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.579524, 0.361883, -0.533751 )
-
 [node name="BigRoomLayout" parent="." instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10181, 0 )
-
-[node name="PyramidStand" parent="." instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0471069, -1.23243, 0.287374 )
 
 [node name="Walls" type="Spatial" parent="."]
 
@@ -258,6 +207,9 @@ transform = Transform( -0.00938978, 0, 0.999956, 0, 1, 0, -0.999956, 0, -0.00938
 [node name="StoneWall49" parent="Walls" instance=ExtResource( 8 )]
 transform = Transform( -0.00938978, 0, 0.999956, 0, 1, 0, -0.999956, 0, -0.00938978, 11.6862, 5.86032, -10.6522 )
 
+[node name="BigWallWithArc2" parent="Walls" instance=ExtResource( 7 )]
+transform = Transform( 0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, -0.283497, -0.107927, 11.6002 )
+
 [node name="LightsAndCrystals" type="Spatial" parent="."]
 
 [node name="Torch" parent="LightsAndCrystals" instance=ExtResource( 2 )]
@@ -296,7 +248,7 @@ transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, 2
 [node name="Crystal6" parent="LightsAndCrystals" instance=ExtResource( 13 )]
 transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, 2.99077, 1.12628, -3.79461 )
 
-[node name="Props" type="Node" parent="."]
+[node name="Props" type="Spatial" parent="."]
 
 [node name="GoldenCup" parent="Props" instance=ExtResource( 19 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.85997, 0.917404, -1.92456 )
@@ -310,7 +262,55 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97728, 0.917404, -1.50318 )
 [node name="Table" parent="Props" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.67225, -0.121049, -1.8441 )
 
-[node name="Ceilings" type="Node" parent="."]
+[node name="miniatur_pyramide_finished" parent="Props" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.579524, 0.361883, -0.533751 )
+
+[node name="PyramidStand" parent="Props" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0471069, -1.23243, 0.287374 )
+
+[node name="Ceilings" type="Spatial" parent="."]
+
+[node name="Ceiling" parent="Ceilings" instance=ExtResource( 4 )]
+transform = Transform( 4, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, -8.31296, 4.8462, 5.42082 )
+
+[node name="Cube" parent="Ceilings/Ceiling" index="0"]
+transform = Transform( 1.02795, 0, 0, 0, 1, 6.25278e-13, 0, 0, 1, 0, -0.966174, 5.96046e-08 )
+mesh = SubResource( 10 )
+
+[node name="Ceiling2" parent="Ceilings" instance=ExtResource( 4 )]
+transform = Transform( 4, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, -0.17049, 4.8462, 5.42082 )
+
+[node name="Cube" parent="Ceilings/Ceiling2" index="0"]
+transform = Transform( 1.02795, 0, 0, 0, 1, 6.25278e-13, 0, 0, 1, 0, -0.966174, 5.96046e-08 )
+mesh = SubResource( 10 )
+
+[node name="Ceiling3" parent="Ceilings" instance=ExtResource( 4 )]
+transform = Transform( 4.16003, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, 8.0309, 4.8462, 5.42082 )
+
+[node name="Cube" parent="Ceilings/Ceiling3" index="0"]
+transform = Transform( 1.02795, 0, 0, 0, 1, 5.68434e-13, 0, 0, 1, 0, -0.966174, 2.43161e-08 )
+mesh = SubResource( 10 )
+
+[node name="Ceiling4" parent="Ceilings" instance=ExtResource( 4 )]
+transform = Transform( 4, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, -8.31296, 4.8462, -6.53755 )
+
+[node name="Cube" parent="Ceilings/Ceiling4" index="0"]
+transform = Transform( 1.02795, 0, 0, 0, 1, 5.68434e-13, 0, 0, 1, 0, -0.966174, 2.43161e-08 )
+mesh = SubResource( 10 )
+
+[node name="Ceiling5" parent="Ceilings" instance=ExtResource( 4 )]
+transform = Transform( 4, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, -0.17049, 4.8462, -6.53755 )
+
+[node name="Cube" parent="Ceilings/Ceiling5" index="0"]
+transform = Transform( 1.02795, 0, 0, 0, 1, 5.68434e-13, 0, 0, 1, 0, -0.966174, 2.43161e-08 )
+mesh = SubResource( 10 )
+
+[node name="Ceiling6" parent="Ceilings" instance=ExtResource( 4 )]
+transform = Transform( 4.16003, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, 8.0309, 4.8462, -6.53755 )
+
+[node name="Cube" parent="Ceilings/Ceiling6" index="0"]
+transform = Transform( 1.02795, 0, 0, 0, 1, 5.68434e-13, 0, 0, 1, 0, -0.966174, 2.43161e-08 )
+mesh = SubResource( 10 )
 
 [node name="Pillars" type="Spatial" parent="."]
 
@@ -326,9 +326,14 @@ transform = Transform( 1.55808, 0, 0, 0, 1.23243, 0, 0, 0, 1.55808, -8.41023, -0
 [node name="Pillar4" parent="Pillars" instance=ExtResource( 1 )]
 transform = Transform( 1.55808, 0, 0, 0, 1.23243, 0, 0, 0, 1.55808, -8.59723, -0.0184861, 5.12625 )
 
-[editable path="Ceiling"]
-[editable path="Ceiling2"]
-[editable path="Ceiling3"]
-[editable path="Ceiling4"]
-[editable path="Ceiling5"]
-[editable path="Ceiling6"]
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.23114, 0.0719352 )
+extents = Vector3( 15.4753, 9.04306, 13.5347 )
+origin_offset = Vector3( -0.99, 0, 0 )
+
+[editable path="Ceilings/Ceiling"]
+[editable path="Ceilings/Ceiling2"]
+[editable path="Ceilings/Ceiling3"]
+[editable path="Ceilings/Ceiling4"]
+[editable path="Ceilings/Ceiling5"]
+[editable path="Ceilings/Ceiling6"]
