@@ -1,6 +1,6 @@
 [gd_resource type="ArrayMesh" load_steps=3 format=2]
 
-[ext_resource path="res://CrystalMaterial.tres" type="Material" id=1]
+[ext_resource path="res://Assets/Materials/CrystalMaterial.tres" type="Material" id=1]
 
 [sub_resource type="SpatialMaterial" id=6]
 vertex_color_use_as_albedo = true

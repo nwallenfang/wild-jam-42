@@ -37,3 +37,7 @@ func say_text(text, duration: float):
 	$Tween.start()
 	yield($Tween, "tween_all_completed")
 	emit_signal("text_done")
+	
+	
+func start_death_animation():
+	pass

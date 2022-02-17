@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://UI/FPSCounter.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Avara.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Assets/Sprites/crosshair_dark.png" type="Texture" id=3]
 [ext_resource path="res://Logic/UI.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sprites/ankh.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/Voronoi_16_9.png" type="Texture" id=6]
+[ext_resource path="res://Shader/Death.gdshader" type="Shader" id=7]
 
 [sub_resource type="DynamicFont" id=7]
 size = 24
@@ -14,6 +17,11 @@ default_font = SubResource( 7 )
 
 [sub_resource type="DynamicFont" id=10]
 font_data = ExtResource( 2 )
+
+[sub_resource type="ShaderMaterial" id=12]
+shader = ExtResource( 7 )
+shader_param/threshold = 0.0
+shader_param/dissolve_texture = ExtResource( 6 )
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource( 4 )
@@ -56,6 +64,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Control" type="Control" parent="Center"]
+visible = false
+margin_left = 640.0
+margin_top = 360.0
+margin_right = 640.0
+margin_bottom = 360.0
+
+[node name="Sprite" type="Sprite" parent="Center/Control"]
+position = Vector2( 5, -6 )
+texture = ExtResource( 5 )
+
 [node name="Bottom" type="CenterContainer" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
@@ -74,3 +93,24 @@ theme = SubResource( 8 )
 text = "Hello, World"
 
 [node name="Tween" type="Tween" parent="."]
+
+[node name="DeathTexture" type="ColorRect" parent="."]
+visible = false
+material = SubResource( 12 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 640.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 1280, 720 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]

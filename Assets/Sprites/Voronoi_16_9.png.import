@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/part_c2.png-d11b3aee62099a3b61306c11b445bb4e.stex"
+path="res://.import/Voronoi_16_9.png-072f304f0f13c736e994452eff3f508c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Effects/part_c2.png"
-dest_files=[ "res://.import/part_c2.png-d11b3aee62099a3b61306c11b445bb4e.stex" ]
+source_file="res://Assets/Sprites/Voronoi_16_9.png"
+dest_files=[ "res://.import/Voronoi_16_9.png-072f304f0f13c736e994452eff3f508c.stex" ]
 
 [params]
 
@@ -23,7 +23,7 @@ flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=1
+flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
