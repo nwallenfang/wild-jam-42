@@ -48,10 +48,6 @@ config/windows_native_icon="res://Assets/Sprites/icon.ico"
 
 Game="*res://Logic/Game.tscn"
 
-[debug]
-
-settings/fps/force_fps=60
-
 [display]
 
 window/size/width=1280

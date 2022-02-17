@@ -48,7 +48,7 @@ script = ExtResource( 9 )
 environment = ExtResource( 7 )
 
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.432232, 95.114, -177.008 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.4317, 95.114, -199.997 )
 script = ExtResource( 10 )
 
 [node name="PlayerMesh" type="MeshInstance" parent="Player"]
@@ -200,8 +200,7 @@ width = 3.06678
 transform = Transform( 0.408824, 0.645315, -0.645315, 3.09086e-08, 0.707107, 0.707107, 0.912613, -0.289082, 0.289082, -18.0713, 100.885, 20.8303 )
 
 [node name="Room2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 0.0938825, 0, 0.995583, 0, 1, 0, -0.995583, 0, 0.0938825, -94.6045, 62.8225, -7.19987 )
-visible = false
+transform = Transform( 0.0938825, 0, 0.995583, 0, 1, 0, -0.995583, 0, 0.0938825, -36.6328, 93.0961, -192.492 )
 
 [node name="Spatial" parent="." instance=ExtResource( 12 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 18.5377, 91.3163, -160.852 )

@@ -1,0 +1,37 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=2]
+
+[ext_resource path="res://Shader/AnimatedCrystal.tres" type="Shader" id=1]
+
+[sub_resource type="OpenSimplexNoise" id=2]
+
+[sub_resource type="NoiseTexture" id=3]
+seamless = true
+noise = SubResource( 2 )
+
+[sub_resource type="OpenSimplexNoise" id=4]
+period = 18.5
+persistence = 0.538
+
+[sub_resource type="NoiseTexture" id=5]
+seamless = true
+noise = SubResource( 4 )
+
+[resource]
+resource_name = "Crystal"
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 1, 1, 1, 1 )
+shader_param/specular = 0.5
+shader_param/metallic = 0.0
+shader_param/roughness = 0.209091
+shader_param/point_size = 1.0
+shader_param/emission = Color( 0, 0, 0, 1 )
+shader_param/emission_energy = 1.0
+shader_param/normal_scale = 1.0
+shader_param/uv1_scale = Vector3( 1, 1, 1 )
+shader_param/uv1_offset = Vector3( 0, 0, 0 )
+shader_param/uv2_scale = Vector3( 1, 1, 1 )
+shader_param/uv2_offset = Vector3( 0, 0, 0 )
+shader_param/color1 = Color( 0, 0.866667, 1, 1 )
+shader_param/color2 = Color( 0.364706, 0, 0.580392, 1 )
+shader_param/noise_texture = SubResource( 5 )
+shader_param/movement_noise_texture = SubResource( 3 )

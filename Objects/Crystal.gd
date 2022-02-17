@@ -8,6 +8,7 @@ func _ready():
 	$Dance.play("dance")
 	$Rotate.play("rotate")
 #	$MoveThis.connect("started_interacting", self, "start_interacting")
+	pass
 
 func start_interacting(player: Player):
 	
