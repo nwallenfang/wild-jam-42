@@ -48,6 +48,7 @@ config/windows_native_icon="res://Assets/Sprites/icon.ico"
 
 Game="*res://Logic/Game.tscn"
 UI="*res://Logic/UI.tscn"
+SoundManager="*res://Logic/SoundManager.tscn"
 
 [display]
 
@@ -1135,6 +1136,10 @@ texture={
 "size_limit": 0,
 "stream": false,
 "svg/scale": 1.0
+}
+ogg_vorbis={
+"loop": false,
+"loop_offset": 0
 }
 
 [input]

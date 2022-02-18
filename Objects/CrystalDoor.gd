@@ -65,11 +65,12 @@ func move_to_transform(target_transform_arg: Transform):
 
 func open() -> void:
 	# TODO have sand particles flying
-	# TODO play cool sound
 	yield(get_tree().create_timer(1.5), "timeout")
+	$DoorSound.play()
 	# move doormesh down towards ground
 	var start = $SlidingDoor.transform
 	# works under the assumption that door is perfecly upright
+	# (what kind of psycho door doesn't stand nicely upright?)
 	var move_depth = 4
 	var end = start.translated(Vector3(0, -move_depth, 0))
 	

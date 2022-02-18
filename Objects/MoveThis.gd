@@ -7,4 +7,4 @@ func start_interacting(player: Player):
 	
 func stop_interacting():
 	# do nothing
-	pass
+	get_parent().get_node("PickupSound").play()

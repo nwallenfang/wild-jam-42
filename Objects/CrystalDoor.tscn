@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Objects/CrystalDoor.gd" type="Script" id=1]
 [ext_resource path="res://Objects/SlidingDoorNew.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Meshes/Crystal/GodotCrystal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/Sounds/door_moving.ogg" type="AudioStream" id=4]
 [ext_resource path="res://Objects/SlidingDoorArc.tscn" type="PackedScene" id=5]
 
 [sub_resource type="SphereShape" id=4]
@@ -72,5 +73,8 @@ visible = false
 [node name="CollisionShape" type="CollisionShape" parent="SlidingDoor/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1.79874, 0, 0, 0, 0.266046, 0, 0, 0 )
 shape = SubResource( 8 )
+
+[node name="DoorSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
 
 [connection signal="body_entered" from="CrystalDetector" to="." method="_on_CrystalDetector_body_entered"]

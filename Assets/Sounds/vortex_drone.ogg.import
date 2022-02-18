@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/vortex_drone.ogg-260f6be32afa9b95aa35a821d8e84c0b.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/vortex_drone.ogg"
+dest_files=[ "res://.import/vortex_drone.ogg-260f6be32afa9b95aa35a821d8e84c0b.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
