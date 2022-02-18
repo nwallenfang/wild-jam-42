@@ -71,12 +71,12 @@ func execute_movement(delta: float) -> void:
 		
 #	velocity = move_and_slide_with_snap(velocity, snap_vector, Vector3.UP, stop_on_slopes, max_slides, floor_max_angle)
 	velocity = move_and_slide(velocity, Vector3.UP, stop_on_slopes, max_slides, floor_max_angle)
-	var ground = -0.8
+	var ground = -0.7
 	var collision: KinematicCollision = get_last_slide_collision()
 
 	if collision != null:
 		var height = collision.position.y - global_transform.origin.y
-#		print(height)
+		print(height)
 		if height < -0.5 and Input.is_action_pressed("move_forward"):
 			translate(Vector3(0.0, height - ground, 0.0))
 	

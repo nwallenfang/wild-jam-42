@@ -14,11 +14,11 @@ radius = 0.5
 script = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 0.7648, 0, 0, 0, 1.55784, 0, 0, 0, 0.443808, 0.0655214, 0.0537969, 0.0303274 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="Head" type="Spatial" parent="."]
-transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0.637, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
 
 [node name="Camera" type="Camera" parent="Head"]
 environment = ExtResource( 2 )
