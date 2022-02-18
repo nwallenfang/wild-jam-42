@@ -71,6 +71,10 @@ shape = SubResource( 3 )
 transform = Transform( 2.36698, 0, -0.702259, 0, 1, 0, 6.63288, 0, 1.34877, -3.48711, 24.3027, -14.7179 )
 shape = SubResource( 3 )
 
+[node name="CollisionShape9" type="CollisionShape" parent="InvisibleWalls"]
+transform = Transform( -5.52347, 0, -1.50274, 0, 1, 0, 4.3691, 0, -0.232623, -12.2356, 24.3027, -24.1049 )
+shape = SubResource( 3 )
+
 [node name="CollisionShape2" type="CollisionShape" parent="InvisibleWalls"]
 transform = Transform( 2.03822, 0, 0.739537, 0, 1, 0, -2.23934, 0, 0.673116, 7.35546, 24.5804, -14.4214 )
 shape = SubResource( 3 )
@@ -106,7 +110,7 @@ transform = Transform( 1.49443, 0, 0, 0, 1, 0, 0, 0, 1.85369, 0, -67.0396, 0 )
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.5673, -5.63243, -3.60892 )
 
 [node name="House" parent="." instance=ExtResource( 8 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 28.6451, -45.726 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 28.2245, -45.726 )
 
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 3.76467, 0, 0, 0, 1, 0, 0, 0, 3.57441, 0, 27.7924, -51.9069 )
