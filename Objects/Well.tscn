@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Objects/WellCylinder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/well_plank_bridge_with_rock.tscn" type="PackedScene" id=2]
@@ -28,13 +28,6 @@ radius = 0.5
 height = 1.6
 
 [sub_resource type="BoxShape" id=6]
-
-[sub_resource type="SpatialMaterial" id=12]
-flags_unshaded = true
-albedo_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="QuadMesh" id=14]
-material = SubResource( 12 )
 
 [node name="Well" type="Spatial"]
 script = ExtResource( 11 )
@@ -134,11 +127,6 @@ transform = Transform( 7.88362, 0, 0, 0, 3.2317, 0, 0, 0, 1, 0, 8.64567, -27.443
 shape = SubResource( 6 )
 
 [node name="Curtains" type="Spatial" parent="."]
-
-[node name="Curtain" type="MeshInstance" parent="Curtains"]
-transform = Transform( 30.7468, 0, 0, 0, 13.1508, 0, 0, 0, 13.1508, 4.31187, 30.0708, -57.8486 )
-mesh = SubResource( 14 )
-material/0 = null
 
 [editable path="well_cylinder"]
 [editable path="well_plank_bridge_with_rock"]

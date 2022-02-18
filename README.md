@@ -1,4 +1,4 @@
-## The Last Walk
+## Seti's Last Jorney
 An entry to [Godot Wild Jam 42](https://itch.io/jam/godot-wild-jam-42).
 
 ### Licensing

@@ -11,7 +11,8 @@
                 0,
                 1,
                 2,
-                3
+                3,
+                4
             ]
         }
     ],
@@ -41,6 +42,10 @@
                 0.8728230595588684,
                 1
             ]
+        },
+        {
+            "mesh" : 4,
+            "name" : "StairsCollision"
         }
     ],
     "materials" : [
@@ -70,8 +75,7 @@
                 "baseColorTexture" : {
                     "index" : 3
                 },
-                "metallicFactor" : 0,
-                "roughnessFactor" : 0.8181822299957275
+                "metallicFactor" : 0
             }
         },
         {
@@ -86,6 +90,20 @@
                 },
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.7590909004211426
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "Material",
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.8000000715255737,
+                    0,
+                    0.6728983521461487,
+                    1
+                ],
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
             }
         }
     ],
@@ -143,6 +161,20 @@
                     },
                     "indices" : 15,
                     "material" : 2
+                }
+            ]
+        },
+        {
+            "name" : "Plane.003",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 16,
+                        "NORMAL" : 17,
+                        "TEXCOORD_0" : 18
+                    },
+                    "indices" : 19,
+                    "material" : 3
                 }
             ]
         }
@@ -341,6 +373,40 @@
             "componentType" : 5123,
             "count" : 360,
             "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 16,
+            "componentType" : 5126,
+            "count" : 8,
+            "max" : [
+                1.4729083776474,
+                0,
+                6
+            ],
+            "min" : [
+                -1.458343744277954,
+                -1,
+                -6
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 17,
+            "componentType" : 5126,
+            "count" : 8,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 18,
+            "componentType" : 5126,
+            "count" : 8,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 19,
+            "componentType" : 5123,
+            "count" : 12,
+            "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
@@ -423,6 +489,26 @@
             "buffer" : 0,
             "byteLength" : 720,
             "byteOffset" : 30768
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 96,
+            "byteOffset" : 31488
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 96,
+            "byteOffset" : 31584
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 64,
+            "byteOffset" : 31680
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 24,
+            "byteOffset" : 31744
         }
     ],
     "samplers" : [
@@ -433,7 +519,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 31488,
+            "byteLength" : 31768,
             "uri" : "BigRoomLayout.bin"
         }
     ]
