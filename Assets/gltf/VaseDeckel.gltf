@@ -1,0 +1,263 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.7.33",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Plank"
+        },
+        {
+            "mesh" : 1,
+            "name" : "Grabber",
+            "rotation" : [
+                0,
+                -0.14116664230823517,
+                0,
+                0.9899859428405762
+            ],
+            "translation" : [
+                0,
+                -0.015186137519776821,
+                0
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Material",
+            "normalTexture" : {
+                "index" : 0,
+                "scale" : 2.429999828338623
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.5
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "Material.001",
+            "normalTexture" : {
+                "index" : 2,
+                "scale" : 1.100000023841858
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 3
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.8909090757369995
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cube",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        },
+        {
+            "sampler" : 0,
+            "source" : 3
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "WoodLogSidingRough001_NRM_2K",
+            "uri" : "WoodLogSidingRough001_NRM_2K.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "WoodLogSidingRough001_COL_2K",
+            "uri" : "WoodLogSidingRough001_COL_2K.jpg"
+        },
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "RockBrown005_NRM_3K",
+            "uri" : "RockBrown005_NRM_3K.jpg"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "BorderTextureBake",
+            "uri" : "BorderTextureBake.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 704,
+            "max" : [
+                0.14999999105930328,
+                0.010000012814998627,
+                0.14999999105930328
+            ],
+            "min" : [
+                -0.14999999105930328,
+                -0.010000012814998627,
+                -0.14999999105930328
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 704,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 704,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 1140,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 767,
+            "max" : [
+                0.05842939019203186,
+                0.07039374858140945,
+                0.01249999925494194
+            ],
+            "min" : [
+                -0.05842938646674156,
+                0.007614023517817259,
+                -0.01249999925494194
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 767,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 767,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 3264,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 8448,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 8448,
+            "byteOffset" : 8448
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5632,
+            "byteOffset" : 16896
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2280,
+            "byteOffset" : 22528
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 9204,
+            "byteOffset" : 24808
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 9204,
+            "byteOffset" : 34012
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6136,
+            "byteOffset" : 43216
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 6528,
+            "byteOffset" : 49352
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 55880,
+            "uri" : "VaseDeckel.bin"
+        }
+    ]
+}
