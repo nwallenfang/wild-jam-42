@@ -16,6 +16,7 @@ func _ready() -> void:
 
 signal text_done
 func say_text(text, duration: float):
+	lore_text.visible = true
 	# set text
 	lore_text.text = text
 	# blend text in
@@ -38,6 +39,19 @@ func say_text(text, duration: float):
 	yield($Tween, "tween_all_completed")
 	emit_signal("text_done")
 	
+
+#func show_start_instructions():
+#	$Bottom/BeginInstructions.visible = true
+
 	
+func _process(delta: float) -> void:
+	if Input.is_action_pressed("move_forward") or Input.is_action_pressed("move_backward") \
+	or Input.is_action_pressed("move_right") or Input.is_action_pressed("move_left"):
+		var color_blended_out = Color(lore_text.modulate)
+		color_blended_out.a = 0.0
+		$TutorialTween.interpolate_property($Bottom/BeginInstructions, "modulate", null, color_blended_out, 0.5)
+		$TutorialTween.start()
+		self.set_process(false)  # don't check if inputs are made for the rest of the game..
+
 func start_death_animation():
 	pass

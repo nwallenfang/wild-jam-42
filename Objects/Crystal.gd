@@ -14,11 +14,8 @@ func _ready():
 # CAREFUL this is not directly called but instead "MoveThis" is interacted with
 func start_interacting(player: Player):
 	player.crystal_collected(self)
+	SoundManager.get_node("PickupSound").play()
 	
-	
-
-
-
 var start_transform: Transform
 var target_transform: Transform
 # made this global hope this works
@@ -37,7 +34,7 @@ func move_to_global_transform(global_target_transform: Transform):
 	$Tween.playback_process_mode = Tween.TWEEN_PROCESS_PHYSICS
 	$Tween.interpolate_method(self, "interpolate_transform", 0.0, 1.0, duration, Tween.TRANS_LINEAR)
 	$Tween.start()
-	$FliyngSound.play()
+	$FlyingSound.play()
 
 
 func move_towards(target_position_global: Transform):

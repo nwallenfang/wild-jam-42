@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Objects/WellCylinder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/well_plank_bridge_with_rock.tscn" type="PackedScene" id=2]
@@ -16,12 +16,25 @@
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 1.10894, 0.880383, 0.245037 )
 
+[sub_resource type="SpatialMaterial" id=13]
+flags_unshaded = true
+albedo_color = Color( 0, 0, 0, 1 )
+
 [sub_resource type="CapsuleMesh" id=4]
 radius = 0.5
 
 [sub_resource type="CylinderShape" id=5]
 radius = 0.5
 height = 1.6
+
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="SpatialMaterial" id=12]
+flags_unshaded = true
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="QuadMesh" id=14]
+material = SubResource( 12 )
 
 [node name="Well" type="Spatial"]
 script = ExtResource( 11 )
@@ -86,9 +99,10 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 28.6
 [node name="CSGBox" type="CSGBox" parent="."]
 transform = Transform( 3.76467, 0, 0, 0, 1, 0, 0, 0, 3.57441, 0, 27.7924, -51.9069 )
 use_collision = true
+material = SubResource( 13 )
 
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0589075, 30.284, -52.8033 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0589066, 29.7751, -52.8033 )
 script = ExtResource( 10 )
 
 [node name="PlayerMesh" type="MeshInstance" parent="Player"]
@@ -101,16 +115,30 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000228882, 0 )
 shape = SubResource( 5 )
 
 [node name="Head" type="Spatial" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.637039, 0.482178 )
+transform = Transform( 1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, 0, 0.637039, 0.482178 )
 
 [node name="Camera" type="Camera" parent="Player/Head"]
-transform = Transform( -1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, -1, 0, 0, -1.52588e-05 )
+transform = Transform( -1, 0, -1.15241e-07, 0, 1, 0, 1.15241e-07, 0, -1, 0, 0, -1.52588e-05 )
 environment = ExtResource( 9 )
 current = true
 fov = 80.0
 far = 150.0
 
 [node name="UI" parent="." instance=ExtResource( 12 )]
+
+[node name="IntroToWellArea" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.7842, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="IntroToWellArea"]
+transform = Transform( 7.88362, 0, 0, 0, 3.2317, 0, 0, 0, 1, 0, 8.64567, -27.4438 )
+shape = SubResource( 6 )
+
+[node name="Curtains" type="Spatial" parent="."]
+
+[node name="Curtain" type="MeshInstance" parent="Curtains"]
+transform = Transform( 30.7468, 0, 0, 0, 13.1508, 0, 0, 0, 13.1508, 4.31187, 30.0708, -57.8486 )
+mesh = SubResource( 14 )
+material/0 = null
 
 [editable path="well_cylinder"]
 [editable path="well_plank_bridge_with_rock"]

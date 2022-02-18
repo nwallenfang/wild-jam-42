@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://UI/FPSCounter.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Avara.ttf" type="DynamicFontData" id=2]
@@ -7,15 +7,20 @@
 [ext_resource path="res://Assets/Sprites/ankh.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Sprites/Voronoi_16_9.png" type="Texture" id=6]
 [ext_resource path="res://Shader/Death.gdshader" type="Shader" id=7]
+[ext_resource path="res://Assets/default_font.tres" type="DynamicFont" id=8]
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="Theme" id=8]
+default_font = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=13]
 size = 24
 font_data = ExtResource( 2 )
 
-[sub_resource type="Theme" id=8]
-default_font = SubResource( 7 )
-
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=14]
+size = 37
 font_data = ExtResource( 2 )
 
 [sub_resource type="ShaderMaterial" id=12]
@@ -85,14 +90,27 @@ __meta__ = {
 }
 
 [node name="LoreText" type="Label" parent="Bottom"]
+visible = false
 margin_left = 567.0
 margin_top = 22.0
 margin_right = 713.0
 margin_bottom = 51.0
 theme = SubResource( 8 )
+custom_fonts/font = SubResource( 13 )
 text = "Hello, World"
 
+[node name="BeginInstructions" type="Label" parent="Bottom"]
+margin_left = 442.0
+margin_top = 14.0
+margin_right = 838.0
+margin_bottom = 58.0
+theme = SubResource( 8 )
+custom_fonts/font = SubResource( 14 )
+text = "press W/A/S/D to start"
+
 [node name="Tween" type="Tween" parent="."]
+
+[node name="TutorialTween" type="Tween" parent="."]
 
 [node name="DeathTexture" type="ColorRect" parent="."]
 visible = false
