@@ -1,0 +1,174 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.7.33",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "AnubisOriginalUV",
+            "rotation" : [
+                0.1805068850517273,
+                0,
+                0,
+                0.9835737347602844
+            ],
+            "scale" : [
+                0.4520910382270813,
+                0.4520910382270813,
+                0.4520910382270813
+            ],
+            "translation" : [
+                0,
+                18.524837493896484,
+                -0.3043990135192871
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "AllBaked",
+            "normalTexture" : {
+                "index" : 0,
+                "scale" : 1.2000000476837158
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1
+                },
+                "roughnessFactor" : 0.30909091234207153
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "mesh.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2,
+                        "COLOR_0" : 3
+                    },
+                    "indices" : 4,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "AnubisFullNormalBake",
+            "uri" : "AnubisFullNormalBake.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "AnubisFullTextureBake",
+            "uri" : "AnubisFullTextureBake.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 31811,
+            "max" : [
+                9.14536190032959,
+                9.133176803588867,
+                17.337270736694336
+            ],
+            "min" : [
+                -10.177111625671387,
+                -38.22233963012695,
+                -3.8083667755126953
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 31811,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 31811,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 31811,
+            "normalized" : true,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5123,
+            "count" : 125322,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 381732,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 381732,
+            "byteOffset" : 381732
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 254488,
+            "byteOffset" : 763464
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 254488,
+            "byteOffset" : 1017952
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 250644,
+            "byteOffset" : 1272440
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 1523084,
+            "uri" : "Anubis.bin"
+        }
+    ]
+}

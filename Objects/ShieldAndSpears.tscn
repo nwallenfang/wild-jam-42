@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Meshes/spear.tres" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/gltf/Shield.gltf" type="PackedScene" id=2]
+
+[node name="ShieldAndSpears" type="Spatial"]
+
+[node name="Shield" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1.28396, 0, 0, 0, 1.28396, 0, 0, 0, 1.16871, -0.221885, 1.38147, -5.597 )
+
+[node name="SingleSpear" type="MeshInstance" parent="."]
+transform = Transform( 1.21128, 0.699333, 0, -0.699333, 1.21128, 0, 0, 0, 1, -0.218753, 1.39616, -5.54588 )
+use_in_baked_light = true
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="SingleSpear2" type="MeshInstance" parent="."]
+transform = Transform( 1.21128, -0.699333, 0, 0.699333, 1.21128, 0, 0, 0, 1, -0.216593, 1.41326, -5.54567 )
+use_in_baked_light = true
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+material/0 = null
+material/1 = null
+material/2 = null

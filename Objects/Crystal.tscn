@@ -11,7 +11,7 @@ extents = Vector3( 1, 0.583276, 1 )
 [sub_resource type="Curve" id=23]
 _data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.263285, 0.995455 ), 0.0, 0.0, 0, 0, Vector2( 0.487923, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.753623, 1 ), -0.0427686, -0.0427686, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=21]
+[sub_resource type="CurveTexture" id=27]
 curve = SubResource( 23 )
 
 [sub_resource type="ParticlesMaterial" id=24]
@@ -22,15 +22,15 @@ spread = 0.0
 gravity = Vector3( 0, 0, 0 )
 initial_velocity = 0.3
 initial_velocity_random = 0.53
-scale_curve = SubResource( 21 )
+scale_curve = SubResource( 27 )
 color = Color( 0.262745, 0.815686, 0.984314, 1 )
 
-[sub_resource type="SpatialMaterial" id=16]
+[sub_resource type="SpatialMaterial" id=28]
 flags_unshaded = true
 vertex_color_use_as_albedo = true
 
 [sub_resource type="CubeMesh" id=25]
-material = SubResource( 16 )
+material = SubResource( 28 )
 size = Vector3( 0.003, 0.12, 0.003 )
 
 [sub_resource type="Animation" id=4]
