@@ -31,6 +31,7 @@ var number_of_crystals = 0
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	$PlayerMesh.visible = false
 
 
 func crystal_collected(crystal):
@@ -74,7 +75,6 @@ func on_pressed_interact():
 	if node_to_interact_with != null and node_to_interact_with.is_in_group("interactable"):
 		# have some kind of contract that ever node belonging to interactable
 		# has start_interacting() and stop_interacting()
-		print("interacitng")
 		Game.change_crosshair("selection")
 #		Game.CROSSHAIR.texture = Game.selection_crosshair
 		node_currently_interacting_with = node_to_interact_with
