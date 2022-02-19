@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "Player",
 "language": "GDScript",
 "path": "res://Logic/Player.gd"
+}, {
+"base": "Spatial",
+"class": "Pyramide",
+"language": "GDScript",
+"path": "res://Objects/MiniaturPyramide.gd"
 } ]
 _global_script_class_icons={
 "CharaOutline": "",
 "CharaOutlineRegister": "",
 "PhysicsMover3D": "",
-"Player": ""
+"Player": "",
+"Pyramide": ""
 }
 
 [application]
