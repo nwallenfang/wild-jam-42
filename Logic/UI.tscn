@@ -102,6 +102,7 @@ custom_fonts/font = SubResource( 13 )
 text = "Hello, World"
 
 [node name="BeginInstructions" type="Label" parent="Bottom"]
+visible = false
 margin_left = 117.0
 margin_top = 14.0
 margin_right = 513.0

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://OneSidedUV.tres" type="ArrayMesh" id=1]
+[ext_resource path="res://Assets/gltf/GroundSandDesertRippled001_NRM_2K.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/gltf/GroundSandDesertRippled001_COL_2K.jpg" type="Texture" id=3]
+
+[sub_resource type="SpatialMaterial" id=1]
+albedo_texture = ExtResource( 3 )
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 2 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+use_in_baked_light = true
+mesh = ExtResource( 1 )
+material/0 = SubResource( 1 )

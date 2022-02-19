@@ -210,15 +210,15 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 223,
+            "count" : 212,
             "max" : [
-                1.486275553703308,
+                1.4760299921035767,
                 1,
-                1.7535597085952759
+                1.195345163345337
             ],
             "min" : [
-                -1.486275553703308,
-                -4.7516984939575195,
+                -1.479422688484192,
+                -4.751698017120361,
                 -1.311214804649353
             ],
             "type" : "VEC3"
@@ -226,19 +226,19 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 223,
+            "count" : 212,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 223,
+            "count" : 212,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 738,
+            "count" : 702,
             "type" : "SCALAR"
         },
         {
@@ -347,83 +347,83 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 2676,
+            "byteLength" : 2544,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 2676,
-            "byteOffset" : 2676
+            "byteLength" : 2544,
+            "byteOffset" : 2544
         },
         {
             "buffer" : 0,
-            "byteLength" : 1784,
-            "byteOffset" : 5352
+            "byteLength" : 1696,
+            "byteOffset" : 5088
         },
         {
             "buffer" : 0,
-            "byteLength" : 1476,
-            "byteOffset" : 7136
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 2508,
-            "byteOffset" : 8612
+            "byteLength" : 1404,
+            "byteOffset" : 6784
         },
         {
             "buffer" : 0,
             "byteLength" : 2508,
-            "byteOffset" : 11120
+            "byteOffset" : 8188
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2508,
+            "byteOffset" : 10696
         },
         {
             "buffer" : 0,
             "byteLength" : 1672,
-            "byteOffset" : 13628
+            "byteOffset" : 13204
         },
         {
             "buffer" : 0,
             "byteLength" : 1368,
-            "byteOffset" : 15300
+            "byteOffset" : 14876
         },
         {
             "buffer" : 0,
             "byteLength" : 134592,
-            "byteOffset" : 16668
+            "byteOffset" : 16244
         },
         {
             "buffer" : 0,
             "byteLength" : 134592,
-            "byteOffset" : 151260
+            "byteOffset" : 150836
         },
         {
             "buffer" : 0,
             "byteLength" : 89728,
-            "byteOffset" : 285852
+            "byteOffset" : 285428
         },
         {
             "buffer" : 0,
             "byteLength" : 86016,
-            "byteOffset" : 375580
+            "byteOffset" : 375156
         },
         {
             "buffer" : 0,
             "byteLength" : 69312,
-            "byteOffset" : 461596
+            "byteOffset" : 461172
         },
         {
             "buffer" : 0,
             "byteLength" : 69312,
-            "byteOffset" : 530908
+            "byteOffset" : 530484
         },
         {
             "buffer" : 0,
             "byteLength" : 46208,
-            "byteOffset" : 600220
+            "byteOffset" : 599796
         },
         {
             "buffer" : 0,
             "byteLength" : 23712,
-            "byteOffset" : 646428
+            "byteOffset" : 646004
         }
     ],
     "samplers" : [
@@ -434,7 +434,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 670140,
+            "byteLength" : 669716,
             "uri" : "well_plank_bridge_with_rock.bin"
         }
     ]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Objects/WellCylinder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/well_plank_bridge_with_rock.tscn" type="PackedScene" id=2]
@@ -11,7 +11,6 @@
 [ext_resource path="res://Logic/Player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Logic/Well.gd" type="Script" id=11]
 [ext_resource path="res://Logic/UI.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Logic/TextTrigger.tscn" type="PackedScene" id=13]
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 1.10894, 0.880383, 0.245037 )
@@ -21,32 +20,6 @@ flags_unshaded = true
 albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="BoxShape" id=6]
-
-[sub_resource type="BoxShape" id=15]
-
-[sub_resource type="BoxShape" id=16]
-
-[sub_resource type="BoxShape" id=14]
-
-[sub_resource type="GDScript" id=17]
-script/source = "extends Spatial
-
-
-export var text: String
-export var duration: float
-
-func _on_Area_body_entered(body: Node) -> void:
-	if body is Player:
-		UI.queue_text(text, duration)
-		# these TextTriggers are oneshot, so disable monitoring once triggered
-		set_deferred(\"monitoring\", false)
-
-
-func trigger_manually():
-	UI.queue_text(text, duration)
-	# these TextTriggers are oneshot, so disable monitoring once triggered
-	set_deferred(\"monitoring\", false)
-"
 
 [node name="Well" type="Spatial"]
 script = ExtResource( 11 )
@@ -100,6 +73,7 @@ transform = Transform( 4.75891, 0, 0.525632, 0, 1, 0, -2.95709, 0, 0.850717, 12.
 shape = SubResource( 3 )
 
 [node name="well_plank_bridge_with_rock" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [node name="Vortex" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1.49443, 0, 0, 0, 1, 0, 0, 0, 1.85369, 0, -67.0396, 0 )
@@ -127,44 +101,6 @@ transform = Transform( 7.88362, 0, 0, 0, 3.2317, 0, 0, 0, 1, 0, 8.64567, -27.443
 shape = SubResource( 6 )
 
 [node name="Curtains" type="Spatial" parent="."]
-
-[node name="TextTriggers" type="Spatial" parent="."]
-
-[node name="IntroMessage1" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.8216, 0 )
-text = "Pharaoh Sethos was killed by the blade of his own priest."
-duration = 4.8
-
-[node name="CollisionShape" type="CollisionShape" parent="TextTriggers/IntroMessage1"]
-transform = Transform( 3.23827, 0, 0, 0, 1, 0, 0, 0, 1, 0.063423, 12.243, -40.5487 )
-shape = SubResource( 15 )
-
-[node name="IntroMessage2" parent="TextTriggers" instance=ExtResource( 13 )]
-text = "As his light fades his spirit traverses the crumbling ruins of his past life."
-duration = 7.9
-
-[node name="CollisionShape" type="CollisionShape" parent="TextTriggers/IntroMessage2"]
-transform = Transform( 3.23827, 0, 0, 0, 1, 0, 0, 0, 1, 0.063423, 25.1905, -30.605 )
-shape = SubResource( 16 )
-
-[node name="WellMessage1" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 26.1244, -17.6281 )
-text = "The old Pharaoh feels the gods reaching out to him."
-duration = 5.5
-
-[node name="CollisionShape" type="CollisionShape" parent="TextTriggers/WellMessage1"]
-transform = Transform( 0.374769, 0, 1.46497, 0, 2.14128, 0, -0.0355357, 0, 1.82589, -8.56855, -1.14302, -6.22102 )
-shape = SubResource( 14 )
-
-[node name="WellMessage2" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9045, 25.1646, -10.7578 )
-script = SubResource( 17 )
-text = "The eternal realm of Anubis awaits below."
-duration = 5.0
-
-[node name="CollisionShape" type="CollisionShape" parent="TextTriggers/WellMessage2"]
-transform = Transform( 0.374769, 0, 1.46497, 0, 2.14128, 0, -0.0355357, 0, 1.82589, -8.56855, -1.14302, -6.22102 )
-shape = SubResource( 14 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.0618, -52.3359 )
