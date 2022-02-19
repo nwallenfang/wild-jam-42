@@ -351,11 +351,11 @@ transform = Transform( 12.7609, 0, 0, 0, 9.43611, 0, 0, 0, 13.1001, 0, 4.60045, 
 visible = false
 mesh = SubResource( 12 )
 material/0 = null
+
 [node name="EntryRamp" type="StaticBody" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="EntryRamp"]
 transform = Transform( 1, 0, 0, 0, 0.942046, -0.335484, 0, 0.335484, 0.942046, 0, -0.45906, 12.9264 )
-shape = SubResource( 12 )
 
 [editable path="Ceilings/Ceiling"]
 [editable path="Ceilings/Ceiling2"]
