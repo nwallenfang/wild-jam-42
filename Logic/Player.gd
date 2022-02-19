@@ -105,6 +105,12 @@ func shoot_test_ray():
 		UI.unset_interaction_text()
 
 func handle_input(_delta):
+	if Input.is_action_just_pressed("screenshot"):
+		var image = get_viewport().get_texture().get_data()
+		image.flip_y()
+		image.save_png("C:\\Users\\Nils\\Pictures\\godot_screenshot.png")
+		print("screenshot")
+
 	if Input.is_action_just_pressed("interact"):
 		on_pressed_interact()
 	

@@ -32,6 +32,7 @@ shader_param/dissolve_texture = ExtResource( 6 )
 script = ExtResource( 4 )
 
 [node name="FPSCounter" type="Label" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 14.0
 script = ExtResource( 1 )
@@ -49,10 +50,11 @@ __meta__ = {
 }
 
 [node name="Crosshair" type="TextureRect" parent="Center"]
-margin_left = 629.0
-margin_top = 349.0
-margin_right = 651.0
-margin_bottom = 371.0
+visible = false
+margin_left = 304.0
+margin_top = 239.0
+margin_right = 326.0
+margin_bottom = 261.0
 rect_pivot_offset = Vector2( 11, 11 )
 texture = ExtResource( 3 )
 
@@ -71,10 +73,10 @@ __meta__ = {
 
 [node name="Control" type="Control" parent="Center"]
 visible = false
-margin_left = 640.0
-margin_top = 360.0
-margin_right = 640.0
-margin_bottom = 360.0
+margin_left = 315.0
+margin_top = 250.0
+margin_right = 315.0
+margin_bottom = 250.0
 
 [node name="Sprite" type="Sprite" parent="Center/Control"]
 position = Vector2( 5, -6 )
@@ -91,18 +93,18 @@ __meta__ = {
 
 [node name="LoreText" type="Label" parent="Bottom"]
 visible = false
-margin_left = 567.0
+margin_left = 242.0
 margin_top = 22.0
-margin_right = 713.0
+margin_right = 388.0
 margin_bottom = 51.0
 theme = SubResource( 8 )
 custom_fonts/font = SubResource( 13 )
 text = "Hello, World"
 
 [node name="BeginInstructions" type="Label" parent="Bottom"]
-margin_left = 442.0
+margin_left = 117.0
 margin_top = 14.0
-margin_right = 838.0
+margin_right = 513.0
 margin_bottom = 58.0
 theme = SubResource( 8 )
 custom_fonts/font = SubResource( 14 )
