@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Objects/WellCylinder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/well_plank_bridge_with_rock.tscn" type="PackedScene" id=2]
@@ -9,9 +9,12 @@
 [ext_resource path="res://Prototyping/BigRoom.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Prototyping/House.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Logic/Player.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Prototyping/Room.lmbake" type="BakedLightmapData" id=10]
 [ext_resource path="res://Logic/Well.gd" type="Script" id=11]
 [ext_resource path="res://Logic/UI.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Logic/TextTrigger.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/Torch.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Objects/Glue.tscn" type="PackedScene" id=15]
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 1.10894, 0.880383, 0.245037 )
@@ -19,8 +22,6 @@ extents = Vector3( 1.10894, 0.880383, 0.245037 )
 [sub_resource type="SpatialMaterial" id=13]
 flags_unshaded = true
 albedo_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="BoxShape" id=6]
 
 [sub_resource type="BoxShape" id=15]
 
@@ -53,11 +54,13 @@ extents = Vector3( 4.04962, 2.11233, 1 )
 
 [sub_resource type="BoxShape" id=19]
 
+[sub_resource type="BoxShape" id=6]
+
 [node name="Well" type="Spatial"]
 script = ExtResource( 11 )
 
 [node name="TripleRoom" parent="." instance=ExtResource( 4 )]
-transform = Transform( 0.803908, 0, 0.594753, 0, 1, 0, -0.594753, 0, 0.803908, 39.7723, 4.24685, -13.188 )
+transform = Transform( 0.803908, 0, 0.594753, 0, 1, 0, -0.594753, 0, 0.803908, 39.0308, 4.24685, -13.0592 )
 
 [node name="OmniLight" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33.9883, 0 )
@@ -65,6 +68,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33.9883, 0 )
 [node name="well_cylinder" parent="." instance=ExtResource( 1 )]
 
 [node name="well_tunnel_room_1" parent="." instance=ExtResource( 3 )]
+
+[node name="Torch" parent="well_tunnel_room_1" instance=ExtResource( 14 )]
+transform = Transform( -0.765943, 0, -0.642908, 0, 1, 0, 0.642908, 0, -0.765943, 39.5905, 5.86718, -6.16199 )
+
+[node name="Torch2" parent="well_tunnel_room_1" instance=ExtResource( 14 )]
+transform = Transform( -0.765943, 0, -0.642908, 0, 1, 0, 0.642908, 0, -0.765943, 45.2574, 5.86718, -10.0164 )
 
 [node name="InvisibleWalls" type="StaticBody" parent="."]
 
@@ -122,15 +131,6 @@ transform = Transform( 3.76467, 0, 0, 0, 1, 0, 0, 0, 3.57441, 0, 27.7924, -51.90
 use_collision = true
 material = SubResource( 13 )
 
-[node name="UI" parent="." instance=ExtResource( 12 )]
-
-[node name="IntroToWellArea" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.7842, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="IntroToWellArea"]
-transform = Transform( 7.88362, 0, 0, 0, 3.2317, 0, 0, 0, 1, 0, 8.64567, -27.4438 )
-shape = SubResource( 6 )
-
 [node name="Curtains" type="Spatial" parent="."]
 
 [node name="TextTriggers" type="Spatial" parent="."]
@@ -172,7 +172,7 @@ transform = Transform( 0.374769, 0, 1.46497, 0, 2.14128, 0, -0.0355357, 0, 1.825
 shape = SubResource( 14 )
 
 [node name="Room1Money" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 33.4795, 4.82125, -7.45836 )
+transform = Transform( 0.645092, 0, 0.707107, 0, 1, 0, -0.645092, 0, 0.707107, 34.3144, 4.82125, -5.65156 )
 text = "Sapphires from Sethos’ empire brought him unfathomable riches."
 duration = 5.7
 
@@ -181,40 +181,40 @@ transform = Transform( 0.979108, 0, -0.18796, 0, 1, 0, 0.178643, 0, 0.977362, 0,
 shape = SubResource( 18 )
 
 [node name="Room1Weapons1" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.75507, 0, 0.582222, 0, 1, 0, -0.540716, 0, 0.813029, 40.9565, 4.82125, -12.8773 )
+transform = Transform( 0.75507, 0, 0.582222, 0, 1, 0, -0.540716, 0, 0.813029, 41.9418, 4.82125, -11.5014 )
 text = "From his early years onward Seti was trained in close combat and war tactics."
 duration = 5.7
 
 [node name="CollisionShape" type="CollisionShape" parent="TextTriggers/Room1Weapons1"]
-transform = Transform( 0.979108, 0, -0.18796, 0, 1, 0, 0.178643, 0, 0.977362, 0, 0, -1.90735e-06 )
+transform = Transform( 0.9491, 0, -0.016347, 0, 1, 0, 0.0425697, 0, 0.364458, -1.37043, 0, 1.20029 )
 shape = SubResource( 18 )
 
 [node name="Room1Weapons2" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -13.9416 )
+transform = Transform( 0.707107, 0, 0.256115, 0, 1, 0, -0.707107, 0, 0.256115, 39.14, 4.82125, -14.7644 )
 text = "None of which offered any help in the moment of betrayal."
 duration = 5.7
 
 [node name="CollisionShape" type="CollisionShape" parent="TextTriggers/Room1Weapons2"]
-transform = Transform( 0.979108, 0, -0.18796, 0, 1, 0, 0.178643, 0, 0.977362, 0, 0, -1.90735e-06 )
+transform = Transform( 0.979108, 0, -0.18796, 0, 1, 0, 0.178643, 0, 0.977362, 0, 0, 0 )
 shape = SubResource( 18 )
 
 [node name="Room2Pyramid1_TriggerManually" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -13.9416 )
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -27.2003 )
 text = "Long before his death a large pyramid complex was built in Seti’s name."
 duration = 5.7
 
 [node name="Room2Pyramid2_TriggerManually" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -13.9416 )
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -27.2003 )
 text = "The marriage to his wife Anck-Su-Namun took place there."
 duration = 5.0
 
 [node name="Room2Anubis_TriggerManually2" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -13.9416 )
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -27.2003 )
 text = "His highpriest Imhotep was hired to maintain good relations to the gods."
 duration = 7.0
 
 [node name="Room3Message1" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -13.9416 )
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -27.2003 )
 text = "He was paralyzed when he discovered the secret relationship between Namun and Imhotep."
 duration = 5.0
 
@@ -222,7 +222,7 @@ duration = 5.0
 shape = SubResource( 19 )
 
 [node name="Room3Message2" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -13.9416 )
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -27.2003 )
 text = "In the heat of the moment the highpriest stabbed the Pharaoh with his own sword."
 duration = 6.0
 
@@ -230,7 +230,50 @@ duration = 6.0
 shape = SubResource( 19 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.0618, -52.3359 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.481, 5.82064, -5.73042 )
+
+[node name="SoundTriggers" type="Spatial" parent="."]
+
+[node name="IntroToWellArea" type="Area" parent="SoundTriggers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.7842, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="SoundTriggers/IntroToWellArea"]
+transform = Transform( 7.88362, 0, 0, 0, 3.2317, 0, 0, 0, 1, 0, 8.64567, -27.4438 )
+shape = SubResource( 6 )
+
+[node name="UI" parent="." instance=ExtResource( 12 )]
+
+[node name="Glue" type="Spatial" parent="."]
+
+[node name="Glue" parent="Glue" instance=ExtResource( 15 )]
+transform = Transform( 7.56346, 0.00170187, 0.563151, -0.0188501, 0.999998, -1.96812e-10, -5.15442, -0.0011598, 0.826354, 47.5777, 4.11964, -11.3873 )
+
+[node name="Glue2" parent="Glue" instance=ExtResource( 15 )]
+transform = Transform( -3.9239e-07, -0.800804, 0.598926, 11.2098, -4.37114e-08, 0, 2.9347e-07, 0.598926, 0.800804, 54.1334, 6.40277, -15.6654 )
+
+[node name="TripleRoomBakedLightmap" type="BakedLightmap" parent="."]
+transform = Transform( 0.80213, 1.20201e-07, 0.597149, -9.69844e-08, 1, -7.10153e-08, -0.597149, -9.50616e-10, 0.80213, 40.5213, 6.80003, -12.4267 )
+visible = false
+extents = Vector3( 14.2397, 3.47216, 7.26076 )
+quality = 2
+light_data = ExtResource( 10 )
+
+[node name="ReflectionProbeMiddle" type="ReflectionProbe" parent="."]
+transform = Transform( 0.799758, 0, 0.600322, 0, 1, 0, -0.600322, 0, 0.799758, 38.5494, 5.61283, -13.6212 )
+extents = Vector3( 2.82781, 1.26359, 5.59735 )
+interior_enable = true
+
+[node name="ReflectionProbeLeft" type="ReflectionProbe" parent="."]
+transform = Transform( 0.799758, 0, 0.600322, 0, 1, 0, -0.600322, 0, 0.799758, 31.6192, 5.61283, -7.60808 )
+extents = Vector3( 3.14146, 3.94097, 5.59735 )
+interior_enable = true
+
+[node name="ReflectionProbeRight" type="ReflectionProbe" parent="."]
+transform = Transform( 0.799758, 0, 0.600322, 0, 1, 0, -0.600322, 0, 0.799758, 46.4519, 5.61283, -18.0635 )
+extents = Vector3( 3.62151, 2.83263, 5.59735 )
+interior_enable = true
 
 [editable path="well_cylinder"]
 [editable path="well_plank_bridge_with_rock"]
+[editable path="Glue/Glue"]
+[editable path="Glue/Glue/OneSidedUV"]
