@@ -1,0 +1,258 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Objects/ClingCups.gd" type="Script" id=1]
+[ext_resource path="res://Objects/GoldenCup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/ClingCupsStatic.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("GoldenCup:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.280582, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("GoldenCup:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("GoldenCup:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("GoldenCup2:translation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -0.12983, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("GoldenCup2:translation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("GoldenCup2:translation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("GoldenCup2:rotation_degrees:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("GoldenCup2:rotation_degrees:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 180, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("GoldenCup2:rotation_degrees:z")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/9/type = "bezier"
+tracks/9/path = NodePath("GoldenCup:rotation_degrees:x")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("GoldenCup:rotation_degrees:y")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 180, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("GoldenCup:rotation_degrees:z")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "cling"
+length = 4.0
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("GoldenCup:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.280582, -0.25, 0, 0.25, 0, 0.280582, -0.25, 0, 0.2, -0.00714508, 0.2396, -0.1, 0.0077554, 0.1, 0.0077554, 0.307333, -0.4, -0.00132662, 0.25, 0, 0.304599, -0.3, -0.00191399, 0.7, 0.00929657, 0.387812, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 1.4, 2.1, 2.7, 4 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("GoldenCup:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.200108, -0.25, 0, 0.25, 0, 0.184886, -0.25, 0, 0.25, 0, 0.210287, -0.25, 0, 0.25, 0, 0.202922, -0.25, 0, 0.5, -0.0114304, 0.000442028, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 1.4, 2.2, 2.8, 3.9 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("GoldenCup2:translation:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -0.12983, -0.25, 0, 0.25, 0, -0.13, -0.25, 0, 0.2, 0.00529318, -0.00239059, -0.1, -0.00554688, 0.1, -0.00325008, -0.122078, -0.25, 0, 0.25, 0, -0.122078, -0.25, 0, 0.25, 0, -0.127671, -0.0999999, -0.00296214, 0.1, 0.00387357, -0.154625, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 1.4, 2, 2.2, 2.6, 3.8 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("GoldenCup2:translation:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0.2, -0.25, 0, 0.25, 0, 0.178023, -0.25, 0, 0.25, 0, 0.18315, -0.3, -0.00420392, 0.3, 0.0033122, 0.19141, -0.25, 0, 0.25, 0, 0.192528, -0.25, 0, 0.4, -0.000923023, -0.00245623, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1, 1.4, 2, 2.6, 2.8, 4 )
+}
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1.4, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "play_cling_sound"
+}, {
+"args": [  ],
+"method": "spawn_crystal"
+} ]
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("GoldenCup:rotation_degrees:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 180, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8, 1.4, 2.2, 2.6, 3.8 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("GoldenCup:rotation_degrees:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 25, -0.25, 0, 0.25, 0, 19, -0.25, 0, 0.25, 0, 19, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8, 1.4, 2.2, 2.6, 3.2 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("GoldenCup2:rotation_degrees:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 180, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8, 1.4, 2, 2.6, 3.8 )
+}
+tracks/8/type = "bezier"
+tracks/8/path = NodePath("GoldenCup2:rotation_degrees:z")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -20, -0.25, 0, 0.25, 0, -15, -0.25, 0, 0.25, 0, -15, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8, 1.4, 2, 2.5, 3.2 )
+}
+
+[sub_resource type="CapsuleShape" id=3]
+radius = 0.0664873
+height = 0.11591
+
+[node name="ClingCups" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="GoldenCup" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74227e-08, 0, -1, 0.280582, 0, 0 )
+
+[node name="GoldenCup2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.12983, 0, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/cling = SubResource( 2 )
+
+[node name="StaticBody" type="StaticBody" parent="." groups=["interactable"]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.094966, 0 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.129047, 0.0252485, 0 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.280302, 0.0252485, 0 )
+shape = SubResource( 3 )
