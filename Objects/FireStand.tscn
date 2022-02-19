@@ -50,6 +50,7 @@ material = SubResource( 8 )
 
 [node name="Particles" type="Particles" parent="." index="5"]
 transform = Transform( 0.326635, 0, 0, 0, 0.326635, 0, 0, 0, 0.326635, -0.00477695, 1.78471, -0.0237218 )
+portal_mode = 3
 amount = 20
 lifetime = 1.48
 explosiveness = 0.13

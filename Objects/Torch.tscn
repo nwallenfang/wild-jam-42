@@ -48,10 +48,11 @@ material = SubResource( 8 )
 
 [node name="Particles" type="Particles" parent="."]
 transform = Transform( 0.326635, 0, 0, 0, 0.326635, 0, 0, 0, 0.326635, -0.00477695, 0.265259, -0.221735 )
+portal_mode = 3
 amount = 20
 lifetime = 1.48
 explosiveness = 0.13
-visibility_aabb = AABB( -1.9189, -1.14476, -1.97407, 3.91638, 4.50744, 4.06185 )
+visibility_aabb = AABB( -1.99576, -1.13316, -2.09642, 3.94618, 4.49686, 3.79784 )
 process_material = SubResource( 2 )
 draw_pass_1 = SubResource( 4 )
 

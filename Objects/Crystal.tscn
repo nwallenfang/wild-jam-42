@@ -119,6 +119,7 @@ shape = SubResource( 3 )
 
 [node name="FairyDust" type="Particles" parent="MoveThis"]
 transform = Transform( 0.91281, 0, -0.408385, 0, 1, 0, 0.408385, 0, 0.91281, 0, 0.000894293, 0 )
+portal_mode = 3
 amount = 5
 lifetime = 0.18
 speed_scale = 0.2
