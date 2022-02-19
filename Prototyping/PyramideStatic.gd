@@ -8,7 +8,7 @@ var pyramide: Pyramide
 func _ready() -> void:
 	pyramide = get_node(pyramide_path)
 
-func start_interacting(player: Player):
+func start_interacting(_player: Player):
 	pyramide = get_node(pyramide_path)
 	remove_from_group("interactable")
 	match pyramide.build_state:

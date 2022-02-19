@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pling.ogg-bc8031ee9ff60c912a365e75ce8b8d96.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/pling.ogg"
+dest_files=[ "res://.import/pling.ogg-bc8031ee9ff60c912a365e75ce8b8d96.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

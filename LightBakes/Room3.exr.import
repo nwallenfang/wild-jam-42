@@ -1,0 +1,25 @@
+[remap]
+
+importer="texture_array"
+type="TextureArray"
+path="res://.import/Room3.exr-4b79dd0056ffc6826aad98f637f34de9.texarr"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://LightBakes/Room3.exr"
+dest_files=[ "res://.import/Room3.exr-4b79dd0056ffc6826aad98f637f34de9.texarr" ]
+
+[params]
+
+compress/mode=0
+compress/no_bptc_if_rgb=false
+flags/repeat=false
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=false
+slices/horizontal=1
+slices/vertical=5

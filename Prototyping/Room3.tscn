@@ -1,6 +1,6 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://Prototyping/Room.lmbake" type="BakedLightmapData" id=1]
+[ext_resource path="res://LightBakes/Room3.lmbake" type="BakedLightmapData" id=1]
 [ext_resource path="res://Objects/CrystalDoor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Objects/Torch.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Meshes/HalfWall.glb" type="PackedScene" id=4]
@@ -65,7 +65,11 @@ surfaces/0 = {
 
 [sub_resource type="BoxShape" id=12]
 
-[node name="Room" type="Spatial"]
+[sub_resource type="CubeMesh" id=13]
+
+[sub_resource type="CubeMesh" id=14]
+
+[node name="Room" type="Room"]
 
 [node name="CrystalDoor" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.958858, 1.70141, -5.7423 )
@@ -130,9 +134,8 @@ mesh = SubResource( 6 )
 material/0 = null
 
 [node name="BakedLightmap" type="BakedLightmap" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000412703, 1.91919, -0.273464 )
-visible = false
-extents = Vector3( 4.13644, 2.19777, 5.84648 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000412703, 1.91919, 5.70587 )
+extents = Vector3( 4.13644, 2.19777, 12.3686 )
 quality = 2
 light_data = ExtResource( 1 )
 
@@ -208,6 +211,18 @@ visible = false
 extents = Vector3( 5.49018, 1.88525, 7.35951 )
 origin_offset = Vector3( 0, 0, 0.000976563 )
 interior_enable = true
+
+[node name="Bound_room-bound" type="MeshInstance" parent="."]
+transform = Transform( 5.14273, 0, 0, 0, 4.21392, 0, 0, 0, 13.2167, 0, 0.807504, 5.71 )
+visible = false
+mesh = SubResource( 13 )
+material/0 = null
+
+[node name="room-bounds" type="MeshInstance" parent="."]
+transform = Transform( 5.24918, 0, 0, 0, 1, 0, 0, 0, 12.5004, 0, 0, 5.94305 )
+visible = false
+mesh = SubResource( 14 )
+material/0 = null
 
 [editable path="Ceiling"]
 [editable path="Ceiling2"]

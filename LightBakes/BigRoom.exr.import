@@ -1,0 +1,25 @@
+[remap]
+
+importer="texture_array"
+type="TextureArray"
+path="res://.import/BigRoom.exr-3d9d43f79b105b346a582b1446f5e65b.texarr"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://LightBakes/BigRoom.exr"
+dest_files=[ "res://.import/BigRoom.exr-3d9d43f79b105b346a582b1446f5e65b.texarr" ]
+
+[params]
+
+compress/mode=0
+compress/no_bptc_if_rgb=false
+flags/repeat=false
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=false
+slices/horizontal=1
+slices/vertical=6
