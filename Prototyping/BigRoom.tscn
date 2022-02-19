@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Objects/Pillar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Torch.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Objects/ClingCups.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Objects/OneSidedUV.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/MiniaturPyramide.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/CrystalDoor.tscn" type="PackedScene" id=6]
@@ -251,13 +252,10 @@ transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, 2
 [node name="Props" type="Spatial" parent="."]
 
 [node name="GoldenCup" parent="Props" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.39715, 0.917404, -2.30425 )
+transform = Transform( 0.998056, 0.0623202, 0, -0.0623202, 0.998056, 0, 0, 0, 1, -9.44694, 0.917852, -2.32416 )
 
 [node name="GoldenCup2" parent="Props" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.94985, 0.917404, -1.74377 )
-
-[node name="GoldenCup3" parent="Props" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.99873, 0.917404, -1.3261 )
+transform = Transform( 0.996643, -0.0818689, 0, 0.0818689, 0.996643, 0, 0, 0, 1, -9.20174, 0.899736, -1.2918 )
 
 [node name="Table" parent="Props" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.67225, -0.121049, -1.8441 )
@@ -267,6 +265,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.579524, -0.133835, -0.533751
 
 [node name="PyramidStand" parent="Props" instance=ExtResource( 17 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0471069, -1.72767, 0.287374 )
+
+[node name="ClingCups" parent="Props" instance=ExtResource( 3 )]
+transform = Transform( -0.0497388, 0, 0.998762, 0, 1, 0, -0.998762, 0, -0.0497388, -7.92023, 0.917479, -1.36573 )
 
 [node name="Ceilings" type="Spatial" parent="."]
 
