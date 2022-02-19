@@ -81,7 +81,6 @@ func execute_movement(delta: float) -> void:
 
 	if collision != null:
 		var height = capsule_height + (collision.position.y - global_transform.origin.y)
-		print(height)
 		if height > 0 and height < warp_height and Input.is_action_pressed("move_forward"):
 			translate(Vector3(0.0, height, 0.0))
 	

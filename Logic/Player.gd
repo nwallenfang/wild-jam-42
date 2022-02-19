@@ -104,6 +104,7 @@ func shoot_test_ray():
 		Game.change_crosshair("default")
 		UI.unset_interaction_text()
 
+
 func handle_input(_delta):
 	if Input.is_action_just_pressed("interact"):
 		on_pressed_interact()
