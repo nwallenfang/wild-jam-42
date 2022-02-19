@@ -19,8 +19,12 @@ func start_interacting(player: Player):
 		2:
 			pyramide.build_extras()
 	yield(pyramide, "build_done")
+	print(pyramide.build_state)
 	if pyramide.build_state < 3:
 		add_to_group("interactable")
+	else:
+		pyramide.spawn_crystal()
+		queue_free()
 	
 func stop_interacting():
 	pass
