@@ -21,12 +21,12 @@
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "Well",
+            "name" : "Collision",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0.8000000715255737,
-                    0.076444111764431,
-                    0.05367552861571312,
+                    0,
+                    0.7826359868049622,
                     1
                 ],
                 "metallicFactor" : 0,
@@ -54,7 +54,7 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 87255,
+            "count" : 87227,
             "max" : [
                 29.125532150268555,
                 53.19881820678711,
@@ -70,47 +70,47 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 87255,
+            "count" : 87227,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 87255,
+            "count" : 87227,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5125,
-            "count" : 87801,
+            "count" : 87777,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 1047060,
+            "byteLength" : 1046724,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 1047060,
-            "byteOffset" : 1047060
+            "byteLength" : 1046724,
+            "byteOffset" : 1046724
         },
         {
             "buffer" : 0,
-            "byteLength" : 698040,
-            "byteOffset" : 2094120
+            "byteLength" : 697816,
+            "byteOffset" : 2093448
         },
         {
             "buffer" : 0,
-            "byteLength" : 351204,
-            "byteOffset" : 2792160
+            "byteLength" : 351108,
+            "byteOffset" : 2791264
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 3143364,
+            "byteLength" : 3142372,
             "uri" : "well_cylinder.bin"
         }
     ]

@@ -2,7 +2,7 @@ extends CanvasLayer
 
 signal text_done
 
-onready var interaction_text_label = $Center/Crosshair/InteractionText
+onready var interaction_text_label = $Center/SelectionCrosshair/InteractionText
 onready var lore_text = $Bottom/LoreText
 
 var text_queue = []
@@ -11,14 +11,29 @@ func set_interaction_text(text: String):
 	interaction_text_label.text = "[E] to " + text
 
 func unset_interaction_text():
-	interaction_text_label.text = ""
+	if is_instance_valid(interaction_text_label):
+		interaction_text_label.text = ""
 	
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	lore_text.modulate.a = 0.0
-	Game.CROSSHAIR = $Center/Crosshair
 	var _e = connect("text_done", self, "text_done")
+	
+	
+	# control ankh sprite size
+	var viewportWidth = get_viewport().size.x
+	var viewportHeight = get_viewport().size.y
+
+	var scale = viewportWidth / $Ankh.texture.get_size().x
+
+	# Optional: Center the sprite, required only if the sprite's Offset>Centered checkbox is set
+	$Ankh.set_position(Vector2(viewportWidth/2, viewportHeight/2))
+
+	# Set same scale value horizontally/vertically to maintain aspect ratio
+	# If however you don't want to maintain aspect ratio, simply set different
+	# scale along x and y
+	$Ankh.set_scale(Vector2(scale, scale))
 
 
 var text_currently_showing = false
@@ -61,6 +76,18 @@ func queue_text(text: String, duration: float):
 	else:
 		show_text(text, duration)
 
+var current = "default"
+func change_crosshair(name: String):
+	if name != current:
+		match name:
+			"default":
+				$Center/DefaultCrosshair.visible = true
+				$Center/SelectionCrosshair.visible = false
+			"selection":
+				$Center/DefaultCrosshair.visible = false
+				$Center/SelectionCrosshair.visible = true
+		current = name
+
 
 func _process(_delta: float) -> void:
 	if Input.is_action_pressed("move_forward") or Input.is_action_pressed("move_backward") \
@@ -71,5 +98,32 @@ func _process(_delta: float) -> void:
 		$TutorialTween.start()
 		self.set_process(false)  # don't check if inputs are made for the rest of the game..
 
+var voronoi_duration = 0.9
+var ankh_show_duration = 0.4
 func start_death_animation():
-	pass
+	$Center.visible = false
+	$Bottom.visible = false
+	$Center/DefaultCrosshair.visible = false
+#	$Center/Crosshair.queue_free()
+	
+	$DeathTexture.visible = true
+	var mat = $DeathTexture.material
+	$Tween.interpolate_property(mat, "shader_param/threshold", 0.0, 1.0, voronoi_duration, Tween.EASE_OUT)
+	$Tween.start()
+	
+	yield($Tween, "tween_all_completed")
+	
+	# slowly show Ankh
+	var color_blended_out = Color(lore_text.modulate)
+	color_blended_out.a = 0.0
+	var color_blended_in = Color(lore_text.modulate)
+	color_blended_in.a = 1.0
+	$DeathTexture.visible = false
+	$Ankh.visible = true
+	$Ankh.modulate = color_blended_out
+	$Tween.interpolate_property($Ankh, "modulate", color_blended_out, color_blended_in, ankh_show_duration, Tween.EASE_IN)
+	$Tween.start()
+
+
+func _on_Button_pressed() -> void:
+	start_death_animation()

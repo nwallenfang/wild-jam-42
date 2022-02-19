@@ -17,15 +17,16 @@ var snap_vector := Vector3.DOWN
 var up_vector := Vector3.UP
 
 
-var floor_max_angle = deg2rad(75.0)
+var floor_max_angle = deg2rad(50.0)
 var max_slides = 4
 var stop_on_slopes = true
 
 # height of the player collider
 # this hard-coded value needs to be changed if the player collider changes
-var capsule_height = 1.2
+var capsule_height = 1.0
 # height the player should be able to overcome
-var warp_height = 0.3
+var max_warp_height = 0.3
+var min_warp_height = 0.1
 
 
 
@@ -81,7 +82,7 @@ func execute_movement(delta: float) -> void:
 
 	if collision != null:
 		var height = capsule_height + (collision.position.y - global_transform.origin.y)
-		if height > 0 and height < warp_height and Input.is_action_pressed("move_forward"):
+		if height > min_warp_height and height < max_warp_height and Input.is_action_pressed("move_forward"):
 			translate(Vector3(0.0, height, 0.0))
 	
 	var just_landed = is_on_floor() and snap_vector == Vector3.ZERO

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://UI/FPSCounter.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Avara.ttf" type="DynamicFontData" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Assets/Sprites/Voronoi_16_9.png" type="Texture" id=6]
 [ext_resource path="res://Shader/Death.gdshader" type="Shader" id=7]
 [ext_resource path="res://Assets/default_font.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Assets/Sprites/cross_selection_circle_thick.png" type="Texture" id=9]
 
 [sub_resource type="Theme" id=8]
 default_font = ExtResource( 8 )
@@ -48,7 +49,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Crosshair" type="TextureRect" parent="Center"]
+[node name="DefaultCrosshair" type="TextureRect" parent="Center"]
 margin_left = 629.0
 margin_top = 349.0
 margin_right = 651.0
@@ -56,7 +57,7 @@ margin_bottom = 371.0
 rect_pivot_offset = Vector2( 11, 11 )
 texture = ExtResource( 3 )
 
-[node name="InteractionText" type="Label" parent="Center/Crosshair"]
+[node name="InteractionText" type="Label" parent="Center/DefaultCrosshair"]
 margin_left = -62.0
 margin_top = 18.0
 margin_right = 84.0
@@ -69,16 +70,27 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Control" type="Control" parent="Center"]
+[node name="SelectionCrosshair" type="TextureRect" parent="Center"]
 visible = false
-margin_left = 640.0
-margin_top = 360.0
-margin_right = 640.0
-margin_bottom = 360.0
+margin_left = 629.0
+margin_top = 349.0
+margin_right = 651.0
+margin_bottom = 371.0
+rect_pivot_offset = Vector2( 11, 11 )
+texture = ExtResource( 9 )
 
-[node name="Sprite" type="Sprite" parent="Center/Control"]
-position = Vector2( 5, -6 )
-texture = ExtResource( 5 )
+[node name="InteractionText" type="Label" parent="Center/SelectionCrosshair"]
+margin_left = -62.0
+margin_top = 18.0
+margin_right = 84.0
+margin_bottom = 63.0
+theme = SubResource( 8 )
+custom_fonts/font = SubResource( 10 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="PauseLabel" type="Label" parent="Center"]
 visible = false
@@ -130,14 +142,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_right = 640.0
-margin_bottom = 360.0
-rect_min_size = Vector2( 1280, 720 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="Ankh" type="Sprite" parent="."]
+visible = false
+position = Vector2( 960, 540 )
+texture = ExtResource( 5 )
+
+[node name="Button" type="Button" parent="."]
+visible = false
+margin_right = 12.0
+margin_bottom = 20.0
+text = "die"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

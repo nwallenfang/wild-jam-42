@@ -75,8 +75,7 @@ func on_pressed_interact():
 	if node_to_interact_with != null and node_to_interact_with.is_in_group("interactable"):
 		# have some kind of contract that ever node belonging to interactable
 		# has start_interacting() and stop_interacting()
-		Game.change_crosshair("selection")
-#		Game.CROSSHAIR.texture = Game.selection_crosshair
+		UI.change_crosshair("selection")
 		node_currently_interacting_with = node_to_interact_with
 		node_currently_interacting_with.call("start_interacting", self)
 		state = State.INTERACTING
@@ -98,16 +97,20 @@ func shoot_test_ray():
 	if node_to_interact_with != null and node_to_interact_with.is_in_group("interactable"):
 		# have some kind of contract that ever node belonging to interactable
 		# has start_interacting() and stop_interacting()
-		Game.change_crosshair("selection")
+		UI.change_crosshair("selection")
 		UI.set_interaction_text(node_to_interact_with.interaction_text)
 	else:
-		Game.change_crosshair("default")
+		UI.change_crosshair("default")
 		UI.unset_interaction_text()
 
 
 func handle_input(_delta):
 	if Input.is_action_just_pressed("interact"):
 		on_pressed_interact()
+		
+	if Input.is_action_just_pressed("kill_ui"):
+		var ui = get_tree().root.get_node("/root/UI")
+		ui.queue_free()
 	
 	var h_rot = global_transform.basis.get_euler().y
 	
@@ -143,9 +146,7 @@ func state_interacting(_delta):
 		if is_instance_valid(node_currently_interacting_with):
 			node_currently_interacting_with.call("stop_interacting")
 
-
-		Game.change_crosshair("default")
-#		Game.CROSSHAIR.texture = Game.default_crosshair
+		UI.change_crosshair("default")
 		state = State.DEFAULT
 
 
