@@ -45,11 +45,11 @@ func build_pyramids():
 	$Tween.interpolate_property(big, "translation", big.translation + Vector3(0, -2, 0), big.translation, 2)
 	big.translation = big.translation + Vector3(0, -2, 0)
 	big.visible = true
-	yield(get_tree().create_timer(1), "timeout")
+	yield(get_tree().create_timer(.5), "timeout")
 	$Tween.interpolate_property(small, "translation", small.translation + Vector3(0, -2, 0), small.translation, 2)
 	small.translation = small.translation + Vector3(0, -2, 0)
 	small.visible = true
-	yield(get_tree().create_timer(.7), "timeout")
+	yield(get_tree().create_timer(1.3), "timeout")
 	$Tween.interpolate_property(entry, "translation", entry.translation + Vector3(0, 0, -.5), entry.translation, 1)
 	entry.translation = small.translation + Vector3(0, 0, -.5)
 	entry.visible = true
@@ -100,8 +100,9 @@ func build_extras():
 	call_deferred("parallel_build_palms")
 	yield(get_tree().create_timer(.7), "timeout")
 	call_deferred("parallel_build_houses")
-	#yield($Tween, "tween_all_completed")
-	#$Tween.remove_all()
+	yield(get_tree().create_timer(.2), "timeout")
+	yield($Tween, "tween_all_completed")
+	$Tween.remove_all()
 	build_state = 3
 	emit_signal("build_done")
 
@@ -125,3 +126,13 @@ func parallel_build_houses():
 
 func x_translation_sort(a, b):
 	return a.translation.x < b.translation.x
+
+const CRYSTAL = preload("res://Objects/Crystal.tscn")
+
+func spawn_crystal():
+	var crystal = CRYSTAL.instance()
+	get_parent().add_child(crystal)
+	crystal.translation = translation + Vector3(0,1,1.5)
+	
+	
+
