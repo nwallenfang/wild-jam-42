@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Objects/WellCylinder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/well_plank_bridge_with_rock.tscn" type="PackedScene" id=2]
@@ -47,6 +47,11 @@ func trigger_manually():
 	# these TextTriggers are oneshot, so disable monitoring once triggered
 	set_deferred(\"monitoring\", false)
 "
+
+[sub_resource type="BoxShape" id=18]
+extents = Vector3( 4.04962, 2.11233, 1 )
+
+[sub_resource type="BoxShape" id=19]
 
 [node name="Well" type="Spatial"]
 script = ExtResource( 11 )
@@ -165,6 +170,64 @@ duration = 5.0
 [node name="CollisionShape" type="CollisionShape" parent="TextTriggers/WellMessage2"]
 transform = Transform( 0.374769, 0, 1.46497, 0, 2.14128, 0, -0.0355357, 0, 1.82589, -8.56855, -1.14302, -6.22102 )
 shape = SubResource( 14 )
+
+[node name="Room1Money" parent="TextTriggers" instance=ExtResource( 13 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 33.4795, 4.82125, -7.45836 )
+text = "Sapphires from Sethos’ empire brought him unfathomable riches."
+duration = 5.7
+
+[node name="CollisionShape" type="CollisionShape" parent="TextTriggers/Room1Money"]
+transform = Transform( 0.979108, 0, -0.18796, 0, 1, 0, 0.178643, 0, 0.977362, 0, 0, -1.90735e-06 )
+shape = SubResource( 18 )
+
+[node name="Room1Weapons1" parent="TextTriggers" instance=ExtResource( 13 )]
+transform = Transform( 0.75507, 0, 0.582222, 0, 1, 0, -0.540716, 0, 0.813029, 40.9565, 4.82125, -12.8773 )
+text = "From his early years onward Seti was trained in close combat and war tactics."
+duration = 5.7
+
+[node name="CollisionShape" type="CollisionShape" parent="TextTriggers/Room1Weapons1"]
+transform = Transform( 0.979108, 0, -0.18796, 0, 1, 0, 0.178643, 0, 0.977362, 0, 0, -1.90735e-06 )
+shape = SubResource( 18 )
+
+[node name="Room1Weapons2" parent="TextTriggers" instance=ExtResource( 13 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -13.9416 )
+text = "None of which offered any help in the moment of betrayal."
+duration = 5.7
+
+[node name="CollisionShape" type="CollisionShape" parent="TextTriggers/Room1Weapons2"]
+transform = Transform( 0.979108, 0, -0.18796, 0, 1, 0, 0.178643, 0, 0.977362, 0, 0, -1.90735e-06 )
+shape = SubResource( 18 )
+
+[node name="Room2Pyramid1_TriggerManually" parent="TextTriggers" instance=ExtResource( 13 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -13.9416 )
+text = "Long before his death a large pyramid complex was built in Seti’s name."
+duration = 5.7
+
+[node name="Room2Pyramid2_TriggerManually" parent="TextTriggers" instance=ExtResource( 13 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -13.9416 )
+text = "The marriage to his wife Anck-Su-Namun took place there."
+duration = 5.0
+
+[node name="Room2Anubis_TriggerManually2" parent="TextTriggers" instance=ExtResource( 13 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -13.9416 )
+text = "His highpriest Imhotep was hired to maintain good relations to the gods."
+duration = 7.0
+
+[node name="Room3Message1" parent="TextTriggers" instance=ExtResource( 13 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -13.9416 )
+text = "He was paralyzed when he discovered the secret relationship between Namun and Imhotep."
+duration = 5.0
+
+[node name="CollisionShape" type="CollisionShape" parent="TextTriggers/Room3Message1"]
+shape = SubResource( 19 )
+
+[node name="Room3Message2" parent="TextTriggers" instance=ExtResource( 13 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -13.9416 )
+text = "In the heat of the moment the highpriest stabbed the Pharaoh with his own sword."
+duration = 6.0
+
+[node name="CollisionShape" type="CollisionShape" parent="TextTriggers/Room3Message2"]
+shape = SubResource( 19 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.0618, -52.3359 )
