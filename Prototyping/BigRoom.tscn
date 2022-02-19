@@ -225,16 +225,16 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.102
 transform = Transform( -0.0366437, 0, 0.999328, 0, 1, 0, -0.999328, 0, -0.0366437, 11.5087, 1.23247, -1.11185 )
 
 [node name="FireStand" parent="LightsAndCrystals" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.45448, 0.976072, 5.62176 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.53193, 0.990113, 5.51294 )
 
 [node name="FireStand2" parent="LightsAndCrystals" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35845, 0.976072, 5.62176 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.55342, 0.889147, 5.4714 )
 
 [node name="FireStand3" parent="LightsAndCrystals" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35845, 0.976072, -5.33004 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53547, 0.877675, -5.60134 )
 
 [node name="FireStand4" parent="LightsAndCrystals" instance=ExtResource( 15 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.36155, 0.976072, -5.33004 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57366, 0.976072, -5.54132 )
 
 [node name="Crystal" parent="LightsAndCrystals" instance=ExtResource( 13 )]
 transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, -0.713546, 1.12628, -1.73504 )
@@ -251,22 +251,22 @@ transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, 2
 [node name="Props" type="Spatial" parent="."]
 
 [node name="GoldenCup" parent="Props" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.85997, 0.917404, -1.92456 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.39715, 0.917404, -2.30425 )
 
 [node name="GoldenCup2" parent="Props" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.44787, 0.917404, -2.05799 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.94985, 0.917404, -1.74377 )
 
 [node name="GoldenCup3" parent="Props" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97728, 0.917404, -1.50318 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.99873, 0.917404, -1.3261 )
 
 [node name="Table" parent="Props" instance=ExtResource( 18 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.67225, -0.121049, -1.8441 )
 
 [node name="miniatur_pyramide_finished" parent="Props" instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.579524, 0.361883, -0.533751 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.579524, -0.133835, -0.533751 )
 
 [node name="PyramidStand" parent="Props" instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0471069, -1.23243, 0.287374 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0471069, -1.72767, 0.287374 )
 
 [node name="Ceilings" type="Spatial" parent="."]
 
