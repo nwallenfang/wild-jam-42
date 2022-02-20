@@ -245,15 +245,23 @@ shape = SubResource( 23 )
 transform = Transform( -0.288356, -0.95615, 0.0512669, -0.022506, 0.0602943, 0.997927, -0.957259, 0.286604, -0.0389054, 53.155, 9.62958, -14.0663 )
 
 [node name="Cube" parent="Glue/OneSidedUV" index="0"]
-transform = Transform( 1.78488, -0.193875, 2.98023e-08, 0.352737, 0.981027, 3.94881e-07, -3.72529e-08, -5.58794e-08, 8.27155, 0.481672, 0.243721, 8.58307e-06 )
+transform = Transform( 1.78488, -0.193875, -8.9407e-08, 0.352737, 0.981027, 3.20375e-07, -1.49012e-08, -2.23517e-08, 8.27155, -0.54816, 0.276714, 1.14441e-05 )
 material/0 = SubResource( 31 )
 
 [node name="OneSidedUV2" parent="Glue" instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.3946, 9.72633, -9.95134 )
+transform = Transform( -0.639261, -0.140122, 1.43746, -0.242491, 0.977855, 0.0500384, -0.949142, -0.155453, -0.980932, 50.4237, 4.06572, -14.3518 )
 
 [node name="Cube" parent="Glue/OneSidedUV2" index="0"]
-transform = Transform( 1.15242, 0, -11.7234, 0, 1, 0, 1.40789, 0, 9.59619, -4.45386, -5.60963, -4.23833 )
+transform = Transform( 1.78488, -0.193875, 2.98023e-08, 0.352737, 0.981027, 3.94881e-07, -3.72529e-08, -5.58794e-08, 8.27155, 0.481672, 0.243721, 8.58307e-06 )
 material/0 = SubResource( 31 )
+
+[node name="StaticBody" parent="Glue/OneSidedUV2/Cube" index="0"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape" parent="Glue/OneSidedUV2/Cube/StaticBody" index="0"]
+transform = Transform( 1, 9.31323e-10, 2.38419e-07, 2.23517e-08, 1, -2.98023e-08, 1.49012e-08, -1.16415e-10, 1, -0.00240278, -0.0844641, 4.76837e-07 )
+disabled = true
 
 [node name="RoomManager" type="RoomManager" parent="."]
 roomlist = NodePath("../RoomList")
@@ -418,6 +426,7 @@ light_data = ExtResource( 16 )
 
 [node name="Portal" type="Portal" parent="RoomList/Tunnel1"]
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 44.5433, 6.92844, -1.53162 )
+visible = false
 linked_room = NodePath("../../TripleRoom")
 points = PoolVector2Array( 18.1773, -3.59143, 14.7121, 3.12329, -5.07354, 1.3472, -4.54036, -2.91876 )
 

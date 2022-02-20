@@ -159,6 +159,7 @@ light_cull_mask = 4294967293
 
 [node name="CeilingSolid" type="MeshInstance" parent="RoomLeft"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 4.08558, -0.127396 )
+visible = false
 mesh = SubResource( 17 )
 material/0 = null
 
@@ -395,7 +396,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25838, -0.0241808, -4.58483 
 transform = Transform( 0.131215, 0, 0, 0, 0.131215, 0, 0, 0, 0.131215, -0.0537605, 1.78471, -0.0237217 )
 
 [node name="OmniLight" parent="RoomRight/FireStand" index="6"]
-light_energy = 0.6
+light_energy = 3.0
 light_indirect_energy = 0.5
 
 [node name="FireStand2" parent="RoomRight" instance=ExtResource( 17 )]
@@ -405,7 +406,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14993, -0.0241808, -4.7149 
 transform = Transform( 0.131215, 0, 0, 0, 0.131215, 0, 0, 0, 0.131215, -0.0537605, 1.78471, -0.0237217 )
 
 [node name="OmniLight" parent="RoomRight/FireStand2" index="6"]
-light_energy = 0.6
+light_energy = 3.0
 light_indirect_energy = 0.5
 
 [node name="SmallVaseWithCrystal" parent="RoomRight" instance=ExtResource( 24 )]
@@ -470,8 +471,8 @@ extents = Vector3( 4.45362, 3.54407, 6.84712 )
 interior_enable = true
 
 [node name="ReflectionProbeLeft" type="ReflectionProbe" parent="."]
-transform = Transform( 0.999976, 0, 0.00694519, 0, 1, 0, -0.00694519, 0, 0.999976, -8.35818, 1.36598, -0.0317612 )
-extents = Vector3( 4.44973, 4.03834, 6.31515 )
+transform = Transform( 0.999976, 0, 0.00694519, 0, 1, 0, -0.00694519, 0, 0.999976, -8.35818, 1.88942, -0.0317612 )
+extents = Vector3( 4.13008, 2.31205, 6.31515 )
 origin_offset = Vector3( 0.196289, 0, 0 )
 interior_enable = true
 
