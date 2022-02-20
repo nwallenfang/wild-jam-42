@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Prototyping/HouseLayoutNeu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/HalfWallWithoutFilling.tscn" type="PackedScene" id=2]
@@ -15,6 +15,11 @@
 [ext_resource path="res://Prototyping/House.gd" type="Script" id=13]
 [ext_resource path="res://Objects/GlueWithCollisions.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Assets/gltf/GroundSandDesertRippled001_NRM_2K.jpg" type="Texture" id=15]
+[ext_resource path="res://Objects/Rock110x100x60.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Objects/Rock60x50x40.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Objects/Rock130x120x110.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Objects/Rock160x160x145.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Objects/Rock90x80x60.tscn" type="PackedScene" id=20]
 
 [sub_resource type="SpatialMaterial" id=9]
 albedo_texture = ExtResource( 10 )
@@ -210,6 +215,7 @@ shape = SubResource( 15 )
 transform = Transform( 6.07774, 0, 0, 0, 1, 0, 0, 0, 6.07774, 0, -0.0237093, 5.03421 )
 
 [node name="Mesh" parent="Glue" index="0"]
+transform = Transform( 2.03249, 0, 0, 0, 2.03249, 0, 0, 0, 2.03249, 0, 0, 0 )
 material/0 = SubResource( 16 )
 
 [node name="House-bound" type="MeshInstance" parent="."]
@@ -217,6 +223,62 @@ transform = Transform( 20.9849, 0, 0, 0, 51.9823, 0, 0, 0, 61.4381, -6.22228, 0,
 visible = false
 mesh = SubResource( 17 )
 material/0 = null
+
+[node name="Rocks" type="Spatial" parent="."]
+
+[node name="Rock90x80x61" parent="Rocks" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6693, -35.1264, -85.9953 )
+
+[node name="Rock90x80x62" parent="Rocks" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5751, -34.8129, -84.5729 )
+
+[node name="Rock130x120x111" parent="Rocks" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.64719, -5.99573, -22.967 )
+
+[node name="Rock90x80x63" parent="Rocks" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.372851, -7.78681, -27.4975 )
+
+[node name="Rock60x50x40" parent="Rocks" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.62569, -13.3247, -35.2031 )
+
+[node name="Rock90x80x64" parent="Rocks" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31551, -13.9868, -38.5048 )
+
+[node name="Rock110x100x60" parent="Rocks" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59876, -14.184, -39.4033 )
+
+[node name="Rock160x160x145" parent="Rocks" instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.75724, -16.1257, -48.6028 )
+
+[node name="Rock110x100x61" parent="Rocks" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2286, -26.5998, -70.8997 )
+
+[node name="Rock60x50x41" parent="Rocks" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.2036, -26.9603, -71.535 )
+
+[node name="Rock130x120x112" parent="Rocks" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.959, -37.9058, -94.5106 )
+
+[node name="Rock110x100x62" parent="Rocks" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8942, -38.3918, -96.0014 )
+
+[node name="Rock60x50x42" parent="Rocks" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3708, -39.3535, -99.1496 )
+
+[node name="Rock90x80x65" parent="Rocks" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3776, -39.0706, -98.2667 )
+
+[node name="Rock130x120x110" parent="Rocks" instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8557, -34.8595, -85.3921 )
+
+[node name="Rock90x80x60" parent="Rocks" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.7515, -34.6877, -82.3057 )
+
+[node name="Rock60x50x43" parent="Rocks" instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2014, -24.3338, -65.0409 )
+
+[node name="Rock90x80x66" parent="Rocks" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.21334, -20.5608, -58.3825 )
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
 
