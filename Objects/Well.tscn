@@ -437,6 +437,18 @@ transform = Transform( 0.803908, 0, 0.594753, 0, 1, 0, -0.594753, 0, 0.803908, 3
 
 [node name="well_tunnel_to_bridge" parent="RoomList/TunnelToBridge" instance=ExtResource( 17 )]
 
+[node name="OneSidedUV" parent="RoomList/TunnelToBridge/well_tunnel_to_bridge" instance=ExtResource( 21 )]
+transform = Transform( 1.76131, 0, 0.622801, 0, 1, 0, -1.40207, 0, 0.78238, 27.8904, 4.10436, -12.5671 )
+
+[node name="OneSidedUV2" parent="RoomList/TunnelToBridge/well_tunnel_to_bridge" instance=ExtResource( 21 )]
+transform = Transform( 0.00916066, 0.782369, 0.622801, -2.2512, 0.00520103, 1.55003e-10, -0.0072922, -0.622793, 0.78238, 26.7768, 5.93544, -11.6806 )
+
+[node name="OneSidedUV3" parent="RoomList/TunnelToBridge/well_tunnel_to_bridge" instance=ExtResource( 21 )]
+transform = Transform( -1.75873, -0.0423783, 0.622802, 0.12194, -0.998532, -5.01128e-09, 1.40001, 0.0337346, 0.78238, 28.1043, 7.7393, -12.7373 )
+
+[node name="OneSidedUV4" parent="RoomList/TunnelToBridge/well_tunnel_to_bridge" instance=ExtResource( 21 )]
+transform = Transform( -0.108538, -0.780893, 0.622801, 2.24695, -0.0616234, -8.92915e-09, 0.0864002, 0.621618, 0.78238, 29.3683, 5.72073, -13.7436 )
+
 [node name="BigRoom" parent="RoomList" instance=ExtResource( 7 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.5673, -5.63243, -3.60892 )
 
