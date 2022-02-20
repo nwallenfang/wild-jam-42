@@ -137,3 +137,5 @@ anims/rotate = SubResource( 26 )
 
 [node name="FlyingSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="GrowTween" type="Tween" parent="."]
