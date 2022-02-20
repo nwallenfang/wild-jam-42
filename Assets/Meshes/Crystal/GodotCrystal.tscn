@@ -107,7 +107,7 @@ material/1 = null
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Sparkle" type="Particles" parent="."]
-portal_mode = 3
+portal_mode = 2
 amount = 3
 lifetime = 3.0
 visibility_aabb = AABB( -0.605233, -0.576056, -0.564675, 1.15908, 1.2614, 1.12935 )

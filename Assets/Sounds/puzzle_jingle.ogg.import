@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/puzzle_jingle.ogg-a9fc773dea9ef758951d17992fb6baee.oggstr"
+
+[deps]
+
+source_file="res://Assets/Sounds/puzzle_jingle.ogg"
+dest_files=[ "res://.import/puzzle_jingle.ogg-a9fc773dea9ef758951d17992fb6baee.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

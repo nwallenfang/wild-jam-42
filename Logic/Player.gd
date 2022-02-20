@@ -28,6 +28,7 @@ var node_currently_interacting_with: Node
 
 # number of currently owned crystals
 var number_of_crystals = 0
+var total_number_of_crystals = 0
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -37,7 +38,11 @@ func _ready() -> void:
 func crystal_collected(crystal):
 	print("player: crystal collected")
 	number_of_crystals += 1
+	total_number_of_crystals += 1
 	crystal.queue_free()
+	
+	if total_number_of_crystals == 3 or total_number_of_crystals == 6 or total_number_of_crystals == 7:
+		$PuzzleJingle.play(0.71)
 
 
 func debug_cyl(coords_array):

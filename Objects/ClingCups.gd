@@ -5,7 +5,7 @@ func cling():
 	$AnimationPlayer.play("cling")
 	
 func play_cling_sound():
-	pass
+	$ClingSound.play()
 
 const CRYSTAL = preload("res://Objects/Crystal.tscn")
 

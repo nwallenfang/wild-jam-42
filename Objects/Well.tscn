@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Objects/WellCylinder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/well_plank_bridge_with_rock.tscn" type="PackedScene" id=2]
@@ -53,6 +53,8 @@ extents = Vector3( 4.04962, 2.11233, 1 )
 
 [sub_resource type="BoxShape" id=23]
 
+[sub_resource type="BoxShape" id=28]
+
 [sub_resource type="CylinderMesh" id=25]
 
 [sub_resource type="SpatialMaterial" id=26]
@@ -62,6 +64,8 @@ albedo_color = Color( 0.113725, 1, 0.0392157, 1 )
 extents = Vector3( 1.10894, 0.880383, 0.245037 )
 
 [sub_resource type="BoxShape" id=24]
+
+[sub_resource type="CubeMesh" id=27]
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 11 )
@@ -164,7 +168,7 @@ duration = 6.0
 shape = SubResource( 19 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16.431, 66.507, -143.227 )
+transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -23.7151, 20.1932, -5.49846 )
 
 [node name="SoundTriggers" type="Spatial" parent="."]
 
@@ -174,6 +178,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.7842, 0 )
 [node name="CollisionShape" type="CollisionShape" parent="SoundTriggers/IntroToWellArea"]
 transform = Transform( 7.88362, 0, 0, 0, 3.2317, 0, 0, 0, 1, 0, 8.64567, -27.4438 )
 shape = SubResource( 23 )
+
+[node name="TripleRoomMainThemeSwitch" type="Area" parent="SoundTriggers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.771, 6.73182, -6.90956 )
+
+[node name="CollisionShape" type="CollisionShape" parent="SoundTriggers/TripleRoomMainThemeSwitch"]
+transform = Transform( 5.20039, 0, 0.644417, 0, 1.98266, 0, -4.38255, 0, 0.764674, -0.709583, -1.48621, 3.63619 )
+shape = SubResource( 28 )
 
 [node name="Glue" type="Spatial" parent="."]
 
@@ -185,6 +196,7 @@ transform = Transform( -3.9239e-07, -0.800804, 0.598926, 11.2098, -4.37114e-08, 
 
 [node name="RoomManager" type="RoomManager" parent="."]
 roomlist = NodePath("../RoomList")
+pvs_mode = 2
 
 [node name="RoomList" type="Spatial" parent="."]
 
@@ -215,7 +227,7 @@ points = PoolVector2Array( 0.878069, -1.80301, 1, 1, -1, 1, -0.92011, -1.81266 )
 [node name="well_plank_bridge_with_rock" parent="RoomList/WellRoom" instance=ExtResource( 2 )]
 
 [node name="well-bound" type="MeshInstance" parent="RoomList/WellRoom"]
-transform = Transform( 27.9489, 0, 0, 0, 60.959, 0, 0, 0, 31.0324, 0, 0, 0 )
+transform = Transform( 27.9489, 0, 0, 0, 60.959, 0, 0, 0, 68.6144, 0, 0, 0 )
 visible = false
 portal_mode = 4
 mesh = SubResource( 25 )
@@ -275,9 +287,27 @@ transform = Transform( 18.4367, 0, 0, 0, 1.40226, 0, 0, 0, 1.40226, 0, 0, 0 )
 shape = SubResource( 24 )
 
 [node name="PortalToRoom3" type="Portal" parent="RoomList/WellRoom"]
-transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -7.18329, -31.0521, 28.7882 )
-linked_room = NodePath("../../Room3")
+transform = Transform( -1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -7.18329, -31.0521, 27.9418 )
+linked_room = NodePath("../Room3")
+portal_margin = 5.08
 points = PoolVector2Array( 1.06427, -1.92771, 1, 1, -1, 1, -1.13858, -1.89954 )
+
+[node name="Room3" parent="RoomList/WellRoom" instance=ExtResource( 12 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.12971, -32.8402, 47.1722 )
+
+[node name="PortalFromRoom3ToWell" type="Portal" parent="RoomList/WellRoom/Room3"]
+transform = Transform( -0.436284, 0, -0.899809, 0, 1, 0, 0.899809, 0, -0.436284, -31.0374, -19.6739, 32.2703 )
+linked_room = NodePath("../..")
+points = PoolVector2Array( 2.84133, -2.49917, 1.95458, 2.07531, -2.53538, 2.02618, -2.46273, -2.8824 )
+
+[node name="well_tunnel_to_end" parent="RoomList/WellRoom/Room3" instance=ExtResource( 14 )]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.12971, 32.8402, 47.1722 )
+
+[node name="room-bound" type="MeshInstance" parent="RoomList/WellRoom/Room3"]
+transform = Transform( 64.9268, 0, 0, 0, 22.8826, 0, 0, 0, 21.6477, 0, 0.807503, 5.71 )
+visible = false
+mesh = SubResource( 27 )
+material/0 = null
 
 [node name="Tunnel1" type="Room" parent="RoomList"]
 
@@ -305,17 +335,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.567
 [node name="well_tunnel_to_bridge2" parent="RoomList/BigRoom" instance=ExtResource( 18 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.60892, 5.63243, 39.5673 )
 
-[node name="Room3" parent="RoomList" instance=ExtResource( 12 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.12971, -32.8402, 47.1722 )
-
-[node name="PortalFromRoom3ToWell" type="Portal" parent="RoomList/Room3"]
-transform = Transform( -0.436284, 0, -0.899809, 0, 1, 0, 0.899809, 0, -0.436284, -31.0374, -19.6739, 32.2703 )
-linked_room = NodePath("../../WellRoom")
-points = PoolVector2Array( 2.84133, -2.49917, 1.95458, 2.07531, -2.53538, 2.02618, -2.46273, -2.8824 )
-
-[node name="well_tunnel_to_end" parent="RoomList/Room3" instance=ExtResource( 14 )]
-transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.12971, 32.8402, 47.1722 )
-
+[connection signal="body_entered" from="SoundTriggers/TripleRoomMainThemeSwitch" to="." method="_on_TripleRoomMainThemeSwitch_body_entered"]
 [connection signal="body_entered" from="RoomList/WellRoom/Vortex/DeathTrigger" to="." method="_on_DeathTrigger_body_entered"]
 
 [editable path="Glue/Glue"]

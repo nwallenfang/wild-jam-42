@@ -2,19 +2,30 @@ extends Node
 
 #const default_volume := 0.0
 # if we need more granularity we can do it like this
-const default_volumes = {"MainTheme" : -6.9, "IntroAtmosphere" : 0.0} # , ...
+const default_volumes = {"MainTheme" : -9.9, "IntroAtmosphere" : 0.0} # , ...
 
 var tween_out_current_player: AudioStreamPlayer
 var tween_in_current_player: AudioStreamPlayer
-
+var currently_playing: AudioStreamPlayer
 
 # if we want to get right into action
 const main_theme_intro_offset = 17.4
 func switch_to_main_theme(skip_intro: bool):
+	currently_playing = $MainTheme
 	if skip_intro:
 		$MainTheme.play(main_theme_intro_offset)
+
 	else:
 		$MainTheme.play(0)
+		
+func tween_to_main_theme(skip_intro: bool):
+	var currently_playing_player = tween_in_current_player
+	if currently_playing_player != null:
+		tween_out(currently_playing_player, 1.5)
+	if skip_intro:
+		tween_in_with_offset($MainTheme, 2.1, main_theme_intro_offset)
+	else:
+		tween_in($MainTheme, 2.1)
 		
 func play_intro_atmosphere():
 	$IntroAtmosphere.play()
@@ -32,6 +43,20 @@ func tween_in(player: AudioStreamPlayer, duration: float):
 	$TweenIn.interpolate_property(player, "volume_db", -80, default_volume, duration, Tween.TRANS_CIRC, Tween.EASE_IN, 0)
 	player.play()
 	$TweenIn.start()
+	currently_playing = player
+	
+func tween_in_with_offset(player: AudioStreamPlayer, duration: float, offset: float):
+	var default_volume = default_volumes[player.name]
+	tween_in_current_player = player
+	$TweenIn.reset_all()
+	$TweenIn.interpolate_property(player, "volume_db", -80, default_volume, duration, Tween.TRANS_CIRC, Tween.EASE_IN, 0)
+	player.play(offset)
+	$TweenIn.start()
+	
+func fade_out_for(duration: float):
+	tween_out(currently_playing, 0.4)
+	yield(get_tree().create_timer(duration), "timeout")
+	tween_in(currently_playing, 0.4)
 
 
 func stop_intro_atmosphere():
