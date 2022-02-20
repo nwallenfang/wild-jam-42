@@ -6,6 +6,7 @@ func _on_CrystalDispenser_body_entered(body: Node) -> void:
 		var crystal = CRYSTAL.instance()
 		get_parent().add_child(crystal)
 		crystal.global_transform.origin = $Anubis/CrystalPos.global_transform.origin
+		crystal.grow()
 		$Room2Anubis_TriggerManually.trigger_manually()
 		
 
