@@ -45,7 +45,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 42.3026, 3.59095, 0 )
 [node name="FireStand2" parent="." index="5" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 49.8017, 3.06525, -2.60556 )
 
-[node name="Rocks" type="Spatial" parent="." index="6"]
+[node name="FireStand3" parent="." index="6" instance=ExtResource( 4 )]
+transform = Transform( 0.798636, 0, 0.601815, 0, 1, 0, -0.601815, 0, 0.798636, 47.6611, 4.22715, -10.248 )
+
+[node name="Rocks" type="Spatial" parent="." index="7"]
 
 [node name="Rock160x160x145" parent="Rocks" index="0" instance=ExtResource( 6 )]
 transform = Transform( 0.668151, 0.744025, -8.9407e-08, 2.98024e-08, -2.38419e-07, -1, -0.744025, 0.668151, -2.38419e-07, 54.4707, 3.62128, 13.9418 )
@@ -134,24 +137,24 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 51.7329, 3.76822, -7.83729 )
 [node name="Rock130x120x112" parent="Rocks" index="28" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.7333, 2.86158, -1.25158 )
 
-[node name="Rock90x80x60" parent="." index="7" instance=ExtResource( 8 )]
+[node name="Rock90x80x60" parent="." index="8" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.3233, 3.86254, -0.0473086 )
 
-[node name="Anubis" parent="." index="8" instance=ExtResource( 11 )]
+[node name="Anubis" parent="." index="9" instance=ExtResource( 11 )]
 transform = Transform( 0.000451332, 0, -0.20687, 0, 0.20687, 0, 0.20687, 0, 0.000451332, 57.2369, 2.96851, 24.5212 )
 
-[node name="OmniLight" type="OmniLight" parent="." index="9"]
+[node name="OmniLight" type="OmniLight" parent="." index="10"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.6997, 7.00176, 24.6466 )
 light_color = Color( 1, 0.419608, 0.419608, 1 )
 light_energy = 0.0
 omni_range = 8.13
 
-[node name="Area" type="Area" parent="." index="10"]
+[node name="Area" type="Area" parent="." index="11"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Area" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.8294, 5.53964, 28.6131 )
 shape = SubResource( 2 )
 
-[node name="Tween" type="Tween" parent="." index="11"]
+[node name="Tween" type="Tween" parent="." index="12"]
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
