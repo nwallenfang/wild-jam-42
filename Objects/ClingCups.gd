@@ -2,6 +2,10 @@ extends Spatial
 
 func cling():
 	$StaticBody.remove_from_group("interactable")
+	$StaticBody.set_deferred("monitoring", false)
+	$StaticBody.set_deferred("monitorable", false)
+	for collision in $StaticBody.get_children():
+		collision.set_deferred("disabled", true)
 	$AnimationPlayer.play("cling")
 	
 func play_cling_sound():

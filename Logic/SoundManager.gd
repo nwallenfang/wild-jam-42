@@ -92,10 +92,12 @@ func main_theme_to_vortex():
 
 
 func stop_main_theme_towards_end():
-	tween_out($MainTheme, 3.0)
+	$TweenOut.reset_all()
+	$TweenOut.interpolate_property($MainTheme, "volume_db", null, -3, 5.0, Tween.TRANS_CIRC, Tween.EASE_IN)
+	$TweenOut.start()
 	
 func vortex_drone_towards_end():
-	tween_in($VortexDrone, 4.0)
+	tween_in($VortexDrone, 2.5)
 
 
 func _on_TweenOut_tween_all_completed() -> void:

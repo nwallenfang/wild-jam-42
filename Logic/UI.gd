@@ -141,6 +141,7 @@ func start_death_animation():
 	$Tween.start()
 	yield($Tween, "tween_all_completed")
 	yield(get_tree().create_timer(3.8), "timeout")
+	SoundManager.switch_to_main_theme(true)
 	# show first credit scene
 	$Tween.reset_all()
 	$Tween.interpolate_property($Ankh, "modulate", blended_in, blended_out, 1.0, Tween.EASE_OUT)
@@ -152,7 +153,7 @@ func start_death_animation():
 	$Tween2.reset_all()
 	$Tween2.interpolate_property($Credit1, "modulate", blended_out, blended_in, ankh_show_duration, Tween.EASE_IN)
 	$Tween2.start()
-	yield(get_tree().create_timer(10.0), "timeout")
+	yield(get_tree().create_timer(16.5), "timeout")
 	
 	$Tween.reset_all()
 	$Tween.interpolate_property($Credit1, "modulate", blended_in, blended_out, 1.0, Tween.EASE_OUT)
@@ -163,12 +164,12 @@ func start_death_animation():
 	$Tween2.interpolate_property($Credit2, "modulate", blended_out, blended_in, ankh_show_duration, Tween.EASE_IN)
 	$Tween2.start()
 
-	yield(get_tree().create_timer(5.0), "timeout")
+	yield(get_tree().create_timer(9.0), "timeout")
 	
 	
 	# Fade to black
 	$Tween.reset_all()
-	$Tween.interpolate_property($Credit2, "modulate", blended_in, blended_out, 1.8, Tween.EASE_OUT)
+	$Tween.interpolate_property($Credit2, "modulate", blended_in, blended_out, 2.5, Tween.EASE_OUT)
 	$Tween.start()
 
 	yield($Tween, "tween_all_completed")
