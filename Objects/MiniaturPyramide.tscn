@@ -6,4 +6,160 @@
 [node name="miniatur_pyramide_finished" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
+[node name="Palme L1" parent="." index="0"]
+use_in_baked_light = false
+
+[node name="Palme L2" parent="." index="1"]
+use_in_baked_light = false
+
+[node name="Palme L3" parent="." index="2"]
+use_in_baked_light = false
+
+[node name="Palme L4" parent="." index="3"]
+use_in_baked_light = false
+
+[node name="Palme L5" parent="." index="4"]
+use_in_baked_light = false
+
+[node name="Palme L6" parent="." index="5"]
+use_in_baked_light = false
+
+[node name="Palme L7" parent="." index="6"]
+use_in_baked_light = false
+
+[node name="Palme L8" parent="." index="7"]
+use_in_baked_light = false
+
+[node name="Palme L9" parent="." index="8"]
+use_in_baked_light = false
+
+[node name="Palme L10" parent="." index="9"]
+use_in_baked_light = false
+
+[node name="Palme O1" parent="." index="10"]
+use_in_baked_light = false
+
+[node name="Palme O2" parent="." index="11"]
+use_in_baked_light = false
+
+[node name="Palme O3" parent="." index="12"]
+use_in_baked_light = false
+
+[node name="Palme O4" parent="." index="13"]
+use_in_baked_light = false
+
+[node name="Palme O5" parent="." index="14"]
+use_in_baked_light = false
+
+[node name="Palme R1" parent="." index="15"]
+use_in_baked_light = false
+
+[node name="Palme R2" parent="." index="16"]
+use_in_baked_light = false
+
+[node name="Palme R3" parent="." index="17"]
+use_in_baked_light = false
+
+[node name="Palme R4" parent="." index="18"]
+use_in_baked_light = false
+
+[node name="Palme R5" parent="." index="19"]
+use_in_baked_light = false
+
+[node name="Palme R6" parent="." index="20"]
+use_in_baked_light = false
+
+[node name="Palme R7" parent="." index="21"]
+use_in_baked_light = false
+
+[node name="Palme R8" parent="." index="22"]
+use_in_baked_light = false
+
+[node name="Palme R9" parent="." index="23"]
+use_in_baked_light = false
+
+[node name="Palme R10" parent="." index="24"]
+use_in_baked_light = false
+
+[node name="Brunnen L" parent="." index="25"]
+use_in_baked_light = false
+
+[node name="Brunnen R" parent="." index="26"]
+use_in_baked_light = false
+
+[node name="Cube" parent="." index="27"]
+use_in_baked_light = false
+
+[node name="Garten" parent="." index="28"]
+use_in_baked_light = false
+
+[node name="Obelisk" parent="." index="29"]
+use_in_baked_light = false
+
+[node name="Turm 1" parent="." index="30"]
+use_in_baked_light = false
+
+[node name="Turm 2" parent="." index="31"]
+use_in_baked_light = false
+
+[node name="Turm 3" parent="." index="32"]
+use_in_baked_light = false
+
+[node name="Turm 4" parent="." index="33"]
+use_in_baked_light = false
+
+[node name="Turm 5" parent="." index="34"]
+use_in_baked_light = false
+
+[node name="Turm 6" parent="." index="35"]
+use_in_baked_light = false
+
+[node name="Turm 7" parent="." index="36"]
+use_in_baked_light = false
+
+[node name="Turm 8" parent="." index="37"]
+use_in_baked_light = false
+
+[node name="Cube001" parent="." index="38"]
+use_in_baked_light = false
+
+[node name="house 1 v1" parent="." index="39"]
+use_in_baked_light = false
+
+[node name="house 2 v2" parent="." index="40"]
+use_in_baked_light = false
+
+[node name="house 3 v2" parent="." index="41"]
+use_in_baked_light = false
+
+[node name="house 4 v3" parent="." index="42"]
+use_in_baked_light = false
+
+[node name="house 5 v3" parent="." index="43"]
+use_in_baked_light = false
+
+[node name="house 6 v3" parent="." index="44"]
+use_in_baked_light = false
+
+[node name="house 7 v3" parent="." index="45"]
+use_in_baked_light = false
+
+[node name="house 8 v4" parent="." index="46"]
+use_in_baked_light = false
+
+[node name="house 9 v4" parent="." index="47"]
+use_in_baked_light = false
+
+[node name="house 10 v4" parent="." index="48"]
+use_in_baked_light = false
+
+[node name="house 11 v4" parent="." index="49"]
+use_in_baked_light = false
+
+[node name="Pyramide klein" parent="." index="50"]
+use_in_baked_light = false
+
+[node name="Pyramide Main" parent="." index="51"]
+use_in_baked_light = false
+
 [node name="Tween" type="Tween" parent="." index="52"]
