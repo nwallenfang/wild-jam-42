@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Objects/WellCylinder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/well_plank_bridge_with_rock.tscn" type="PackedScene" id=2]
@@ -269,6 +269,18 @@ transform = Transform( 5.58867, 0, 0.071011, 0, 1, 0, -0.39786, 0, 0.997481, -17
 linked_room = NodePath("../../WellRoom")
 points = PoolVector2Array( 0.463748, -0.639832, 0.483755, 3.29624, -0.204378, 3.36969, -0.154085, -0.331596, 0.281875, 4.75965, -0.0403981, 4.65511 )
 
+[node name="OneSidedUV" parent="RoomList/House" instance=ExtResource( 21 )]
+transform = Transform( 0.937537, 0.347885, -2.04152e-08, 0.00811042, -0.0218573, 5.79778, 0.34779, -0.937282, -0.135203, -20.0642, -40.4071, -105.321 )
+
+[node name="OneSidedUV2" parent="RoomList/House" instance=ExtResource( 21 )]
+transform = Transform( 0.923364, -0.383925, -2.04152e-08, -0.00895063, -0.0215269, 5.79778, -0.38382, -0.923113, -0.135203, -14.1329, -39.3633, -105.398 )
+
+[node name="OneSidedUV3" parent="RoomList/House" instance=ExtResource( 21 )]
+transform = Transform( -0.429318, -0.2446, 5.04196, -0.880935, -0.0987972, -2.684, 0.199098, -0.964577, -1.00364, -14.2966, -36.4993, -105.939 )
+
+[node name="OneSidedUV4" parent="RoomList/House" instance=ExtResource( 21 )]
+transform = Transform( 0.667362, -0.0182292, 4.31768, -0.743493, -0.0739668, 3.85449, 0.0429532, -0.997094, -0.364872, -17.768, -34.5667, -105.542 )
+
 [node name="WellRoom" type="Room" parent="RoomList"]
 
 [node name="well_cylinder" parent="RoomList/WellRoom" instance=ExtResource( 1 )]
@@ -374,6 +386,24 @@ transform = Transform( 64.9268, 0, 0, 0, 22.8826, 0, 0, 0, 21.6477, 0, 0.807503,
 visible = false
 mesh = SubResource( 27 )
 material/0 = null
+
+[node name="OneSidedUV" parent="RoomList/WellRoom/Room3" instance=ExtResource( 21 )]
+transform = Transform( -0.069427, -0.999781, 0, 3.31995, -0.0209075, 0, 0, 0, 1.38132, 4.39691, 1.32058, 19.5831 )
+
+[node name="OneSidedUV2" parent="RoomList/WellRoom/Room3" instance=ExtResource( 21 )]
+transform = Transform( -0.0694271, -0.945284, -0.320299, 3.31995, -0.0197678, -0.0066981, -4.02041e-08, -0.325651, 0.930155, -0.029407, 1.55065, 18.3528 )
+
+[node name="OneSidedUV4" parent="RoomList/WellRoom/Room3" instance=ExtResource( 21 )]
+transform = Transform( -0.250595, -0.391937, -0.110444, 1.18456, -0.00819623, -0.207751, 0.655509, -0.135022, 0.333201, -0.345511, 3.31137, 19.2263 )
+
+[node name="OneSidedUV3" parent="RoomList/WellRoom/Room3" instance=ExtResource( 21 )]
+transform = Transform( 3.21875, -0.0197032, -0.379291, 0.0630942, 0.999806, -0.00809734, 0.813968, 0.000414878, 1.5005, 2.97706, 4.41199, 18.4876 )
+
+[node name="OneSidedUV5" parent="RoomList/WellRoom/Room3" instance=ExtResource( 21 )]
+transform = Transform( 1.57032, -0.00932178, 0.0169859, 0.0309614, 0.473019, 3.09748e-05, -0.0364382, 0.000196283, 0.732044, 0.431785, 4.34425, 19.2168 )
+
+[node name="OneSidedUV6" parent="RoomList/WellRoom/Room3" instance=ExtResource( 21 )]
+transform = Transform( 1.26844, -0.00932178, -0.431799, 0.0246127, 0.473019, -0.00875483, 0.92663, 0.000196283, 0.591312, 3.96753, 4.41345, 20.3629 )
 
 [node name="Tunnel1" type="Room" parent="RoomList"]
 
