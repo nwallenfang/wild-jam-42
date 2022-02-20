@@ -371,7 +371,7 @@ material/0 = null
 [node name="EntryRamp" type="StaticBody" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="EntryRamp"]
-transform = Transform( 1, 0, 0, 0, 0.0173114, -0.115837, 0, 0.00578697, 0.34652, -0.0852009, -0.312708, 12.4893 )
+transform = Transform( 1, 0, 0, 0, 0.0173114, -0.115837, 0, 0.00578697, 0.34652, -0.0852009, -0.300509, 12.529 )
 shape = SubResource( 13 )
 
 [node name="Anubis" parent="." instance=ExtResource( 13 )]
