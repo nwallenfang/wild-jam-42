@@ -10,7 +10,7 @@ func grow():
 	$GrowTween.start()
 	scale = init_scale
 	yield(get_tree().create_timer(1.5), "timeout")
-	$MoveThis.remove_from_group("interactable")
+	$MoveThis.add_to_group("interactable")
 	
 
 func _ready():
