@@ -1,0 +1,25 @@
+[remap]
+
+importer="texture_array"
+type="TextureArray"
+path="res://.import/well_tunnel_to_end.exr-b795da12e6977cef698eaf3d0f27dd68.texarr"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://LightBakes/well_tunnel_to_end.exr"
+dest_files=[ "res://.import/well_tunnel_to_end.exr-b795da12e6977cef698eaf3d0f27dd68.texarr" ]
+
+[params]
+
+compress/mode=0
+compress/no_bptc_if_rgb=false
+flags/repeat=false
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=false
+slices/horizontal=1
+slices/vertical=1

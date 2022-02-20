@@ -41,8 +41,6 @@ surfaces/0 = {
 "vertex_count": 24
 }
 
-[sub_resource type="BoxShape" id=12]
-
 [sub_resource type="SpatialMaterial" id=9]
 albedo_texture = ExtResource( 10 )
 normal_enabled = true
@@ -68,6 +66,8 @@ surfaces/0 = {
 
 [sub_resource type="CubeMesh" id=6]
 size = Vector3( 8.4, 12, 0.5 )
+
+[sub_resource type="BoxShape" id=12]
 
 [node name="Room" type="Spatial"]
 script = ExtResource( 17 )
@@ -161,12 +161,6 @@ transform = Transform( -4, 0, -5.24537e-07, 0, 1, 0, 3.49691e-07, 0, -6, 0, 0.01
 [node name="Cube" parent="Walls/Floor" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, -1.77636e-14, 0, 1, 0, -0.0765085, 0 )
 mesh = SubResource( 11 )
-
-[node name="StaticBody" type="StaticBody" parent="Walls/Floor"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Walls/Floor/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 0.19894, 0, 0, 0, 1, 0, -0.240398, 0 )
-shape = SubResource( 12 )
 
 [node name="Ceiling" parent="Walls" instance=ExtResource( 6 )]
 transform = Transform( 4, 0, 0, 0, -1, 9.05975e-07, 0, -1.50996e-07, -6, 0.0777035, 3.81427, 0 )

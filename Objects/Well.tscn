@@ -252,7 +252,7 @@ material/0 = SubResource( 31 )
 transform = Transform( -0.639261, -0.140122, 1.43746, -0.242491, 0.977855, 0.0500384, -0.949142, -0.155453, -0.980932, 50.4237, 4.06572, -14.3518 )
 
 [node name="Cube" parent="Glue/OneSidedUV2" index="0"]
-transform = Transform( 1.78488, -0.193875, 2.98023e-08, 0.352737, 0.981027, 3.94881e-07, -3.72529e-08, -5.58794e-08, 8.27155, 0.481672, 0.243721, 8.58307e-06 )
+transform = Transform( 1.15242, 0, -11.7234, 0, 1, 0, 1.40789, 0, 9.59619, -4.45386, -5.74039, -4.23833 )
 material/0 = SubResource( 31 )
 
 [node name="StaticBody" parent="Glue/OneSidedUV2/Cube" index="0"]
