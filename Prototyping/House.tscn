@@ -243,7 +243,7 @@ material/0 = SubResource( 16 )
 transform = Transform( -2.65666e-07, 0, 6.07774, 0, 1, 0, -6.07774, 0, -2.65666e-07, 11.9635, -0.0237093, -29.8752 )
 
 [node name="Mesh" parent="Glue2" index="0"]
-transform = Transform( 4.28806, 0, 0, 0, 4.28806, 0, 0, 0, 2.42699, 0, 0, 0.890257 )
+transform = Transform( 4.28806, 0, 2.76172e-08, 0, 4.28806, 0, 4.87946e-08, 0, 1.79518, 0, 0, 0.50857 )
 use_in_baked_light = true
 material/0 = SubResource( 16 )
 
@@ -251,7 +251,7 @@ material/0 = SubResource( 16 )
 transform = Transform( -2.65666e-07, 0, 6.07774, 0, 1, 0, -6.07774, 0, -2.65666e-07, -22.8312, -0.0237093, -29.8752 )
 
 [node name="Mesh" parent="Glue3" index="0"]
-transform = Transform( 4.28806, 0, 0, 0, 4.28806, 0, 0, 0, 2.42699, 0, 0, 0.890257 )
+transform = Transform( 4.28806, 0, 3.25924e-08, 0, 4.28806, 0, 5.75849e-08, 0, 1.68136, 0.0504894, 0, 1.146 )
 use_in_baked_light = true
 material/0 = SubResource( 16 )
 
