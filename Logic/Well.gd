@@ -15,7 +15,6 @@ func _on_DeathTrigger_body_entered(body: Node) -> void:
 
 func _on_TripleRoomMainThemeSwitch_body_entered(body: Node) -> void:
 	if body is Player:
-		print("switch")
 		SoundManager.tween_to_main_theme(true)
 		$SoundTriggers/TripleRoomMainThemeSwitch.set_deferred("monitoring", false)
 		$SoundTriggers/TripleRoomMainThemeSwitch.set_deferred("monitorable", false)

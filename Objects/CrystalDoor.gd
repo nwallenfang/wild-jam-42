@@ -123,6 +123,5 @@ func _on_CrystalDetector_body_entered(body: Node) -> void:
 		player.number_of_crystals = 0
 		currently_entered = false
 
-
 func _on_Button_pressed() -> void:
 	open()

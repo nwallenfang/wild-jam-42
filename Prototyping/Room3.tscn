@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://LightBakes/Room3.lmbake" type="BakedLightmapData" id=1]
 [ext_resource path="res://Objects/CrystalDoor.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Assets/Materials/cliff_jagged_NRM_1k.png" type="Texture" id=11]
 [ext_resource path="res://Assets/Materials/TilesTerracottaSmall.jpg" type="Texture" id=12]
 [ext_resource path="res://Assets/Materials/TilesTerracottaSmallNRM.jpg" type="Texture" id=13]
+[ext_resource path="res://Logic/TextTrigger.tscn" type="PackedScene" id=14]
 
 [sub_resource type="CubeMesh" id=6]
 size = Vector3( 8.4, 12, 0.5 )
@@ -64,6 +65,8 @@ surfaces/0 = {
 }
 
 [sub_resource type="BoxShape" id=12]
+
+[sub_resource type="BoxShape" id=13]
 
 [node name="Room" type="Spatial"]
 
@@ -216,6 +219,22 @@ interior_enable = true
 
 [node name="HalfWall2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.25916, 1.39522, -5.62832 )
+
+[node name="Room3Message1" parent="." instance=ExtResource( 14 )]
+transform = Transform( -0.0193545, 0, 2.40013, 0, 1, 0, -0.999813, 0, -0.0464619, 1.05441, 0.680265, 4.53523 )
+text = "He was paralyzed when he discovered the secret relationship between Namun and Imhotep."
+duration = 5.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Room3Message1"]
+shape = SubResource( 13 )
+
+[node name="Room3Message2MaybeTriggerManually" parent="." instance=ExtResource( 14 )]
+transform = Transform( 4.98127, 0, 0, 0, 2.8509, 0, 0, 0, 1, -0.689845, 0, -1.94379 )
+text = "In the heat of the moment the highpriest stabbed the Pharaoh with his own sword."
+duration = 6.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Room3Message2MaybeTriggerManually"]
+shape = SubResource( 13 )
 
 [editable path="Ceiling"]
 [editable path="Ceiling2"]

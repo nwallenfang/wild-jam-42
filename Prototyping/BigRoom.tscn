@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Objects/Pillar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Torch.tscn" type="PackedScene" id=2]
@@ -12,13 +12,15 @@
 [ext_resource path="res://Assets/Materials/cliff_jagged_COL_1k.png" type="Texture" id=10]
 [ext_resource path="res://Objects/HalfWall.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Prototyping/PyramideStatic.gd" type="Script" id=12]
-[ext_resource path="res://Objects/Crystal.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Objects/Anubis.tscn" type="PackedScene" id=13]
 [ext_resource path="res://LightBakes/BigRoom.lmbake" type="BakedLightmapData" id=14]
 [ext_resource path="res://Objects/FireStand.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Objects/BigRoomLayout.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Objects/PyramidStand.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Objects/Table.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Objects/GoldenCup.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Prototyping/BigRoom.gd" type="Script" id=20]
+[ext_resource path="res://Logic/TextTrigger.tscn" type="PackedScene" id=21]
 
 [sub_resource type="BoxShape" id=11]
 extents = Vector3( 2.16573, 0.791591, 2.07406 )
@@ -50,7 +52,10 @@ surfaces/0 = {
 
 [sub_resource type="BoxShape" id=13]
 
+[sub_resource type="SphereShape" id=14]
+
 [node name="BigRoom" type="Room"]
+script = ExtResource( 20 )
 
 [node name="CrystalDoor" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0367854, 1.70141, -11.9521 )
@@ -245,18 +250,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53547, 0.877675, -5.60134 )
 [node name="FireStand4" parent="LightsAndCrystals" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57366, 0.976072, -5.54132 )
 
-[node name="Crystal" parent="LightsAndCrystals" instance=ExtResource( 13 )]
-transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, -0.713546, 1.12628, -1.73504 )
-
-[node name="Crystal4" parent="LightsAndCrystals" instance=ExtResource( 13 )]
-transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, 2.99077, 1.12628, -1.73504 )
-
-[node name="Crystal5" parent="LightsAndCrystals" instance=ExtResource( 13 )]
-transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, 2.99077, 1.12628, 4.1987 )
-
-[node name="Crystal6" parent="LightsAndCrystals" instance=ExtResource( 13 )]
-transform = Transform( -0.40817, 0, -0.912906, 0, 1, 0, 0.912906, 0, -0.40817, 2.99077, 1.12628, -3.79461 )
-
 [node name="Props" type="Spatial" parent="."]
 
 [node name="GoldenCup" parent="Props" instance=ExtResource( 19 )]
@@ -284,6 +277,16 @@ pyramide_path = NodePath("../miniatur_pyramide_finished")
 [node name="CollisionShape" type="CollisionShape" parent="Props/StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.276191 )
 shape = SubResource( 11 )
+
+[node name="Room2Pyramid1_TriggerManually" parent="Props/StaticBody" instance=ExtResource( 21 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.3833, 4.95508, -26.6665 )
+text = "Long before his death a large pyramid complex was built in Seti’s name."
+duration = 5.7
+
+[node name="Room2Pyramid2_TriggerManually" parent="Props/StaticBody" instance=ExtResource( 21 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.3833, 4.95508, -26.6665 )
+text = "The marriage to his wife Anck-Su-Namun took place there."
+duration = 5.0
 
 [node name="Ceilings" type="Spatial" parent="."]
 
@@ -357,13 +360,27 @@ material/0 = null
 [node name="EntryRamp" type="StaticBody" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="EntryRamp"]
-transform = Transform( 1, 0, 0, 0, 0.942046, -0.335484, 0, 0.335484, 0.942046, 0, -0.45906, 12.9264 )
-
-[node name="StaticBody" type="StaticBody" parent="."]
-
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 0.016572, -0.153156, 0, 0.00765139, 0.331719, -0.0610849, -0.288015, 12.2958 )
 shape = SubResource( 13 )
+
+[node name="Anubis" parent="." instance=ExtResource( 13 )]
+transform = Transform( -8.63217e-09, 0, -0.197481, 0, 0.197481, 0, 0.197481, 0, -8.63217e-09, 10.643, -0.160816, 9.62976 )
+
+[node name="CrystalDispenser" type="Area" parent="Anubis"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Anubis/CrystalDispenser"]
+transform = Transform( 34.1737, 0, 6.3723e-08, 0, 15.2073, 0, 6.37236e-08, 0, 35.6315, 9.19183, 0, -4.19159 )
+shape = SubResource( 14 )
+
+[node name="CrystalPos" type="Position3D" parent="Anubis"]
+transform = Transform( -2.21345e-07, 0, 5.06378, 0, 5.06378, 0, -5.06378, 0, -2.21345e-07, 0.108723, 14.4599, 4.51023 )
+
+[node name="Room2Anubis_TriggerManually" parent="." instance=ExtResource( 21 )]
+transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -27.2003 )
+text = "His highpriest Imhotep was hired to maintain good relations to the gods."
+duration = 7.0
+
+[connection signal="body_entered" from="Anubis/CrystalDispenser" to="." method="_on_CrystalDispenser_body_entered"]
 
 [editable path="Ceilings/Ceiling"]
 [editable path="Ceilings/Ceiling2"]

@@ -8,7 +8,8 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0
+                0,
+                1
             ]
         }
     ],
@@ -32,6 +33,26 @@
                 18.524837493896484,
                 -0.3043990135192871
             ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "AnubisAugen",
+            "rotation" : [
+                0.1805068850517273,
+                0,
+                0,
+                0.9835737347602844
+            ],
+            "scale" : [
+                0.4520910382270813,
+                0.4520910382270813,
+                0.4520910382270813
+            ],
+            "translation" : [
+                0,
+                18.618553161621094,
+                -0.3864862620830536
+            ]
         }
     ],
     "materials" : [
@@ -47,6 +68,28 @@
                     "index" : 1
                 },
                 "roughnessFactor" : 0.30909091234207153
+            }
+        },
+        {
+            "doubleSided" : true,
+            "emissiveFactor" : [
+                0.06831581890583038,
+                0.005807587876915932,
+                0.003596316557377577
+            ],
+            "name" : "Eyes",
+            "normalTexture" : {
+                "index" : 2,
+                "scale" : 1.6000001430511475
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorFactor" : [
+                    0.06831581890583038,
+                    0.005807587876915932,
+                    0.003596316557377577,
+                    1
+                ],
+                "roughnessFactor" : 0
             }
         }
     ],
@@ -65,6 +108,21 @@
                     "material" : 0
                 }
             ]
+        },
+        {
+            "name" : "mesh.002",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 5,
+                        "NORMAL" : 6,
+                        "TEXCOORD_0" : 7,
+                        "COLOR_0" : 8
+                    },
+                    "indices" : 9,
+                    "material" : 1
+                }
+            ]
         }
     ],
     "textures" : [
@@ -75,6 +133,10 @@
         {
             "sampler" : 0,
             "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
         }
     ],
     "images" : [
@@ -87,13 +149,18 @@
             "mimeType" : "image/png",
             "name" : "AnubisFullTextureBake",
             "uri" : "AnubisFullTextureBake.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "AnubisEyeNormalBake",
+            "uri" : "AnubisEyeNormalBake.png"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 31811,
+            "count" : 25560,
             "max" : [
                 9.14536190032959,
                 9.133176803588867,
@@ -109,54 +176,120 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 31811,
+            "count" : 25560,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 31811,
+            "count" : 25560,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 31811,
+            "count" : 25560,
             "normalized" : true,
             "type" : "VEC4"
         },
         {
             "bufferView" : 4,
             "componentType" : 5123,
-            "count" : 125322,
+            "count" : 118182,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 15872,
+            "max" : [
+                1.567610263824463,
+                2.0029423236846924,
+                1.665775179862976
+            ],
+            "min" : [
+                -1.5905123949050903,
+                1.1700795888900757,
+                0.8290402889251709
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 15872,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5126,
+            "count" : 15872,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5123,
+            "count" : 15872,
+            "normalized" : true,
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5123,
+            "count" : 23808,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 381732,
+            "byteLength" : 306720,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 381732,
-            "byteOffset" : 381732
+            "byteLength" : 306720,
+            "byteOffset" : 306720
         },
         {
             "buffer" : 0,
-            "byteLength" : 254488,
-            "byteOffset" : 763464
+            "byteLength" : 204480,
+            "byteOffset" : 613440
         },
         {
             "buffer" : 0,
-            "byteLength" : 254488,
-            "byteOffset" : 1017952
+            "byteLength" : 204480,
+            "byteOffset" : 817920
         },
         {
             "buffer" : 0,
-            "byteLength" : 250644,
-            "byteOffset" : 1272440
+            "byteLength" : 236364,
+            "byteOffset" : 1022400
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 190464,
+            "byteOffset" : 1258764
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 190464,
+            "byteOffset" : 1449228
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 126976,
+            "byteOffset" : 1639692
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 126976,
+            "byteOffset" : 1766668
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 47616,
+            "byteOffset" : 1893644
         }
     ],
     "samplers" : [
@@ -167,7 +300,7 @@
     ],
     "buffers" : [
         {
-            "byteLength" : 1523084,
+            "byteLength" : 1941260,
             "uri" : "Anubis.bin"
         }
     ]

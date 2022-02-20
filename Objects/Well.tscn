@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Objects/WellCylinder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/well_plank_bridge_with_rock.tscn" type="PackedScene" id=2]
@@ -18,7 +18,6 @@
 [ext_resource path="res://LightBakes/Tunnel1.lmbake" type="BakedLightmapData" id=16]
 [ext_resource path="res://Objects/well_tunnel_to_bridge.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Objects/well_tunnel_to_bridge2.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Objects/Crystal.tscn" type="PackedScene" id=19]
 
 [sub_resource type="BoxShape" id=15]
 
@@ -48,8 +47,6 @@ func trigger_manually():
 
 [sub_resource type="BoxShape" id=18]
 extents = Vector3( 4.04962, 2.11233, 1 )
-
-[sub_resource type="BoxShape" id=19]
 
 [sub_resource type="BoxShape" id=23]
 
@@ -136,39 +133,8 @@ duration = 5.7
 transform = Transform( 0.979108, 0, -0.18796, 0, 1, 0, 0.178643, 0, 0.977362, 0, 0, 0 )
 shape = SubResource( 18 )
 
-[node name="Room2Pyramid1_TriggerManually" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -27.2003 )
-text = "Long before his death a large pyramid complex was built in Seti’s name."
-duration = 5.7
-
-[node name="Room2Pyramid2_TriggerManually" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -27.2003 )
-text = "The marriage to his wife Anck-Su-Namun took place there."
-duration = 5.0
-
-[node name="Room2Anubis_TriggerManually2" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -27.2003 )
-text = "His highpriest Imhotep was hired to maintain good relations to the gods."
-duration = 7.0
-
-[node name="Room3Message1" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -27.2003 )
-text = "He was paralyzed when he discovered the secret relationship between Namun and Imhotep."
-duration = 5.0
-
-[node name="CollisionShape" type="CollisionShape" parent="TextTriggers/Room3Message1"]
-shape = SubResource( 19 )
-
-[node name="Room3Message2" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -27.2003 )
-text = "In the heat of the moment the highpriest stabbed the Pharaoh with his own sword."
-duration = 6.0
-
-[node name="CollisionShape" type="CollisionShape" parent="TextTriggers/Room3Message2"]
-shape = SubResource( 19 )
-
 [node name="Player" parent="." instance=ExtResource( 9 )]
-transform = Transform( -0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -23.7151, 20.1932, -5.49846 )
+transform = Transform( -0.999966, 0, 0.00830775, 0, 1, 0, -0.00830775, 0, -0.999966, -16.8404, 66.6923, -141.748 )
 
 [node name="SoundTriggers" type="Spatial" parent="."]
 
@@ -207,9 +173,6 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16.431
 transform = Transform( 5.58867, 0, 0.071011, 0, 1, 0, -0.39786, 0, 0.997481, -17.7918, -40.5005, -104.343 )
 linked_room = NodePath("../../WellRoom")
 points = PoolVector2Array( 0.463748, -0.639832, 0.483755, 3.29624, -0.204378, 3.36969, -0.154085, -0.331596, 0.281875, 4.75965, -0.0403981, 4.65511 )
-
-[node name="Crystal" parent="RoomList/House" instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5046, 3.45166 )
 
 [node name="WellRoom" type="Room" parent="RoomList"]
 
@@ -253,15 +216,23 @@ transform = Transform( -5.52347, 0, -1.50274, 0, 1, 0, 4.3691, 0, -0.232623, -12
 shape = SubResource( 3 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="RoomList/WellRoom/InvisibleWalls"]
-transform = Transform( 2.03822, 0, 0.739537, 0, 1, 0, -2.23934, 0, 0.673116, 5.1697, 24.5804, -15.6578 )
+transform = Transform( 2.42281, 0, 0.599833, 0, 1, 0, -1.81631, 0, 0.800126, 6.62246, 24.5804, -16.4296 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape10" type="CollisionShape" parent="RoomList/WellRoom/InvisibleWalls"]
+transform = Transform( 3.58436, 0, -0.185651, 0, 2.89818, 0, 0.677213, 0, 0.982616, 6.58202, 24.5804, -28.4873 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape11" type="CollisionShape" parent="RoomList/WellRoom/InvisibleWalls"]
+transform = Transform( 3.84365, 0, 0.258514, 0, 4.89318, 0, -1.0286, 0, 0.966008, -5.72273, 24.5804, -28.466 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape4" type="CollisionShape" parent="RoomList/WellRoom/InvisibleWalls"]
-transform = Transform( 1.00689, 0, 0.983265, 0, 1, 0, -5.5116, 0, 0.182209, 9.25808, 24.3102, -22.3426 )
+transform = Transform( 1.14537, 0, 0.978887, 0, 1, 0, -5.4845, 0, 0.204428, 9.87822, 24.3102, -22.6931 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape5" type="CollisionShape" parent="RoomList/WellRoom/InvisibleWalls"]
-transform = Transform( -2.30233, 0, -0.649528, 0, 1, 0, 1.96679, 0, -0.760338, 11.4068, 4.12902, 13.7473 )
+transform = Transform( -2.30233, 0, -0.649527, 0, 2.45233, 0, 1.96679, 0, -0.760339, 10.8809, 4.12902, 13.1317 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape6" type="CollisionShape" parent="RoomList/WellRoom/InvisibleWalls"]

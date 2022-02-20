@@ -14,10 +14,12 @@ func start_interacting(_player: Player):
 	match pyramide.build_state:
 		0:
 			pyramide.build_pyramids()
+			$Room2Pyramid1_TriggerManually.trigger_manually()
 		1:
 			pyramide.build_garden()
 		2:
 			pyramide.build_extras()
+			$Room2Pyramid2_TriggerManually.trigger_manually()
 	yield(pyramide, "build_done")
 	print(pyramide.build_state)
 	if pyramide.build_state < 3:

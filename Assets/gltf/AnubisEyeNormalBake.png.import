@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/AnubisFullTextureBake.png-0ea371e741204024af8f88ff5627ed2a.stex"
+path="res://.import/AnubisEyeNormalBake.png-fee8f3d7c50c1ebddab772b63fd7b516.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/gltf/AnubisFullTextureBake.png"
-dest_files=[ "res://.import/AnubisFullTextureBake.png-0ea371e741204024af8f88ff5627ed2a.stex" ]
+source_file="res://Assets/gltf/AnubisEyeNormalBake.png"
+dest_files=[ "res://.import/AnubisEyeNormalBake.png-fee8f3d7c50c1ebddab772b63fd7b516.stex" ]
 
 [params]
 
@@ -23,7 +23,7 @@ flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
-flags/srgb=1
+flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
