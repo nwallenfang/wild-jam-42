@@ -181,7 +181,7 @@ light_data = ExtResource( 9 )
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55907, -4.9299 )
-extents = Vector3( 6.30203, 6.88546, 12.0822 )
+extents = Vector3( 11.2258, 6.88546, 22.2515 )
 interior_enable = true
 
 [node name="Ceiling" parent="." instance=ExtResource( 12 )]

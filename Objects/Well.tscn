@@ -166,7 +166,7 @@ transform = Transform( -0.613314, 0, -0.783844, 0, 2.06232, 0, 0.783844, 0, -0.6
 shape = SubResource( 18 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -8.26884, -28.5153, 20.5325 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -17.886, 66.7502, -143.141 )
 
 [node name="SoundTriggers" type="Spatial" parent="."]
 
@@ -387,7 +387,7 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.567
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.60892, 5.63243, 39.5673 )
 
 [node name="SpawnPosition" type="Position3D" parent="."]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -17.7031, 66.076, -141.748 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -17.886, 66.7502, -143.141 )
 
 [connection signal="body_entered" from="SoundTriggers/IntroToWellArea" to="." method="_on_IntroToWellArea_body_entered"]
 [connection signal="body_entered" from="SoundTriggers/IntroToWellArea2" to="." method="_on_IntroToWellArea2_body_entered"]
