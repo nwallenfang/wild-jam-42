@@ -62,7 +62,7 @@ func move_to_transform(target_transform_arg: Transform):
 	$Tween.interpolate_method(self, "interpolate_transform", 0.0, 1.0, duration, Tween.TRANS_LINEAR)
 	$Tween.start()
 
-
+var player # for vibration
 func open() -> void:
 	# TODO have sand particles flying
 	yield(get_tree().create_timer(1.5), "timeout")
@@ -76,9 +76,11 @@ func open() -> void:
 	
 	$Tween.reset_all()
 	$Tween.interpolate_property($SlidingDoor, "transform", start, end, 2.5)
+	$Tween.interpolate_property(player, "vibration", .07, 0.02, 2.5)
+	player.vibration = .1
 	$Tween.start()
-	
-
+	yield($Tween, "tween_all_completed")
+	player.vibration = 0
 
 func add_crystal(crystal: Node):
 	# move crystal to new parent (CrystalDoor/SlidingDoor)
@@ -95,12 +97,13 @@ func add_crystal(crystal: Node):
 const Crystal = preload("res://Objects/Crystal.tscn")
 var currently_entered = false
 func _on_CrystalDetector_body_entered(body: Node) -> void:
+	if body is Player:
+		player = body as Player
 	if body is Player and not currently_entered:
 		# instantiate crystals from player position and move them towards
 		# maybe rotate them a couple of times while they are moving
 		# play some ding sound
 		
-		var player = body as Player
 		var current_crystal_count: int = int(crystal_count)
 		
 		for i in range(player.number_of_crystals):

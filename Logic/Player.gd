@@ -162,9 +162,13 @@ func match_state(delta):
 		State.INTERACTING:
 			state_interacting(delta)
 
-
+var vibration := 0.0
 func _physics_process(delta: float) -> void:
 	match_state(delta)
+	#print(vibration)
+	if vibration != 0:
+		#print(vibration)
+		translation = translation + Vector3(0, vibration, 0)
 	
 func _process(delta):
 	#camera physics interpolation to reduce physics jitter on high refresh-rate monitors
