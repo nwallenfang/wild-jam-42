@@ -1,0 +1,14 @@
+[gd_resource type="SpatialMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://Assets/gltf/BorderTextureBake.png" type="Texture" id=1]
+[ext_resource path="res://Assets/gltf/RockBrown005_NRM_3K.jpg" type="Texture" id=2]
+
+[resource]
+resource_name = "Border"
+vertex_color_use_as_albedo = true
+params_cull_mode = 2
+albedo_texture = ExtResource( 1 )
+normal_enabled = true
+normal_scale = 1.5
+normal_texture = ExtResource( 2 )
+uv1_scale = Vector3( 0.5, 2, 1 )
