@@ -1,0 +1,150 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.7.33",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Brimby",
+            "translation" : [
+                0,
+                -0.1764529049396515,
+                -0.0034059062600135803
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "Stone base-material",
+            "normalTexture" : {
+                "index" : 0,
+                "scale" : 0.5000002384185791
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1
+                },
+                "metallicFactor" : 0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Plane.008",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "BrimbyNormalBake",
+            "uri" : "BrimbyNormalBake.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "BrimbyTextureBake",
+            "uri" : "BrimbyTextureBake.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 1293,
+            "max" : [
+                0.6806800365447998,
+                4.094520092010498,
+                1.8793542385101318
+            ],
+            "min" : [
+                -1.4964796304702759,
+                0.17704282701015472,
+                -1.6823350191116333
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 1293,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 1293,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 6858,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 15516,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 15516,
+            "byteOffset" : 15516
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 10344,
+            "byteOffset" : 31032
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 13716,
+            "byteOffset" : 41376
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 55092,
+            "uri" : "brimby.bin"
+        }
+    ]
+}
