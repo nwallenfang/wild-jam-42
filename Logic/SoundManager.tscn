@@ -11,6 +11,7 @@ script = ExtResource( 1 )
 
 [node name="VortexDrone" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
+volume_db = -5.0
 
 [node name="BackgroundDroneMaybe" type="AudioStreamPlayer" parent="."]
 
@@ -27,6 +28,8 @@ stream = ExtResource( 2 )
 
 [node name="PickupSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="TweenQuiet" type="Tween" parent="."]
 
 [connection signal="tween_all_completed" from="TweenOut" to="." method="_on_TweenOut_tween_all_completed"]
 [connection signal="tween_all_completed" from="TweenIn" to="." method="_on_TweenIn_tween_all_completed"]

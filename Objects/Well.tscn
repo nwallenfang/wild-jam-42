@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Objects/WellCylinder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/well_plank_bridge_with_rock.tscn" type="PackedScene" id=2]
@@ -46,11 +46,33 @@ func trigger_manually():
 "
 
 [sub_resource type="BoxShape" id=18]
-extents = Vector3( 4.04962, 2.11233, 1 )
+extents = Vector3( 9.48692, 2.11233, 1 )
+
+[sub_resource type="GDScript" id=30]
+script/source = "extends Spatial
+
+
+export var text: String
+export var duration: float
+
+func _on_Area_body_entered(body: Node) -> void:
+	if body is Player:
+		UI.queue_text(text, duration)
+		# these TextTriggers are oneshot, so disable monitoring once triggered
+		set_deferred(\"monitoring\", false)
+
+
+func trigger_manually():
+	UI.queue_text(text, duration)
+	# these TextTriggers are oneshot, so disable monitoring once triggered
+	set_deferred(\"monitoring\", false)
+"
 
 [sub_resource type="BoxShape" id=23]
 
 [sub_resource type="BoxShape" id=28]
+
+[sub_resource type="BoxShape" id=29]
 
 [sub_resource type="CylinderMesh" id=25]
 
@@ -133,6 +155,16 @@ duration = 5.7
 transform = Transform( 0.979108, 0, -0.18796, 0, 1, 0, 0.178643, 0, 0.977362, 0, 0, 0 )
 shape = SubResource( 18 )
 
+[node name="End" parent="TextTriggers" instance=ExtResource( 13 )]
+transform = Transform( 0.707107, 0, 0.256115, 0, 1, 0, -0.707107, 0, 0.256115, 52.7072, 4.82125, -1.19723 )
+script = SubResource( 30 )
+text = "The time has come."
+duration = 4.0
+
+[node name="CollisionShape" type="CollisionShape" parent="TextTriggers/End"]
+transform = Transform( -0.613314, 0, -0.783844, 0, 2.06232, 0, 0.783844, 0, -0.613314, -30.6402, -56.069, -14.0499 )
+shape = SubResource( 18 )
+
 [node name="Player" parent="." instance=ExtResource( 9 )]
 transform = Transform( -0.999966, 0, 0.00830775, 0, 1, 0, -0.00830775, 0, -0.999966, -16.8404, 66.6923, -141.748 )
 
@@ -142,15 +174,49 @@ transform = Transform( -0.999966, 0, 0.00830775, 0, 1, 0, -0.00830775, 0, -0.999
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16.7842, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="SoundTriggers/IntroToWellArea"]
-transform = Transform( 7.88362, 0, 0, 0, 3.2317, 0, 0, 0, 1, 0, 8.64567, -27.4438 )
+transform = Transform( 5.95805, 0, -0.65486, 0, 3.2317, 0, 5.16266, 0, 0.755751, -10.8382, 7.43997, -20.0347 )
 shape = SubResource( 23 )
 
-[node name="TripleRoomMainThemeSwitch" type="Area" parent="SoundTriggers"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.771, 6.73182, -6.90956 )
+[node name="IntroToWellArea2" type="Area" parent="SoundTriggers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9099, -8.20371, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="SoundTriggers/TripleRoomMainThemeSwitch"]
-transform = Transform( 5.20039, 0, 0.644417, 0, 1.98266, 0, -4.38255, 0, 0.764674, -0.709583, -1.48621, 3.63619 )
+[node name="CollisionShape" type="CollisionShape" parent="SoundTriggers/IntroToWellArea2"]
+transform = Transform( 4.96688, 0, -0.776574, 0, 3.2317, 0, 6.12222, 0, 0.630025, 1.55315, 15.7998, -21.5853 )
+shape = SubResource( 23 )
+
+[node name="OutOfWellAreaTripleRoom" type="Area" parent="SoundTriggers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.4077, 0.265592, 31.239 )
+
+[node name="CollisionShape" type="CollisionShape" parent="SoundTriggers/OutOfWellAreaTripleRoom"]
+transform = Transform( 5.20039, 0, 0.644417, 0, 1.98266, 0, -4.38255, 0, 0.764674, -10.3283, 5.46028, -2.65073 )
 shape = SubResource( 28 )
+
+[node name="OutOfWellArea" type="Area" parent="SoundTriggers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.48459, 0.265592, -5.35406 )
+
+[node name="CollisionShape" type="CollisionShape" parent="SoundTriggers/OutOfWellArea"]
+transform = Transform( 0.239478, 0, 0.99938, 0, 1.98266, 0, -6.79658, 0, 0.0352133, -23.2476, -4.22702, 2.01338 )
+shape = SubResource( 28 )
+
+[node name="TurnMainThemeOff" type="Area" parent="SoundTriggers"]
+transform = Transform( 2.19861, 0, 0, 0, 3.63097, 0, 0, 0, 1, -7.75241, -31.189, 28.8537 )
+
+[node name="CollisionShape" type="CollisionShape" parent="SoundTriggers/TurnMainThemeOff"]
+transform = Transform( 3.04199, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 29 )
+
+[node name="EndVortexDrone" type="Area" parent="SoundTriggers"]
+transform = Transform( 1.1326, 0, -0.857104, 0, 6.99762, 0, 1.88444, 0, 0.515143, 32.7471, -48.3608, 33.4632 )
+
+[node name="CollisionShape" type="CollisionShape" parent="SoundTriggers/EndVortexDrone"]
+transform = Transform( 3.04199, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+shape = SubResource( 29 )
+
+[node name="IntroToWellArea3" type="Area" parent="SoundTriggers"]
+
+[node name="CollisionShape2" type="CollisionShape" parent="SoundTriggers/IntroToWellArea3"]
+transform = Transform( 6.19071, 0, 0.619163, 0, 9.70154, 0, -4.88124, 0, 0.785263, -18.0003, -21.1449, -19.1647 )
+shape = SubResource( 23 )
 
 [node name="Glue" type="Spatial" parent="."]
 
@@ -254,7 +320,7 @@ transform = Transform( 1.49443, 0, 0, 0, 1, 0, 0, 0, 1.85369, 0, -84.4112, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 11.9457, 0, 15.9108, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="RoomList/WellRoom/Vortex/DeathTrigger"]
-transform = Transform( 18.4367, 0, 0, 0, 1.40226, 0, 0, 0, 1.40226, 0, 0, 0 )
+transform = Transform( 18.4367, 0, 0, 0, 1.40226, 0, 0, 0, 1.40226, 0, -7.97437, 0 )
 shape = SubResource( 24 )
 
 [node name="PortalToRoom3" type="Portal" parent="RoomList/WellRoom"]
@@ -306,7 +372,13 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.567
 [node name="well_tunnel_to_bridge2" parent="RoomList/BigRoom" instance=ExtResource( 18 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.60892, 5.63243, 39.5673 )
 
-[connection signal="body_entered" from="SoundTriggers/TripleRoomMainThemeSwitch" to="." method="_on_TripleRoomMainThemeSwitch_body_entered"]
+[connection signal="body_entered" from="SoundTriggers/IntroToWellArea" to="." method="_on_IntroToWellArea_body_entered"]
+[connection signal="body_entered" from="SoundTriggers/IntroToWellArea2" to="." method="_on_IntroToWellArea2_body_entered"]
+[connection signal="body_entered" from="SoundTriggers/OutOfWellAreaTripleRoom" to="." method="_on_OutOfWellAreaTripleRoom_body_entered"]
+[connection signal="body_entered" from="SoundTriggers/OutOfWellArea" to="." method="_on_OutOfWellArea_body_entered"]
+[connection signal="body_entered" from="SoundTriggers/TurnMainThemeOff" to="." method="_on_TurnMainThemeOff_body_entered"]
+[connection signal="body_entered" from="SoundTriggers/EndVortexDrone" to="." method="_on_EndVortexDrone_body_entered"]
+[connection signal="body_entered" from="SoundTriggers/IntroToWellArea3" to="." method="_on_IntroToWellArea3_body_entered"]
 [connection signal="body_entered" from="RoomList/WellRoom/Vortex/DeathTrigger" to="." method="_on_DeathTrigger_body_entered"]
 
 [editable path="Glue/Glue"]

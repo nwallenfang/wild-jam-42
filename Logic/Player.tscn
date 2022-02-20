@@ -35,3 +35,4 @@ material/0 = null
 
 [node name="PuzzleJingle" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+volume_db = -13.373

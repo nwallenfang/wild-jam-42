@@ -15,7 +15,7 @@ var mouse_sensitivity = 0.1
 
 # movement parameters
 export var CONTROLS_ENABLED := true
-export var move_acceleration = 150.0
+export var move_acceleration = 70.0
 export var air_acceleration = 40.0
 export var jump_total_acceleration = 3000.0
 export var ground_dampening = 0.7
@@ -42,7 +42,7 @@ func crystal_collected(crystal):
 	crystal.queue_free()
 	
 	if total_number_of_crystals == 3 or total_number_of_crystals == 6 or total_number_of_crystals == 7:
-		$PuzzleJingle.play(0.71)
+		$PuzzleJingle.play(0.85)
 
 
 func debug_cyl(coords_array):

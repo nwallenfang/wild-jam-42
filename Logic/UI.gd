@@ -98,9 +98,25 @@ func _process(_delta: float) -> void:
 		$TutorialTween.start()
 		self.set_process(false)  # don't check if inputs are made for the rest of the game..
 
+
+func end_fizzle_with_tween():
+	$EndFizzle.play(0.86)
+	$SoundTween.interpolate_property($EndFizzle, "volume_db", -5.88, -80.0, 1.2, Tween.TRANS_CIRC, Tween.EASE_IN)
+	$SoundTween.interpolate_property($EndFizzle, "volume_db", -5.88, -80.0, 1.2, Tween.TRANS_CIRC, Tween.EASE_IN)
+	$SoundTween.start()
+	
+
+
 var voronoi_duration = 0.9
 var ankh_show_duration = 0.4
 func start_death_animation():
+	# play end fizzle
+	end_fizzle_with_tween()
+	
+	# stop drone
+	SoundManager.remove_vortex_drone()
+	
+	
 	$Center.visible = false
 	$Bottom.visible = false
 	$Center/DefaultCrosshair.visible = false
