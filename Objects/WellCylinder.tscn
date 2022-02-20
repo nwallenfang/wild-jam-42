@@ -7,5 +7,4 @@
 
 [node name="Cylinderlp" parent="." index="0"]
 layers = 2
-use_in_baked_light = false
 material/0 = ExtResource( 2 )
