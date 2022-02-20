@@ -166,7 +166,7 @@ transform = Transform( -0.613314, 0, -0.783844, 0, 2.06232, 0, 0.783844, 0, -0.6
 shape = SubResource( 18 )
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-transform = Transform( -0.999966, 0, 0.00830775, 0, 1, 0, -0.00830775, 0, -0.999966, -16.8404, 66.6923, -141.748 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16.4149, 66.076, -141.748 )
 
 [node name="SoundTriggers" type="Spatial" parent="."]
 
@@ -182,6 +182,13 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9099, -8.20371, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="SoundTriggers/IntroToWellArea2"]
 transform = Transform( 4.96688, 0, -0.776574, 0, 3.2317, 0, 6.12222, 0, 0.630025, 1.55315, 15.7998, -21.5853 )
+shape = SubResource( 23 )
+
+[node name="IntroToWellArea4" type="Area" parent="SoundTriggers"]
+transform = Transform( 0.980669, 0, -0.195672, 0, 1, 0, 0.195672, 0, 0.980669, 19.5921, -8.20371, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="SoundTriggers/IntroToWellArea4"]
+transform = Transform( -2.78988, 0, -0.935289, 0, 3.2317, 0, 7.37347, 0, -0.353883, 0.455034, 15.7998, -22.0008 )
 shape = SubResource( 23 )
 
 [node name="OutOfWellAreaTripleRoom" type="Area" parent="SoundTriggers"]
@@ -218,6 +225,13 @@ shape = SubResource( 29 )
 transform = Transform( 6.19071, 0, 0.619163, 0, 9.70154, 0, -4.88124, 0, 0.785263, -18.0003, -21.1449, -19.1647 )
 shape = SubResource( 23 )
 
+[node name="IntroToWellArea5" type="Area" parent="SoundTriggers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5148, 0, -11.5275 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="SoundTriggers/IntroToWellArea5"]
+transform = Transform( 6.19071, 0, 0.619163, 0, 9.70154, 0, -4.88124, 0, 0.785263, -18.0003, -21.1449, -19.1647 )
+shape = SubResource( 23 )
+
 [node name="Glue" type="Spatial" parent="."]
 
 [node name="Glue" parent="Glue" instance=ExtResource( 15 )]
@@ -233,7 +247,7 @@ pvs_mode = 2
 [node name="RoomList" type="Spatial" parent="."]
 
 [node name="House" parent="RoomList" instance=ExtResource( 8 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16.431, 64.841, -134.205 )
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -17.6466, 64.841, -134.205 )
 
 [node name="PortalFromHouseToWell" type="Portal" parent="RoomList/House"]
 transform = Transform( 5.58867, 0, 0.071011, 0, 1, 0, -0.39786, 0, 0.997481, -17.7918, -40.5005, -104.343 )
@@ -372,13 +386,18 @@ transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.567
 [node name="well_tunnel_to_bridge2" parent="RoomList/BigRoom" instance=ExtResource( 18 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.60892, 5.63243, 39.5673 )
 
+[node name="SpawnPosition" type="Position3D" parent="."]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -16.4149, 66.076, -141.748 )
+
 [connection signal="body_entered" from="SoundTriggers/IntroToWellArea" to="." method="_on_IntroToWellArea_body_entered"]
 [connection signal="body_entered" from="SoundTriggers/IntroToWellArea2" to="." method="_on_IntroToWellArea2_body_entered"]
+[connection signal="body_entered" from="SoundTriggers/IntroToWellArea4" to="." method="_on_IntroToWellArea4_body_entered"]
 [connection signal="body_entered" from="SoundTriggers/OutOfWellAreaTripleRoom" to="." method="_on_OutOfWellAreaTripleRoom_body_entered"]
 [connection signal="body_entered" from="SoundTriggers/OutOfWellArea" to="." method="_on_OutOfWellArea_body_entered"]
 [connection signal="body_entered" from="SoundTriggers/TurnMainThemeOff" to="." method="_on_TurnMainThemeOff_body_entered"]
 [connection signal="body_entered" from="SoundTriggers/EndVortexDrone" to="." method="_on_EndVortexDrone_body_entered"]
 [connection signal="body_entered" from="SoundTriggers/IntroToWellArea3" to="." method="_on_IntroToWellArea3_body_entered"]
+[connection signal="body_entered" from="SoundTriggers/IntroToWellArea5" to="." method="_on_IntroToWellArea5_body_entered"]
 [connection signal="body_entered" from="RoomList/WellRoom/Vortex/DeathTrigger" to="." method="_on_DeathTrigger_body_entered"]
 
 [editable path="Glue/Glue"]

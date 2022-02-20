@@ -54,7 +54,7 @@
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 87227,
+            "count" : 88664,
             "max" : [
                 29.125532150268555,
                 53.19881820678711,
@@ -70,47 +70,47 @@
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 87227,
+            "count" : 88664,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 87227,
+            "count" : 88664,
             "type" : "VEC2"
         },
         {
             "bufferView" : 3,
             "componentType" : 5125,
-            "count" : 87777,
+            "count" : 89448,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 1046724,
+            "byteLength" : 1063968,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 1046724,
-            "byteOffset" : 1046724
+            "byteLength" : 1063968,
+            "byteOffset" : 1063968
         },
         {
             "buffer" : 0,
-            "byteLength" : 697816,
-            "byteOffset" : 2093448
+            "byteLength" : 709312,
+            "byteOffset" : 2127936
         },
         {
             "buffer" : 0,
-            "byteLength" : 351108,
-            "byteOffset" : 2791264
+            "byteLength" : 357792,
+            "byteOffset" : 2837248
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 3142372,
+            "byteLength" : 3195040,
             "uri" : "well_cylinder.bin"
         }
     ]

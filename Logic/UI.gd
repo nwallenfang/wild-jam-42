@@ -24,16 +24,13 @@ func _ready() -> void:
 	# control ankh sprite size
 	var viewportWidth = get_viewport().size.x
 	var viewportHeight = get_viewport().size.y
+	
+	for sprite in [$Ankh, $Credit1, $Credit2]:
+		var scale = viewportWidth / sprite.texture.get_size().x
+		sprite.set_position(Vector2(viewportWidth/2, viewportHeight/2))
 
-	var scale = viewportWidth / $Ankh.texture.get_size().x
-
-	# Optional: Center the sprite, required only if the sprite's Offset>Centered checkbox is set
-	$Ankh.set_position(Vector2(viewportWidth/2, viewportHeight/2))
-
-	# Set same scale value horizontally/vertically to maintain aspect ratio
-	# If however you don't want to maintain aspect ratio, simply set different
-	# scale along x and y
-	$Ankh.set_scale(Vector2(scale, scale))
+		# set same scale value horizontally/vertically to maintain aspect ratio
+		sprite.set_scale(Vector2(scale, scale))
 
 
 var text_currently_showing = false
@@ -109,6 +106,8 @@ func end_fizzle_with_tween():
 
 var voronoi_duration = 0.9
 var ankh_show_duration = 0.4
+var blended_in = Color(1.0, 1.0, 1.0, 1.0)
+var blended_out = Color(1.0, 1.0, 1.0, 0.0)
 func start_death_animation():
 	# play end fizzle
 	end_fizzle_with_tween()
@@ -130,16 +129,51 @@ func start_death_animation():
 	yield($Tween, "tween_all_completed")
 	
 	# slowly show Ankh
-	var color_blended_out = Color(lore_text.modulate)
-	color_blended_out.a = 0.0
-	var color_blended_in = Color(lore_text.modulate)
-	color_blended_in.a = 1.0
+#	var color_blended_out = Color(lore_text.modulate)
+#	color_blended_out.a = 0.0
+#	var color_blended_in = Color(lore_text.modulate)
+#	color_blended_in.a = 1.0
 	$DeathTexture.visible = false
-	$Ankh.visible = true
-	$Ankh.modulate = color_blended_out
-	$Tween.interpolate_property($Ankh, "modulate", color_blended_out, color_blended_in, ankh_show_duration, Tween.EASE_IN)
+	$Ankh.modulate = blended_out
+	$Ankh.set_deferred("visible", true)
+	$Tween.reset_all()
+	$Tween.interpolate_property($Ankh, "modulate", blended_out, blended_in, ankh_show_duration, Tween.EASE_IN)
+	$Tween.start()
+	yield($Tween, "tween_all_completed")
+	yield(get_tree().create_timer(3.8), "timeout")
+	# show first credit scene
+	$Tween.reset_all()
+	$Tween.interpolate_property($Ankh, "modulate", blended_in, blended_out, 1.0, Tween.EASE_OUT)
+	$Tween.start()
+	
+	
+	$Credit1.modulate = blended_out
+	$Credit1.set_deferred("visible", true)
+	$Tween2.reset_all()
+	$Tween2.interpolate_property($Credit1, "modulate", blended_out, blended_in, ankh_show_duration, Tween.EASE_IN)
+	$Tween2.start()
+	yield(get_tree().create_timer(10.0), "timeout")
+	
+	$Tween.reset_all()
+	$Tween.interpolate_property($Credit1, "modulate", blended_in, blended_out, 1.0, Tween.EASE_OUT)
+	$Tween.start()
+	$Credit2.modulate = blended_out
+	$Credit2.set_deferred("visible", true)
+	$Tween2.reset_all()
+	$Tween2.interpolate_property($Credit2, "modulate", blended_out, blended_in, ankh_show_duration, Tween.EASE_IN)
+	$Tween2.start()
+
+	yield(get_tree().create_timer(5.0), "timeout")
+	
+	
+	# Fade to black
+	$Tween.reset_all()
+	$Tween.interpolate_property($Credit2, "modulate", blended_in, blended_out, 1.8, Tween.EASE_OUT)
 	$Tween.start()
 
+	yield($Tween, "tween_all_completed")
+	
+	get_tree().quit()
 
 func _on_Button_pressed() -> void:
 	start_death_animation()

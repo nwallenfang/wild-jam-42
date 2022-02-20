@@ -56,6 +56,10 @@ Game="*res://Logic/Game.tscn"
 UI="*res://Logic/UI.tscn"
 SoundManager="*res://Logic/SoundManager.tscn"
 
+[debug]
+
+settings/fps/force_fps=60
+
 [display]
 
 window/size/width=1280
