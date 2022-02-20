@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Objects/Sword.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Objects/Vase2.tscn" type="PackedScene" id=2]
+
+[node name="VaseWithSwords" type="Spatial"]
+
+[node name="Vase2" parent="." instance=ExtResource( 2 )]
+
+[node name="Sword" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.04919, 0.174858, 0, -0.174858, -1.04919, 0, 0, 0, 1.06366, -0.241567, 1.19648, 0.00459186 )
+
+[node name="Sword2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 0.727137, -0.253624, -0.733698, -0.403363, -0.982366, -0.0601736, -0.663276, 0.319371, -0.767745, 0.0293742, 1.25706, -0.0926289 )
+
+[node name="Sword9" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.491067, 0.00766109, 0.943483, -0.0955019, -1.05856, -0.0411116, 0.938668, -0.103692, 0.489403, -0.128268, 1.2485, 0.115661 )
+
+[node name="Sword3" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.05389, 0.117467, 0.0829946, -0.108139, -1.05182, 0.115529, 0.0948298, 0.106031, 1.0541, -0.0270201, 1.22447, 0.210438 )
+
+[node name="Sword4" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.548004, 0.0939311, -0.906771, -0.170874, -1.04983, -0.00548312, -0.895466, 0.142846, 0.555969, 0.129632, 1.24265, 0.159602 )
+
+[node name="Sword5" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.579252, -0.103331, -0.88609, 0.112787, -1.0565, 0.0494723, -0.884936, -0.0670165, 0.586312, 0.240416, 1.26766, -0.0321506 )
+
+[node name="Sword6" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.05206, -0.0299884, -0.153726, 0.0165322, -1.05941, 0.0935241, -0.155749, 0.0901153, 1.04833, 0.129632, 1.20796, -0.248769 )
+
+[node name="Sword7" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.552735, 0.0706955, -0.906009, 0.0133412, -1.05969, -0.0908261, -0.908665, -0.058562, 0.549786, -0.13502, 1.1998, -0.128447 )

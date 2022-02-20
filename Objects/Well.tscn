@@ -363,7 +363,8 @@ material/0 = null
 [node name="Tunnel1" type="Room" parent="RoomList"]
 
 [node name="BakedLightmap" type="BakedLightmap" parent="RoomList/Tunnel1"]
-transform = Transform( 0.820581, 0, 0.57153, 0, 1, 0, -0.57153, 0, 0.820581, 42.2589, 0, 3.08195 )
+transform = Transform( 0.820581, 0, 0.57153, 0, 1, 0, -0.57153, 0, 0.820581, 40.1665, 7.22416, 14.9432 )
+extents = Vector3( 26.7223, 7.01798, 21.5434 )
 light_data = ExtResource( 16 )
 
 [node name="well_tunnel_to_room1" parent="RoomList/Tunnel1" instance=ExtResource( 3 )]
