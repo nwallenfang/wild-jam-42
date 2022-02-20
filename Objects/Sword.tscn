@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/gltf/Sword.gltf" type="PackedScene" id=1]
+[ext_resource path="res://Objects/SwordStatic.gd" type="Script" id=2]
+[ext_resource path="res://Objects/Sword.gd" type="Script" id=3]
+
+[sub_resource type="CapsuleShape" id=1]
+radius = 0.0842138
+height = 0.831831
+
+[sub_resource type="Animation" id=2]
+resource_name = "hover"
+length = 6.0
+loop = true
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ true ],
+"method": "play_hover_animation"
+}, {
+"args": [ false ],
+"method": "play_hover_animation"
+} ]
+}
+
+[node name="Sword" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Static" type="StaticBody" parent="." index="4"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Static" index="0"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.277925, 0 )
+shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="." index="5"]
+
+[node name="AnimationTween" type="Tween" parent="." index="6"]
+repeat = true
+playback/repeat = true
+
+[node name="HoverTween" type="Tween" parent="." index="7"]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
+anims/hover = SubResource( 2 )
