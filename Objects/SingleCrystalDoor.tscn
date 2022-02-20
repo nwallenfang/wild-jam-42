@@ -32,7 +32,7 @@ stream = ExtResource( 2 )
 [node name="SlidingDoor" parent="." instance=ExtResource( 3 )]
 
 [node name="OmniLight1" type="OmniLight" parent="SlidingDoor"]
-transform = Transform( 0.970851, 0, -0.239686, 0, 1, 0, 0.239686, 0, 0.970851, -0.442411, 0.0156664, 0.332457 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012039, 0.0156664, 0.34639 )
 visible = false
 light_color = Color( 1, 0.188235, 0, 1 )
 light_energy = 0.0

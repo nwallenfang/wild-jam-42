@@ -15,7 +15,7 @@ func _ready() -> void:
 	# in the beginning only house has to visible, the others can be made invis
 	room1.visible = false
 	room2.visible = false
-	room3.visible = true
+	room3.visible = false
 
 
 func _on_DeathTrigger_body_entered(body: Node) -> void:
@@ -76,7 +76,7 @@ func _on_TurnMainThemeOff_body_entered(body: Node) -> void:
 
 func _on_EndVortexDrone_body_entered(body: Node) -> void:
 	if body is Player:
-		# make vortex slowly louder
+		print("end begin vortex")
 		SoundManager.vortex_drone_towards_end()
 		$SoundTriggers/EndVortexDrone.set_deferred("monitoring", false)
 		$SoundTriggers/EndVortexDrone.set_deferred("monitorable", false)
@@ -91,7 +91,6 @@ func _on_IntroToWellArea4_body_entered(body: Node) -> void:
 
 func _on_IntroToWellArea5_body_entered(body: Node) -> void:
 	if body is Player:
-		room2.visible = false
 		room3.visible = true
 		$SoundTriggers/EndVortexDrone.set_deferred("monitoring", false)
 		$SoundTriggers/EndVortexDrone.set_deferred("monitorable", false)

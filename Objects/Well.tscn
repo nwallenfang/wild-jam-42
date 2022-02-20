@@ -129,7 +129,7 @@ transform = Transform( 0.374769, 0, 1.46497, 0, 2.14128, 0, -0.0355357, 0, 1.825
 shape = SubResource( 14 )
 
 [node name="Room1Money" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.645092, 0, 0.707107, 0, 1, 0, -0.645092, 0, 0.707107, 34.3144, 4.82125, -5.65156 )
+transform = Transform( 0.281891, 0, 0.591582, 0, 1, 0, -0.236893, 0, 0.703952, 34.9599, 4.82125, -5.96988 )
 text = "Sapphires from Sethos’ empire brought him unfathomable riches."
 duration = 5.7
 
@@ -138,7 +138,7 @@ transform = Transform( 0.979108, 0, -0.18796, 0, 1, 0, 0.178643, 0, 0.977362, 0,
 shape = SubResource( 18 )
 
 [node name="Room1Weapons1" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.75507, 0, 0.582222, 0, 1, 0, -0.540716, 0, 0.813029, 41.9418, 4.82125, -11.5014 )
+transform = Transform( 0.320546, 0, 0.582222, 0, 1, 0, -0.229548, 0, 0.813029, 41.8877, 4.82125, -11.0139 )
 text = "From his early years onward Seti was trained in close combat and war tactics."
 duration = 5.7
 
@@ -147,7 +147,7 @@ transform = Transform( 0.9491, 0, -0.016347, 0, 1, 0, 0.0425697, 0, 0.364458, -1
 shape = SubResource( 18 )
 
 [node name="Room1Weapons2" parent="TextTriggers" instance=ExtResource( 13 )]
-transform = Transform( 0.707107, 0, 0.256115, 0, 1, 0, -0.707107, 0, 0.256115, 39.14, 4.82125, -14.7644 )
+transform = Transform( 0.302536, 0, 0.256115, 0, 1, 0, -0.302536, 0, 0.256115, 38.6739, 4.82125, -14.2983 )
 text = "None of which offered any help in the moment of betrayal."
 duration = 5.7
 
@@ -216,7 +216,7 @@ shape = SubResource( 29 )
 transform = Transform( 1.1326, 0, -0.857104, 0, 6.99762, 0, 1.88444, 0, 0.515143, 32.7471, -48.3608, 33.4632 )
 
 [node name="CollisionShape" type="CollisionShape" parent="SoundTriggers/EndVortexDrone"]
-transform = Transform( 3.04199, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 2.17489, 0, 0, 0, 1, 0, 2.38419e-07, 0, 1, 0, 0, 0 )
 shape = SubResource( 29 )
 
 [node name="IntroToWellArea3" type="Area" parent="SoundTriggers"]
@@ -343,6 +343,9 @@ linked_room = NodePath("../Room3")
 portal_margin = 5.08
 points = PoolVector2Array( 1.06427, -1.92771, 1, 1, -1, 1, -1.13858, -1.89954 )
 
+[node name="well_tunnel_to_end" parent="RoomList/WellRoom" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29153e-06, 0, 0 )
+
 [node name="Room3" parent="RoomList/WellRoom" instance=ExtResource( 12 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.12971, -32.8402, 47.1722 )
 
@@ -350,9 +353,6 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -5.1297
 transform = Transform( -0.436284, 0, -0.899809, 0, 1, 0, 0.899809, 0, -0.436284, -31.0374, -19.6739, 32.2703 )
 linked_room = NodePath("../..")
 points = PoolVector2Array( 2.84133, -2.49917, 1.95458, 2.07531, -2.53538, 2.02618, -2.46273, -2.8824 )
-
-[node name="well_tunnel_to_end" parent="RoomList/WellRoom/Room3" instance=ExtResource( 14 )]
-transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -5.12971, 32.8402, 47.1722 )
 
 [node name="room-bound" type="MeshInstance" parent="RoomList/WellRoom/Room3"]
 transform = Transform( 64.9268, 0, 0, 0, 22.8826, 0, 0, 0, 21.6477, 0, 0.807503, 5.71 )

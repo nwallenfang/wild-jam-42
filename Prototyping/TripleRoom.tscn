@@ -477,7 +477,7 @@ interior_enable = true
 
 [node name="ReflectionProbeRight" type="ReflectionProbe" parent="."]
 transform = Transform( 0.999976, 0, 0.00694519, 0, 1, 0, -0.00694519, 0, 0.999976, 9.85636, 1.36598, -0.656813 )
-extents = Vector3( 5.39557, 3.9028, 6.95287 )
+extents = Vector3( 5.39557, 3.9028, 5.8484 )
 origin_offset = Vector3( 0.302734, 0.0175781, 1.91211 )
 interior_enable = true
 

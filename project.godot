@@ -44,7 +44,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="The Last Walk"
+config/name="Seti's Last Journey"
 run/main_scene="res://Objects/Well.tscn"
 boot_splash/image="res://Assets/Sprites/Wildling-Wallpaper 1080.png"
 config/icon="res://Assets/Sprites/icon.png"
