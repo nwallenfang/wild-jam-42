@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Objects/WellCylinder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/well_plank_bridge_with_rock.tscn" type="PackedScene" id=2]
@@ -14,12 +14,11 @@
 [ext_resource path="res://Prototyping/Room3.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Logic/TextTrigger.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Objects/well_tunnel_to_end.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Objects/Glue.tscn" type="PackedScene" id=15]
 [ext_resource path="res://LightBakes/Tunnel1.lmbake" type="BakedLightmapData" id=16]
 [ext_resource path="res://Objects/well_tunnel_to_bridge.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Objects/well_tunnel_to_bridge2.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Prototyping/StripeOfLights.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Assets/Materials/GlueMaterial.tres" type="Material" id=20]
+[ext_resource path="res://Objects/OneSidedUV.tscn" type="PackedScene" id=21]
 
 [sub_resource type="BoxShape" id=15]
 
@@ -76,7 +75,7 @@ func trigger_manually():
 
 [sub_resource type="BoxShape" id=29]
 
-[sub_resource type="SpatialMaterial" id=32]
+[sub_resource type="SpatialMaterial" id=31]
 albedo_color = Color( 0, 0, 0, 1 )
 
 [sub_resource type="CylinderMesh" id=25]
@@ -239,19 +238,19 @@ shape = SubResource( 23 )
 
 [node name="Glue" type="Spatial" parent="."]
 
-[node name="Glue" parent="Glue" instance=ExtResource( 15 )]
-transform = Transform( 7.56346, 0.00170187, 0.563151, -0.0188501, 0.999998, -1.96812e-10, -5.15442, -0.0011598, 0.826354, 47.5777, 4.11964, -11.3873 )
+[node name="OneSidedUV" parent="Glue" instance=ExtResource( 21 )]
+transform = Transform( -0.288356, -0.95615, 0.0512669, -0.022506, 0.0602943, 0.997927, -0.957259, 0.286604, -0.0389054, 53.155, 9.62958, -14.0663 )
 
-[node name="Cube" parent="Glue/Glue/OneSidedUV" index="0"]
-transform = Transform( 0.992128, -0.098397, 9.68575e-07, 0.125229, 0.779548, 1.22702e-07, -1.43051e-06, -1.49012e-07, 0.684434, -8.29697e-05, 0.0867519, -3.8147e-06 )
-material/0 = ExtResource( 20 )
+[node name="Cube" parent="Glue/OneSidedUV" index="0"]
+transform = Transform( 1.78488, -0.193875, 2.98023e-08, 0.352737, 0.981027, 3.94881e-07, -3.72529e-08, -5.58794e-08, 8.27155, 0.481672, 0.243721, 8.58307e-06 )
+material/0 = SubResource( 31 )
 
-[node name="Glue2" parent="Glue" instance=ExtResource( 15 )]
-transform = Transform( -3.9239e-07, -0.800804, 0.598926, 11.2098, -4.37114e-08, 0, 2.9347e-07, 0.598926, 0.800804, 53.6185, 6.40277, -15.2803 )
+[node name="OneSidedUV2" parent="Glue" instance=ExtResource( 21 )]
+transform = Transform( -0.639261, -0.140122, 1.43746, -0.242491, 0.977855, 0.0500384, -0.949142, -0.155453, -0.980932, 50.4237, 4.06572, -14.3518 )
 
-[node name="Cube" parent="Glue/Glue2/OneSidedUV" index="0"]
-transform = Transform( 0.539225, 1.64313e-14, 1.73195e-14, -3.55271e-14, 1, 0, -2.84217e-14, 0, 1, 0, 0, 0 )
-material/0 = SubResource( 32 )
+[node name="Cube" parent="Glue/OneSidedUV2" index="0"]
+transform = Transform( 1.78488, -0.193875, 2.98023e-08, 0.352737, 0.981027, 3.94881e-07, -3.72529e-08, -5.58794e-08, 8.27155, 0.481672, 0.243721, 8.58307e-06 )
+material/0 = SubResource( 31 )
 
 [node name="RoomManager" type="RoomManager" parent="."]
 roomlist = NodePath("../RoomList")
@@ -416,7 +415,5 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -17.886
 [connection signal="body_entered" from="SoundTriggers/IntroToWellArea5" to="." method="_on_IntroToWellArea5_body_entered"]
 [connection signal="body_entered" from="RoomList/WellRoom/Vortex/DeathTrigger" to="." method="_on_DeathTrigger_body_entered"]
 
-[editable path="Glue/Glue"]
-[editable path="Glue/Glue/OneSidedUV"]
-[editable path="Glue/Glue2"]
-[editable path="Glue/Glue2/OneSidedUV"]
+[editable path="Glue/OneSidedUV"]
+[editable path="Glue/OneSidedUV2"]

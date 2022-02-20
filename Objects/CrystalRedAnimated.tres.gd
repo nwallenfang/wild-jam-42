@@ -3,11 +3,17 @@ extends Spatial
 
 signal movement_done
 
-
+func grow():
+	$MoveThis.remove_from_group("interactable")
+	var init_scale = Vector3(.1,.1,.1)
+	$GrowTween.interpolate_property(self, "scale", init_scale, scale, 1.8, Tween.TRANS_BACK, Tween.EASE_OUT)
+	$GrowTween.start()
+	scale = init_scale
+	yield(get_tree().create_timer(1.5), "timeout")
+	$MoveThis.add_to_group("interactable")
+	
 
 func _ready():
-	$Dance.play("dance")
-	$Rotate.play("rotate")
 #	$MoveThis.connect("started_interacting", self, "start_interacting")
 	pass
 

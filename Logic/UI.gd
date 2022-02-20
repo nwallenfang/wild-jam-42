@@ -113,7 +113,7 @@ func start_death_animation():
 	end_fizzle_with_tween()
 	
 	# stop drone
-	SoundManager.remove_vortex_drone()
+	SoundManager.remove_vortex_drone_only()
 	
 	
 	$Center.visible = false

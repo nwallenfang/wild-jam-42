@@ -85,19 +85,21 @@ func remove_vortex_drone():
 	$TweenQuiet.interpolate_property($MainTheme, "volume_db", reduced_main_theme, default_volumes["MainTheme"], 2.0, Tween.TRANS_CIRC, Tween.EASE_IN)
 	$TweenQuiet.start()
 
-func main_theme_to_vortex():
-	tween_out($MainTheme, 2.0)
-	# slowly start
-	tween_in($VortexDrone, 3.5)
+
+func remove_vortex_drone_only():
+	tween_out($VortexDrone, 3.0)
 
 
 func stop_main_theme_towards_end():
 	$TweenOut.reset_all()
-	$TweenOut.interpolate_property($MainTheme, "volume_db", null, -30.0, 5.0, Tween.TRANS_CIRC, Tween.EASE_IN)
+	$TweenOut.interpolate_property($MainTheme, "volume_db", null, -80.0, 12.0, Tween.TRANS_LINEAR, Tween.EASE_IN)
 	$TweenOut.start()
 	
 func vortex_drone_towards_end():
-	tween_in($VortexDrone, 2.5)
+	$TweenIn.reset_all()
+	$TweenIn.interpolate_property($VortexDrone, "volume_db", -80, -4, 3.0, Tween.TRANS_CIRC, Tween.EASE_OUT)
+	$VortexDrone.play()
+	$TweenIn.start()
 
 
 func _on_TweenOut_tween_all_completed() -> void:
