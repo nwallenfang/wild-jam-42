@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Objects/Pillar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Torch.tscn" type="PackedScene" id=2]
@@ -21,6 +21,8 @@
 [ext_resource path="res://Objects/GoldenCup.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Prototyping/BigRoom.gd" type="Script" id=20]
 [ext_resource path="res://Logic/TextTrigger.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Objects/Brimby.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Objects/BrokenPillar.tscn" type="PackedScene" id=23]
 
 [sub_resource type="BoxShape" id=11]
 extents = Vector3( 2.16573, 0.791591, 2.07406 )
@@ -51,14 +53,16 @@ surfaces/0 = {
 [sub_resource type="CubeMesh" id=12]
 
 [sub_resource type="BoxShape" id=13]
+extents = Vector3( 1.52993, 1, 1.55977 )
 
 [sub_resource type="SphereShape" id=14]
+radius = 0.646037
 
 [node name="BigRoom" type="Room"]
 script = ExtResource( 20 )
 
 [node name="CrystalDoor" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0367854, 1.70141, -11.9521 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0367854, 1.70141, -11.6414 )
 
 [node name="BakedLightmap" type="BakedLightmap" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.502992, 3.36055, 0.00471735 )
@@ -87,10 +91,10 @@ transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, 2.35626, 5.90636, 11.581
 transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, -2.88523, 5.86719, 11.5679 )
 
 [node name="HalfWallGood3" parent="Walls" instance=ExtResource( 11 )]
-transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, -2.81104, 1.82671, -11.8611 )
+transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, -2.81104, 1.82671, -11.5504 )
 
 [node name="HalfWallGood4" parent="Walls" instance=ExtResource( 11 )]
-transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, 2.51581, 1.86548, -11.9024 )
+transform = Transform( 1.13977, 0, 0, 0, 1, 0, 0, 0, 1, 2.51581, 1.86548, -11.5917 )
 
 [node name="StoneWall9" parent="Walls" instance=ExtResource( 8 )]
 transform = Transform( -0.00938978, 0, 0.999956, 0, 1, 0, -0.999956, 0, -0.00938978, -12.1956, 1.86913, 9.40947 )
@@ -108,16 +112,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.58635, 1.86913, 11.5796 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53583, 1.87406, 11.6044 )
 
 [node name="StoneWall29" parent="Walls" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96692, 1.86913, -11.872 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96692, 1.86913, -11.5613 )
 
 [node name="StoneWall30" parent="Walls" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0142, 1.86913, -11.872 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0142, 1.86913, -11.5613 )
 
 [node name="StoneWall31" parent="Walls" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74646, 1.86913, -11.9144 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.74646, 1.86913, -11.6037 )
 
 [node name="StoneWall32" parent="Walls" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.73186, 1.86913, -11.9349 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.73186, 1.86913, -11.6242 )
 
 [node name="StoneWall10" parent="Walls" instance=ExtResource( 8 )]
 transform = Transform( -0.00938978, 0, 0.999956, 0, 1, 0, -0.999956, 0, -0.00938978, -12.231, 1.86913, 5.41156 )
@@ -171,22 +175,22 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53583, 5.86525, 11.6044 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29013, 5.86525, 11.6044 )
 
 [node name="StoneWall37" parent="Walls" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.958, 5.86, -11.872 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.958, 5.86, -11.5613 )
 
 [node name="StoneWall52" parent="Walls" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93921, 5.86032, -11.8635 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93921, 5.86032, -11.5528 )
 
 [node name="StoneWall50" parent="Walls" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.839, 5.86032, -11.9099 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.839, 5.86032, -11.5992 )
 
 [node name="StoneWall38" parent="Walls" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0142, 5.86032, -11.872 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0142, 5.86032, -11.5613 )
 
 [node name="StoneWall39" parent="Walls" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80778, 5.86032, -11.9031 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80778, 5.86032, -11.5924 )
 
 [node name="StoneWall40" parent="Walls" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80659, 5.86032, -11.9465 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.80659, 5.86032, -11.6358 )
 
 [node name="StoneWall13" parent="Walls" instance=ExtResource( 8 )]
 transform = Transform( -0.00938978, 0, 0.999956, 0, 1, 0, -0.999956, 0, -0.00938978, -12.231, 5.86032, 5.41156 )
@@ -227,16 +231,19 @@ transform = Transform( 0.999997, 0, 0, 0, 0.999997, 0, 0, 0, 0.999997, -0.283497
 [node name="LightsAndCrystals" type="Spatial" parent="."]
 
 [node name="Torch" parent="LightsAndCrystals" instance=ExtResource( 2 )]
-transform = Transform( -0.999203, -0.002707, 0.0398306, -2.96391e-09, 0.997698, 0.0678063, -0.0399225, 0.0677522, -0.996903, 4.02292, 2.02878, -11.8152 )
+transform = Transform( -0.999203, -0.002707, 0.0398306, -2.96391e-09, 0.997698, 0.0678063, -0.0399225, 0.0677522, -0.996903, 4.02292, 2.02878, -11.5045 )
 
 [node name="Torch3" parent="LightsAndCrystals" instance=ExtResource( 2 )]
-transform = Transform( -0.999203, -0.002707, 0.0398306, -2.96391e-09, 0.997698, 0.0678063, -0.0399225, 0.0677522, -0.996903, -4.32488, 2.02878, -11.6416 )
+transform = Transform( -0.999203, -0.002707, 0.0398306, -2.96391e-09, 0.997698, 0.0678063, -0.0399225, 0.0677522, -0.996903, -4.32488, 2.02878, -11.3309 )
 
 [node name="Torch2" parent="LightsAndCrystals" instance=ExtResource( 2 )]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.1028, 1.23247, -1.11185 )
 
 [node name="Torch4" parent="LightsAndCrystals" instance=ExtResource( 2 )]
-transform = Transform( -0.0366437, 0, 0.999328, 0, 1, 0, -0.999328, 0, -0.0366437, 11.5087, 1.23247, -1.11185 )
+transform = Transform( -0.0366437, 0, 0.999328, 0, 1, 0, -0.999328, 0, -0.0366437, 11.5087, 1.23247, -4.67062 )
+
+[node name="Torch5" parent="LightsAndCrystals" instance=ExtResource( 2 )]
+transform = Transform( -0.0366437, 0, 0.999328, 0, 1, 0, -0.999328, 0, -0.0366437, 11.5221, 1.23247, 4.43555 )
 
 [node name="FireStand" parent="LightsAndCrystals" instance=ExtResource( 15 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.53193, 0.990113, 5.51294 )
@@ -345,6 +352,10 @@ transform = Transform( 1.55808, 0, 0, 0, 1.23243, 0, 0, 0, 1.55808, -8.41023, -0
 
 [node name="Pillar4" parent="Pillars" instance=ExtResource( 1 )]
 transform = Transform( 1.55808, 0, 0, 0, 1.23243, 0, 0, 0, 1.55808, -8.59723, -0.0184861, 5.12625 )
+visible = false
+
+[node name="BrokenPillar" parent="Pillars" instance=ExtResource( 23 )]
+transform = Transform( -6.77527e-08, 0, -1.55, 0, 1.23, 0, 1.55, 0, -6.77527e-08, -8.5974, 0, 5.11026 )
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.23114, 0.0719352 )
@@ -360,16 +371,16 @@ material/0 = null
 [node name="EntryRamp" type="StaticBody" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="EntryRamp"]
-transform = Transform( 1, 0, 0, 0, 0.016572, -0.153156, 0, 0.00765139, 0.331719, -0.0610849, -0.288015, 12.2958 )
+transform = Transform( 1, 0, 0, 0, 0.0173114, -0.115837, 0, 0.00578697, 0.34652, -0.0852009, -0.312708, 12.4893 )
 shape = SubResource( 13 )
 
 [node name="Anubis" parent="." instance=ExtResource( 13 )]
-transform = Transform( -8.63217e-09, 0, -0.197481, 0, 0.197481, 0, 0.197481, 0, -8.63217e-09, 10.643, -0.160816, 9.62976 )
+transform = Transform( -8.63217e-09, 0, -0.197481, 0, 0.197481, 0, 0.197481, 0, -8.63217e-09, 10.643, -0.160816, -0.476417 )
 
 [node name="CrystalDispenser" type="Area" parent="Anubis"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Anubis/CrystalDispenser"]
-transform = Transform( 34.1737, 0, 6.3723e-08, 0, 15.2073, 0, 6.37236e-08, 0, 35.6315, 9.19183, 0, -4.19159 )
+transform = Transform( 34.1737, 0, 6.37225e-08, 0, 15.2073, 0, 6.37244e-08, 0, 35.6315, 0.386562, 0, -4.19159 )
 shape = SubResource( 14 )
 
 [node name="CrystalPos" type="Position3D" parent="Anubis"]
@@ -379,6 +390,18 @@ transform = Transform( -2.21345e-07, 0, 5.06378, 0, 5.06378, 0, -5.06378, 0, -2.
 transform = Transform( 0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 39.9628, 4.82125, -27.2003 )
 text = "His highpriest Imhotep was hired to maintain good relations to the gods."
 duration = 7.0
+
+[node name="Brimby" parent="." instance=ExtResource( 22 )]
+transform = Transform( 0.25273, 0, 0, 0, 0.25273, 0, 0, 0, 0.25273, -1.76537, 0.89089, 5.32591 )
+
+[node name="Brimby2" parent="." instance=ExtResource( 22 )]
+transform = Transform( 0.25273, 0, 0, 0, 0.25273, 0, 0, 0, 0.25273, 1.85042, 0.89089, 5.32591 )
+
+[node name="Brimby3" parent="." instance=ExtResource( 22 )]
+transform = Transform( -0.25273, 0, 3.52876e-05, 0, 0.25273, 0, -3.52876e-05, 0, -0.25273, 1.76292, 0.89089, -5.35195 )
+
+[node name="Brimby4" parent="." instance=ExtResource( 22 )]
+transform = Transform( -0.25273, 0, 3.52876e-05, 0, 0.25273, 0, -3.52876e-05, 0, -0.25273, -1.88458, 0.89089, -5.48927 )
 
 [connection signal="body_entered" from="Anubis/CrystalDispenser" to="." method="_on_CrystalDispenser_body_entered"]
 
