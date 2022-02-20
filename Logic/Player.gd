@@ -15,7 +15,7 @@ var mouse_sensitivity = 0.1
 
 # movement parameters
 export var CONTROLS_ENABLED := true
-export var move_acceleration = 70.0
+export var move_acceleration = 60.0
 export var air_acceleration = 40.0
 export var jump_total_acceleration = 3000.0
 export var ground_dampening = 0.7

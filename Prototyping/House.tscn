@@ -235,7 +235,23 @@ shape = SubResource( 15 )
 transform = Transform( 6.07774, 0, 0, 0, 1, 0, 0, 0, 6.07774, 0, -0.0237093, 5.03421 )
 
 [node name="Mesh" parent="Glue" index="0"]
-transform = Transform( 4.28806, 0, 0, 0, 4.28806, 0, 0, 0, 4.28806, 0, 0, 0 )
+transform = Transform( 4.28806, 0, 0, 0, 4.28806, 0, 0, 0, 2.42699, 0, 0, 0.890257 )
+use_in_baked_light = true
+material/0 = SubResource( 16 )
+
+[node name="Glue2" parent="." instance=ExtResource( 14 )]
+transform = Transform( -2.65666e-07, 0, 6.07774, 0, 1, 0, -6.07774, 0, -2.65666e-07, 11.9635, -0.0237093, -29.8752 )
+
+[node name="Mesh" parent="Glue2" index="0"]
+transform = Transform( 4.28806, 0, 0, 0, 4.28806, 0, 0, 0, 2.42699, 0, 0, 0.890257 )
+use_in_baked_light = true
+material/0 = SubResource( 16 )
+
+[node name="Glue3" parent="." instance=ExtResource( 14 )]
+transform = Transform( -2.65666e-07, 0, 6.07774, 0, 1, 0, -6.07774, 0, -2.65666e-07, -22.8312, -0.0237093, -29.8752 )
+
+[node name="Mesh" parent="Glue3" index="0"]
+transform = Transform( 4.28806, 0, 0, 0, 4.28806, 0, 0, 0, 2.42699, 0, 0, 0.890257 )
 use_in_baked_light = true
 material/0 = SubResource( 16 )
 
@@ -337,3 +353,5 @@ shape = SubResource( 18 )
 [editable path="FireStand2"]
 [editable path="Ceiling"]
 [editable path="Glue"]
+[editable path="Glue2"]
+[editable path="Glue3"]

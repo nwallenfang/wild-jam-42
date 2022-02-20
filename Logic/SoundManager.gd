@@ -93,7 +93,7 @@ func main_theme_to_vortex():
 
 func stop_main_theme_towards_end():
 	$TweenOut.reset_all()
-	$TweenOut.interpolate_property($MainTheme, "volume_db", null, -3, 5.0, Tween.TRANS_CIRC, Tween.EASE_IN)
+	$TweenOut.interpolate_property($MainTheme, "volume_db", null, -30.0, 5.0, Tween.TRANS_CIRC, Tween.EASE_IN)
 	$TweenOut.start()
 	
 func vortex_drone_towards_end():
