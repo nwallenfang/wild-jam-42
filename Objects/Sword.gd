@@ -10,6 +10,7 @@ var pull_state := 0
 var pull_distance := .11
 
 signal sword_pulled
+signal sword_slightly_pulled
 
 func pull():
 	if pull_state == 2:
@@ -26,6 +27,8 @@ func pull():
 		yield($Tween,"tween_all_completed")
 		$Static.add_to_group("interactable")
 		pull_state += 1
+		if pull_state == 1:
+			emit_signal("sword_slightly_pulled")
 
 func play_idle_animation():
 	$AnimationTween.interpolate_property(self, "rotation_degrees:y", 0, 360, 3)

@@ -1,0 +1,66 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Objects/MoveThis.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sounds/crystal_moving.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Objects/CrystalRed.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Crystal.gd" type="Script" id=4]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 1, 0.583276, 1 )
+
+[sub_resource type="Curve" id=23]
+_data = [ Vector2( 0, 0 ), 0.0, 0.0, 0, 0, Vector2( 0.263285, 0.995455 ), 0.0, 0.0, 0, 0, Vector2( 0.487923, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.753623, 1 ), -0.0427686, -0.0427686, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=27]
+curve = SubResource( 23 )
+
+[sub_resource type="ParticlesMaterial" id=24]
+emission_shape = 1
+emission_sphere_radius = 0.12
+direction = Vector3( 0, -1, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 0.3
+initial_velocity_random = 0.53
+scale_curve = SubResource( 27 )
+color = Color( 0.435294, 0.356863, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=28]
+flags_unshaded = true
+vertex_color_use_as_albedo = true
+
+[sub_resource type="CubeMesh" id=25]
+material = SubResource( 28 )
+size = Vector3( 0.003, 0.12, 0.003 )
+
+[node name="Crystal" type="Spatial"]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0 )
+script = ExtResource( 4 )
+
+[node name="MoveThis" type="StaticBody" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="MoveThis"]
+transform = Transform( -5.92508e-09, 0.22915, -1.00164e-08, 0, -1.00262e-08, -0.229373, -0.13555, -1.00164e-08, 4.37833e-16, 0, 0.00419089, 0 )
+shape = SubResource( 3 )
+
+[node name="FairyDust" type="Particles" parent="MoveThis"]
+transform = Transform( 0.91281, 0, -0.408385, 0, 1, 0, 0.408385, 0, 0.91281, 0, 0.000894293, 0 )
+visible = false
+portal_mode = 2
+amount = 5
+lifetime = 0.18
+speed_scale = 0.2
+visibility_aabb = AABB( -0.232249, -0.263822, -0.226969, 0.471749, 0.501044, 0.464617 )
+process_material = SubResource( 24 )
+draw_pass_1 = SubResource( 25 )
+
+[node name="CrystalRed" parent="MoveThis" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="FlyingSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )

@@ -15,7 +15,7 @@ func _ready() -> void:
 	# in the beginning only house has to visible, the others can be made invis
 	room1.visible = false
 	room2.visible = false
-	room3.visible = false
+	room3.visible = true
 
 
 func _on_DeathTrigger_body_entered(body: Node) -> void:

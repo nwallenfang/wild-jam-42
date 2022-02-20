@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Objects/RedCrystalDoor.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sounds/door_moving.ogg" type="AudioStream" id=2]
+[ext_resource path="res://Objects/SlidingDoor150SingleCrystal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/SlidingDoorArc.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/CrystalRedAnimated.tscn" type="PackedScene" id=5]
+
+[sub_resource type="SphereShape" id=4]
+radius = 5.0
+
+[sub_resource type="BoxShape" id=5]
+
+[node name="SingleCrystalDoor" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="CrystalDetector" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="CrystalDetector"]
+shape = SubResource( 4 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="LightTw1" type="Tween" parent="."]
+
+[node name="Arc" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.82174, 0 )
+
+[node name="DoorSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="SlidingDoor" parent="." instance=ExtResource( 3 )]
+
+[node name="OmniLight1" type="OmniLight" parent="SlidingDoor"]
+transform = Transform( 0.970851, 0, -0.239686, 0, 1, 0, 0.239686, 0, 0.970851, -0.442411, 0.0156664, 0.332457 )
+visible = false
+light_color = Color( 1, 0.188235, 0, 1 )
+light_energy = 0.0
+light_bake_mode = 0
+omni_attenuation = 3.13834
+
+[node name="StaticBody" type="StaticBody" parent="SlidingDoor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="SlidingDoor/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1.79874, 0, 0, 0, 0.266046, 0, 0, 0 )
+shape = SubResource( 5 )
+
+[node name="Crystal1" parent="SlidingDoor" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0.254943 )
+visible = false
+
+[connection signal="body_entered" from="CrystalDetector" to="." method="_on_CrystalDetector_body_entered"]
