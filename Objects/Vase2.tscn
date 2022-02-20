@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/gltf/Vase2.gltf" type="PackedScene" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+radius = 0.450823
+height = 1.27046
+
+[node name="Vase2" instance=ExtResource( 1 )]
+
+[node name="StaticBody" type="StaticBody" parent="." index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.595758, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody" index="0"]
+shape = SubResource( 1 )
