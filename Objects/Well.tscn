@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://Objects/WellCylinder.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/well_plank_bridge_with_rock.tscn" type="PackedScene" id=2]
@@ -92,6 +92,12 @@ extents = Vector3( 1.10894, 0.880383, 0.245037 )
 
 [sub_resource type="BoxShape" id=33]
 extents = Vector3( 1, 0.0189762, 2.22644 )
+
+[sub_resource type="BoxShape" id=34]
+extents = Vector3( 1.80125, 0.0238394, 2.79123 )
+
+[sub_resource type="BoxShape" id=35]
+extents = Vector3( 1.80125, 0.0238394, 2.79123 )
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 11 )
@@ -461,6 +467,31 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.989, -20.5979, -22.7825 )
 [node name="CollisionShape" type="CollisionShape" parent="RoomList/BigRoom/well_tunnel_to_bridge2/StaticBody"]
 transform = Transform( 0.632468, -0.0941619, -0.768842, 0.147257, 0.989098, 1.64646e-08, 0.76046, -0.113217, 0.639439, 1.17296, -0.58465, -0.16486 )
 shape = SubResource( 33 )
+
+[node name="OneSidedUV" parent="RoomList/BigRoom" instance=ExtResource( 21 )]
+transform = Transform( 0.129704, -0.754358, 1.0858, 3.99401, 0.0244974, -0.0352609, -2.97733e-08, 0.656006, 1.2499, 3.65728, 2.36257, 13.0236 )
+
+[node name="OneSidedUV2" parent="RoomList/BigRoom" instance=ExtResource( 21 )]
+transform = Transform( 0.129704, 0.308124, 0.737159, 3.99401, -0.0100062, -0.0239389, -8.932e-08, 0.951294, -0.239018, -3.33671, 2.5897, 11.9298 )
+
+[node name="StaticBody" type="StaticBody" parent="RoomList/BigRoom"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.6787 )
+
+[node name="CollisionShape" type="CollisionShape" parent="RoomList/BigRoom/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.105723, 1.87864 )
+shape = SubResource( 34 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="RoomList/BigRoom/StaticBody"]
+transform = Transform( -0.0922663, 0.995734, 0, -0.995734, -0.0922663, 0, 0, 0, 1, -2.97496, 1.37834, 2.59169 )
+shape = SubResource( 35 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="RoomList/BigRoom/StaticBody"]
+transform = Transform( -0.0922663, 0.892308, 0.441898, -0.995734, -0.0826827, -0.0409469, 3.72529e-09, -0.443791, 0.89613, 3.90699, 0.740651, 2.59169 )
+shape = SubResource( 35 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="RoomList/BigRoom/StaticBody"]
+transform = Transform( -0.0922663, 0.892308, 0.441898, -0.995734, -0.0826827, -0.0409469, 3.72529e-09, -0.443791, 0.89613, -2.05542, 1.29314, 5.55711 )
+shape = SubResource( 35 )
 
 [node name="SpawnPosition" type="Position3D" parent="."]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -17.886, 66.7502, -143.141 )
