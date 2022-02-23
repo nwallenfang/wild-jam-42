@@ -9,8 +9,8 @@ onready var room3 = $RoomList/WellRoom/Room3
 func _ready() -> void:
 	$Player/PlayerMesh.visible = false
 	
-#	$RoomManager.rooms_convert()
-#	$RoomManager.rooms_set_active(true)
+	$RoomManager.rooms_convert()
+	$RoomManager.rooms_set_active(true)
 
 	# in the beginning only house has to visible, the others can be made invis
 	room1.visible = false
